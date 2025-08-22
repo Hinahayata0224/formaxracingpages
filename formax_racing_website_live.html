@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formax方程式赛车队</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #e10600;
+            --secondary-color: #000;
+            --accent-color: #fff;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* 导航栏样式 */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+		
+        /* Logo样式 */ 
+		.logo-link {
+			display: flex;
+			align-items: baseline;
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.logo-image {
+			height: 40px;
+			width: auto;
+			margin-right: 10px;
+			transition: opacity 0.3s;
+		}
+
+		.logo-image:hover {
+			opacity: 0.8;
+		}
+		.logo-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white !important;;      
+            line-height: 1;     
+            margin-top: 20px;
+        }
+		
+        /* hero区域按键样式 */
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+		/* hero区域轮播图样式 */
+		.carousel {
+			height: 100vh;
+			position: relative;
+			overflow: hidden;
+			margin: 0;
+            padding: 0;
+		}
+
+		.carousel-container {
+			position: relative;
+			height: 100%;
+			width: 100%;
+		}
+
+		.carousel-slides {
+			position: relative;
+			height: 100%;
+			width: 100%;
+		}
+
+		.carousel-slide {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			opacity: 0;
+			transition: opacity 0.8s ease, transform 0.8s ease;
+			transform: translateX(100%);
+		}
+
+		.carousel-slide.active {
+			opacity: 1;
+			transform: translateX(0);
+			z-index: 1;
+		}
+
+		.carousel-slide.prev {
+			transform: translateX(-100%);
+		}
+
+		.carousel-slide.next {
+			transform: translateX(100%);
+		}
+
+		.slide-content {
+			flex: 1;
+			padding: 2rem;
+			color: var(--accent-color);
+			text-align: center;
+			z-index: 2;
+			max-width: 800px;
+			margin: 0 auto;
+			position: relative;
+		}
+
+		.slide-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+			z-index: -1;
+		}
+
+		.slide-image::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+		}
+
+		.carousel-prev,
+		.carousel-next {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background: rgba(255, 255, 255, 0.2);
+			border: none;
+			color: var(--accent-color);
+			font-size: 1.5rem;
+			padding: 1rem;
+			cursor: pointer;
+			z-index: 10;
+			transition: background 0.3s;
+		}
+
+		.carousel-prev:hover,
+		.carousel-next:hover {
+			background: rgba(255, 255, 255, 0.4);
+		}
+
+		.carousel-prev {
+			left: 20px;
+		}
+
+		.carousel-next {
+			right: 20px;
+		}
+
+		.carousel-indicators {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			gap: 10px;
+			z-index: 10;
+		}
+
+		.indicator {
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.5);
+			cursor: pointer;
+			transition: background 0.3s;
+		}
+
+		.indicator.active {
+			background: var(--accent-color);
+		}
+
+		/* 响应式调整 */
+		@media (max-width: 768px) {
+			.carousel-prev,
+			.carousel-next {
+				padding: 0.8rem;
+				font-size: 1.2rem;
+			}
+			
+			.slide-content h1 {
+				font-size: 2.5rem;
+			}
+		}
+
+        /* 部分通用样式 */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* 关于我们样式 */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* 赛车展示样式 */
+        .car-showcase {
+            background-color: var(--light-gray);
+        }
+        
+        .cars-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .car-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        
+        .car-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .car-card:hover .car-image img {
+            transform: scale(1.05);
+        }
+        
+        .car-info {
+            padding: 1.5rem;
+        }
+        
+        .car-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .car-specs {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        .spec {
+            text-align: center;
+            padding: 1rem;
+            min-width: 150px;
+        }
+        
+        .spec i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 团队成员样式 */
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+        }
+        
+        .member {
+            background-color: var(--accent-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .member:hover .member-image img {
+            transform: scale(1.1);
+        }
+        
+        .member-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .member-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .member-role {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+		/* 团队分组样式 */
+		.groups {
+			background-color: var(--light-gray);
+			padding: 5rem 0;
+		}
+
+		.group-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+		}
+
+		.group-card {
+			background-color: var(--accent-color);
+			border-radius: 10px;
+			padding: 2rem;
+			text-align: center;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s;
+		}
+
+		.group-card:hover {
+			transform: translateY(-5px);
+		}
+
+		.group-icon {
+			width: 70px;
+			height: 70px;
+			background-color: var(--primary-color);
+			color: var(--accent-color);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 1.5rem;
+			font-size: 1.8rem;
+		}
+
+		.group-card h3 {
+			margin-bottom: 1rem;
+			color: var(--secondary-color);
+		}
+
+		.group-card p {
+			color: #666;
+		}
+		
+        /* 成就部分样式 */
+        .achievements {
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+        }
+        
+        .achievements .section-title h2 {
+            color: var(--accent-color);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .stat i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }     
+        
+		/* 赞助商部分样式 */
+		.sponsors-section {
+			padding: 5rem 0;
+			background-color: var(--accent-color);
+		}
+
+		.sponsors-level {
+			margin-bottom: 3rem;
+			text-align: center;
+		}
+
+		.sponsors-level:last-child {
+			margin-bottom: 0;
+		}
+
+		.sponsors-level h3 {
+			margin-bottom: 2rem;
+			color: var(--secondary-color);
+			font-size: 1.5rem;
+			position: relative;
+			display: inline-block;
+		}
+
+		.sponsors-level h3::after {
+			content: '';
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 60px;
+			height: 2px;
+			background-color: var(--primary-color);
+		}
+
+		.sponsors-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 2rem;
+		}
+
+		/* 一级赞助商尺寸 */
+		.platinum-sponsors .sponsor {
+			max-width: 250px;
+		}
+
+		.platinum-sponsors .sponsor img {
+			width: 100%;
+			height: auto;
+			filter: grayscale(0%);
+			transition: all 0.3s ease;
+		}
+
+		/* 二级赞助商尺寸 */
+		.gold-sponsors .sponsor {
+			max-width: 180px;
+		}
+
+		.gold-sponsors .sponsor img {
+			width: 100%;
+			height: auto;
+			filter: grayscale(0%);
+			transition: all 0.3s ease;
+		}
+
+		/* 三级赞助商尺寸 */
+		.silver-sponsors .sponsor {
+			max-width: 120px;
+		}
+
+		.silver-sponsors .sponsor img {
+			width: 100%;
+			height: auto;
+			filter: grayscale(0%);
+			transition: all 0.3s ease;
+		}
+
+		/* 赞助商悬停效果 */
+		.sponsor {
+			opacity: 0.8;
+			transition: opacity 0.3s, transform 0.3s;
+		}
+
+		.sponsor:hover {
+			opacity: 1;
+			transform: scale(1.05);
+		}
+
+		/* 响应式调整 */
+		@media (max-width: 768px) {
+			.platinum-sponsors .sponsor {
+				max-width: 200px;
+			}
+			
+			.gold-sponsors .sponsor {
+				max-width: 150px;
+			}
+			
+			.silver-sponsors .sponsor {
+				max-width: 100px;
+			}
+			
+			.sponsors-container {
+				gap: 1.5rem;
+			}
+		}
+        
+        /* 联系样式 */
+        .contact {
+            background-color: var(--light-gray);
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 0 0.5rem;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .social-links i {
+            font-size: 1.2rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cars-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .car-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+				<a href="#home">
+					
+					<span class="logo-text">Formax方程式赛车队</span>
+				</a>
+			</div>
+                <ul class="nav-links">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#about">关于我们</a></li>
+					<li><a href="#achievements">成就</a></li>
+                    <li><a href="#car">赛车展示</a></li>
+                    <li><a href="#team">团队成员</a></li>
+					<li><a href="#groups">团队分组</a></li>
+                    <li><a href="#sponsors">赞助商</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+	 <!-- hero轮播图区域 -->
+	<section class="carousel" id="home">
+		<div class="carousel-container">
+			<div class="carousel-slides">
+				<div class="carousel-slide active">
+					<div class="slide-content">
+						<h1>Formax方程式赛车队</h1>
+						<p>我们是一支充满激情与创新精神的大学生方程式赛车队，致力于设计和制造高性能的方程式赛车。</p>
+						<a href="#about" class="btn">了解更多</a>
+					</div>
+					<div class="slide-image" style="background-image: url('image/hero/hero-slide-1.jpg')"></div>
+				</div>
+				<div class="carousel-slide">
+					<div class="slide-content">
+						<h1>E-Future电动方程式赛车</h1>
+						<p>我们的电动赛车采用先进复材技术和高效轮边电机系统，实现卓越性能表现。</p>
+						<a href="#car" class="btn">查看赛车</a>
+					</div>
+					<div class="slide-image" style="background-image: url('image/hero/hero-slide-2.jpg')"></div>
+				</div>
+				<div class="carousel-slide">
+					<div class="slide-content">
+						<h1>Auto-Future无人驾驶方程式赛车</h1>
+						<p>我们的无人驾驶赛车配备先进的传感器和AI算法，能够自主完成赛道识别和决策。</p>
+						<a href="#car" class="btn">技术详情</a>
+					</div>
+					<div class="slide-image" style="background-image: url('image/hero/hero-slide-3.jpg')"></div>
+				</div>
+			</div>
+			
+			<!-- 导航箭头 -->
+			<button class="carousel-prev">
+				<i class="fas fa-chevron-left"></i>
+			</button>
+			<button class="carousel-next">
+				<i class="fas fa-chevron-right"></i>
+			</button>
+			
+			<!-- 指示器 -->
+			<div class="carousel-indicators">
+				<span class="indicator active" data-slide="0"></span>
+				<span class="indicator" data-slide="1"></span>
+				<span class="indicator" data-slide="2"></span>
+			</div>
+		</div>
+	</section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>关于我们</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Formax方程式赛车队成立于2009年，是广东省第一辆FSC赛车的制造团队，也是FSC赛事最早的发起者之一，由一群对赛车充满热情的大学生创建。我们团队由来自机械、电气、工商管理等多个专业的本科生组成。每年，我们每年自主设计两辆全新的大学生方程式赛车，参加中国大学生方程式赛车大赛。我们的使命是结合工程实践打造创新型人才培养平台。团队秉承“敢拼敢赢，精益求精”的价值观，不断突破技术极限，在比赛中取得优异成绩，同时为成员提供宝贵的实战经验</p>
+                </div>
+                <div class="about-image">
+                    <img src="image/misc/allmember.jpg" alt="两队合影">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成就 -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <div class="section-title">
+                <h2>我们的成就</h2>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <i class="fas fa-trophy"></i>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-name">全国奖项</div>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-car"></i>
+                    <div class="stat-number">20+</div>
+                    <div class="stat-name">赛车制造</div>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-book"></i>
+                    <div class="stat-number">80+</div>
+                    <div class="stat-name">专利数量</div>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-name">团队成员</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赛车展示 -->
+    <section id="car" class="car-showcase">
+        <div class="container">
+            <div class="section-title">
+                <h2>赛车展示</h2>
+            </div>
+            <div class="cars-container">
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="image/vehicle/EF25.jpg" alt="EF25">
+                    </div>
+                    <div class="car-info">
+                        <h3>E-Future 24 电动方程式赛车</h3>
+                        <p>我们的全新电动赛车，采用碳纤维单体壳，重量仅为235kg，搭载四轮边电机系统，最大输出功率80kW。</p>
+                        <div class="car-specs">
+                            <div class="spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <h4>最高速度</h4>
+                                <p>135 km/h</p>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-bolt"></i>
+                                <h4>功率</h4>
+                                <p>80 kW</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="image/vehicle/AF25.jpg" alt="AF25">
+                    </div>
+                    <div class="car-info">
+                        <h3>Auto-Future 24 无人驾驶方程式赛车</h3>
+                        <p>新一代无人驾驶赛车，配备先进的传感器系统和算法，能够自主完成赛道识别、路径规划和实时控制。</p>
+                        <div class="car-specs">
+                            <div class="spec">
+                                <i class="fas fa-brain"></i>
+                                <h4>处理器</h4>
+                                <p>NVIDIA Orin</p>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-satellite-dish"></i>
+                                <h4>传感器</h4>
+                                <p>激光雷达+三目摄像头</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队成员 -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>管理成员</h2>
+            </div>
+            <div class="team-members">
+                <div class="member">
+                    <div class="member-image">
+                        <img src="image/member/1.png" alt="车队经理">
+                    </div>
+                    <div class="member-info">
+                        <h3>游凯任</h3>
+                        <div class="member-role">车队经理</div>
+                        <p>负责两车整体规划、团队品牌搭建、商业合作联系</p>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="member-image">
+                        <img src="image/member/2.png" alt="电车队长">
+                    </div>
+                    <div class="member-info">
+                        <h3>汪明阳</h3>
+                        <div class="member-role">电车队长</div>
+                        <p>负责电车团队整体管理</p>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="member-image">
+                        <img src="image/member/3.png" alt="无人车队长">
+                    </div>
+                    <div class="member-info">
+                        <h3>刘志贤</h3>
+                        <div class="member-role">无人车队长</div>
+                        <p>负责无人车团队整体管理</p>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="member-image">
+                        <img src="image/member/4.png" alt="电车设计总监">
+                    </div>
+                    <div class="member-info">
+                        <h3>许卓涵</h3>
+                        <div class="member-role">电车技术总监</div>
+                        <p>负责电车设计技术统筹</p>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="member-image">
+                        <img src="image/member/5.png" alt="无人设计总监">
+                    </div>
+                    <div class="member-info">
+                        <h3>苌子林</h3>
+                        <div class="member-role">无人设计总监</div>
+                        <p>负责无人车设计技术统筹</p>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="member-image">
+                        <img src="image/member/6.png" alt="无人系统总监">
+                    </div>
+                    <div class="member-info">
+                        <h3>帅正胤</h3>
+                        <div class="member-role">无人系统总监</div>
+                        <p>负责无人驾驶系统的感知、决策和控制算法开发与实现</p>
+					</div>
+				</div>	
+				<div class="member">
+                    <div class="member-image">
+                        <img src="image/member/7.png" alt="财务总监">
+                    </div>
+                    <div class="member-info">
+                        <h3>何阳</h3>
+                        <div class="member-role">财务总监</div>
+                        <p>负责团队资金管理与收支审核及行政规划</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<!-- 团队组成 -->
+	<section id="groups" class="groups">
+		<div class="container">
+			<div class="section-title">
+				<h2>团队组成</h2>
+			</div>
+			<div class="group-container">
+				<div class="group-card">
+					<div class="group-icon">
+						<i class="fas fa-bolt"></i>
+					</div>
+					<h3>电气系统组</h3>
+					<p>负责整车电气系统设计、布置和电机系统算法，确保三电系统高效稳定运行。</p>
+				</div>
+				<div class="group-card">
+					<div class="group-icon">
+						<i class="fas fa-wind"></i>
+					</div>
+					<h3>车身空力组</h3>
+					<p>专注于单体壳设计和空气动力学优化，通过CFD和复合材料提升赛车性能。</p>
+				</div>
+				<div class="group-card">
+					<div class="group-icon">
+						<i class="fas fa-cogs"></i>
+					</div>
+					<h3>底盘组</h3>
+					<p>负责传动、悬架、转向和制动系统的设计与制造，确保赛车操控性和稳定性。</p>
+				</div>
+				<div class="group-card">
+					<div class="group-icon">
+						<i class="fas fa-robot"></i>
+					</div>
+					<h3>无人系统组</h3>
+					<p>开发自动驾驶算法和传感器系统，实现赛车的自主规划与决策能力。</p>
+				</div>
+				<div class="group-card">
+					<div class="group-icon">
+						<i class="fas fa-chart-line"></i>
+					</div>
+					<h3>市场部</h3>
+					<p>负责团队品牌建设、平台运营和活动协调，确保团队互联网发展。</p>
+				</div>
+				<div class="group-card">
+					<div class="group-icon">
+						<i class="fas fa-book"></i>
+					</div>
+					<h3>秘书部</h3>
+					<p>负责团队财务记账、活动安排。</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 赞助伙伴 -->
+<section id="sponsors" class="sponsors-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>赞助伙伴</h2>
+        </div>
+        <div class="sponsors-container">
+            <div class="sponsor">
+               <img src="image/sponsor/partner1.png" alt="赞助伙伴1">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- 联系我们 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>联系我们</h2>
+            </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>地址</h4>
+                            <p>广东省广州市天河区华南理工大学（五山校区）汽车科技大楼1楼</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>邮箱</h4>
+                            <p>youkairen@scutracing.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>电话</h4>
+                            <p>+86 195020601030 </p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>工作时间</h4>
+                            <p>周一至周五: 9:00 - 17:00</p>
+                        </div>
+					
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weibo"></i></a> <!-- 把#替换为要链接的网址 -->
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-qq"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 Formax方程式赛车队. 保留所有解释权利.</p>
+        </div>
+    </footer>
+
+    <script>
+		// 轮播图功能
+		document.addEventListener('DOMContentLoaded', function() {
+			const slides = document.querySelectorAll('.carousel-slide');
+			const indicators = document.querySelectorAll('.indicator');
+			const prevBtn = document.querySelector('.carousel-prev');
+			const nextBtn = document.querySelector('.carousel-next');
+			let currentSlide = 0;
+			let slideInterval;
+
+			// 切换到指定幻灯片
+			function goToSlide(n) {
+				slides[currentSlide].className = 'carousel-slide';
+				indicators[currentSlide].classList.remove('active');
+				
+				currentSlide = (n + slides.length) % slides.length;
+				
+				slides[currentSlide].className = 'carousel-slide active';
+				indicators[currentSlide].classList.add('active');
+			}
+
+			// 下一张幻灯片
+			function nextSlide() {
+				goToSlide(currentSlide + 1);
+			}
+
+			// 上一张幻灯片
+			function prevSlide() {
+				goToSlide(currentSlide - 1);
+			}
+
+			// 设置点击事件
+			nextBtn.addEventListener('click', function() {
+				clearInterval(slideInterval);
+				nextSlide();
+				// 可以在这里重新启动自动播放
+			});
+
+			prevBtn.addEventListener('click', function() {
+				clearInterval(slideInterval);
+				prevSlide();
+				// 可以在这里重新启动自动播放
+			});
+
+			// 指示器点击事件
+			indicators.forEach((indicator, index) => {
+				indicator.addEventListener('click', function() {
+					clearInterval(slideInterval);
+					goToSlide(index);
+					// 可以在这里重新启动自动播放
+				});
+			});
+
+			 // 自动播放功能
+			 function startSlideShow() {
+			     slideInterval = setInterval(nextSlide, 4000);
+			 }
+			 startSlideShow();
+			
+			 // 当用户悬停在轮播图上时暂停自动播放
+			 const carousel = document.querySelector('.carousel');
+			 carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+			 carousel.addEventListener('mouseleave', startSlideShow);
+		});
+        // 导航菜单切换
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    if(navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
