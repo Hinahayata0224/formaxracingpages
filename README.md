@@ -1,0 +1,3 @@
+这里是Formax方程式赛车队的官方网站
+网站正在建设中，欢迎提交issues
+也可以通过scutracing.top域名访问
