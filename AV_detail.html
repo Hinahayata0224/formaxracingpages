@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Future24赛车详情 - Formax方程式赛车队</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 与主页面相同 */
+        :root {
+            --primary-color: #e10600;
+            --secondary-color: #000;
+            --accent-color: #fff;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* 返回按钮 */
+        .back-button {
+            display: inline-block;
+            margin: 2rem 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .back-button i {
+            margin-right: 0.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .back-button:hover i {
+            transform: translateX(-5px);
+        }
+        
+        /* 车辆详情顶部区域 */
+        .car-detail-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .car-detail-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .car-detail-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .car-detail-specs {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .car-detail-specs h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .spec-item {
+            background-color: var(--light-gray);
+            padding: 0.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .spec-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .spec-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* 技术创新亮点 */
+        .innovation-section {
+            margin: 4rem 0;
+        }
+        
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .innovation-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
+        }
+        
+        .innovation-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .innovation-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 1.5rem;
+            color: var(--accent-color);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .innovation-card:hover .innovation-overlay {
+            transform: translateY(0);
+        }
+        
+        .innovation-card:hover .innovation-image {
+            transform: scale(1.05);
+        }
+        
+        .innovation-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 赛车故事部分 */
+        .story-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 4rem 0;
+            align-items: center;
+        }
+        
+        .story-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .story-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+		/* 获得奖项部分 */
+		.awards-section {
+			position: relative;
+			padding: 4rem 0;
+			margin: 0;
+			z-index: 1;
+		}
+
+		.awards-section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: var(--light-gray);
+			z-index: -1;
+			width: 100vw;
+			margin-left: calc(-50vw + 50%);
+		}
+
+		.awards-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 2rem;
+		}
+
+		.award-card {
+			background-color: var(--accent-color);
+			padding: 2rem;
+			border-radius: 10px;
+			text-align: center;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+		}
+
+		.award-icon {
+			font-size: 2.5rem;
+			color: var(--primary-color);
+			margin-bottom: 1rem;
+		}
+
+		.award-title {
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
+			color: var(--secondary-color);
+		}
+
+		.award-year {
+			color: #666;
+			font-size: 0.9rem;
+		}
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .innovation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+		
+		/* 页脚样式 */
+		footer {
+			background-color: var(--secondary-color);
+			color: var(--accent-color);
+			padding: 3rem 0;
+			text-align: center;
+			margin-top: 0;
+		}
+
+		.social-links {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 1.5rem;
+		}
+
+		.social-links a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: rgba(255, 255, 255, 1);
+			margin: 0 0.5rem;
+			transition: background-color 0.3s;
+		}
+
+		.social-links a:hover {
+			background-color: var(--primary-color);
+		}
+
+		.social-links i {
+			font-size: 1.2rem;
+		}
+		
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 返回按钮 -->
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> 返回主页
+        </a>
+        
+        <!-- 车辆详情顶部区域 -->
+        <section class="car-detail-header">
+            <div class="car-detail-image">
+                <img src="image/vehicle/AF25_detail.png" alt="AF25大图">
+            </div>
+            
+            <div class="car-detail-specs">
+                <h2>A-Future24 技术规格</h2>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-value">220kg</div>
+                        <div class="spec-label">整备质量</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">40:60</div>
+                        <div class="spec-label">前后轴荷比</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">1600mm</div>
+                        <div class="spec-label">整车轴距</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">62.19kW</div>
+                        <div class="spec-label">峰值功率</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">2.80</div>
+                        <div class="spec-label">升阻比</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">4.80</div>
+                        <div class="spec-label">整车ClA</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">32线激光</div>
+                        <div class="spec-label">雷达</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-value">双目Zed</div>
+                        <div class="spec-label">相机</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 技术创新亮点 -->
+        <section class="innovation-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">技术创新亮点</h2>
+            <div class="innovation-grid">
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/1.png" alt="基于PillarNet的三维目标检测" class="innovation-image">
+                    <div class="innovation-overlay">
+                        <h3 class="innovation-title">基于PillarNet的三维目标检测</h3>
+                        <p>使用更低线数的雷达实现了更优的效果</p>
+                    </div>
+                </div>
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/2.png" alt="基于TCone-YOLO的环境感知" class="innovation-image">
+                    <div class="innovation-overlay">
+                        <h3 class="innovation-title">基于TCone-YOLO的环境感知</h3>
+                        <p>改善帧率，提升视觉感知范围，最大感知距离大于21m</p>
+                    </div>
+                </div>
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/3.png" alt="自动曝光调节算法" class="innovation-image">
+                    <div class="innovation-overlay">
+                        <h3 class="innovation-title">自动曝光调节算法</h3>
+                        <p>基于动态收敛判定，带来更加稳定的视觉识别效果</p>
+                    </div>
+                </div>
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/4.png" alt="锥桶颜色估计算法CCNet" class="innovation-image">
+                    <div class="innovation-overlay">
+                        <h3 class="innovation-title">锥桶颜色估计算法CCNet</h3>
+                        <p>分类精度高达96%，耗时低至0.2ms</p>
+                    </div>
+                </div>
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/5.png" alt="多模态信息融合数据预处理" class="innovation-image">
+                    <div class="innovation-overlay">
+                        <h3 class="innovation-title">多模态信息融合数据预处理</h3>
+                        <p>实现高速运动状态下精准数据匹配，点云去畸变仅需20ms</p>
+                    </div>
+                </div>
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/6.png" alt="SLAM建图生成中心线" class="innovation-image">
+                    <div class="innovation-overlay">
+                        <h3 class="innovation-title">SLAM建图与路径优化</h3>
+                        <p>采用基于三次样条曲线拟合的路径优化，提高最高车速</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 赛车故事 -->
+        <section class="story-section">
+            <div class="story-content">
+                <h2>赛车故事</h2>
+                <p>A-Future24是我们历时12个月研发的第五代无人驾驶方程式赛车。从概念设计到最终测试，整个团队投入了超过5,000小时的工作。</p>
+                <p>在设计与加工过程中，我们面临了诸多挑战。通过无数次的模拟和测试，我们最终开发出了这辆稳定又精准的无人驾驶赛车。</p>
+                <p>最令人难忘的是在最后阶段的雨中高速循迹赛中，团队成员轮流值守，确保每一个系统都达到最佳状态。这种敢拼敢赢，精益求精的精神最终使我们在2024年全国大学生方程式大赛中获得了全国季军。</p>
+            </div>
+            <div class="story-image">
+                <img src="image/misc/AF24story.jpg" alt="车队研发故事">
+            </div>
+        </section>
+        
+        <!-- 获得奖项 -->
+        <section class="awards-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">获得奖项</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon"><i class="fas fa-trophy"></i></div>
+                    <h3 class="award-title">全国一等奖</h3>
+                    <p class="award-year">2024年</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon"><i class="fas fa-medal"></i></div>
+                    <h3 class="award-title">全国季军</h3>
+                    <p class="award-year">2024年</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon"><i class="fas fa-bolt"></i></div>
+                    <h3 class="award-title">Matlab仿真一等奖</h3>
+                    <p class="award-year">2024年</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3 class="award-title">设计答辩第三名</h3>
+                    <p class="award-year">2024年</p>
+                </div>
+            </div>
+        </section>
+    </div>
+	
+		<!-- 页脚 -->
+	<footer>
+		<div class="container">
+			<div class="social-links">
+				<a href="#"><i class="fab fa-weibo"></i></a>
+				<a href="#"><i class="fab fa-weixin"></i></a>
+				<a href="#"><i class="fab fa-qq"></i></a>
+				<a href="#"><i class="fab fa-instagram"></i></a>
+				<a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click"><i class="fab fa-youtube"></i></a>
+			</div>
+			<p>&copy; 2025 Formax方程式赛车队. 保留所有权利.</p>
+		</div>
+	</footer>
+
+
+    <script>
+        // 简单的返回顶部按钮功能
+        window.addEventListener('scroll', function() {
+            const backButton = document.querySelector('.back-button');
+            if (window.scrollY > 300) {
+                backButton.style.position = 'fixed';
+                backButton.style.top = '20px';
+                backButton.style.left = '20px';
+                backButton.style.zIndex = '1000';
+                backButton.style.background = 'rgba(255, 255, 255, 0.9)';
+                backButton.style.padding = '10px 15px';
+                backButton.style.borderRadius = '5px';
+                backButton.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                backButton.style.position = 'static';
+                backButton.style.background = 'transparent';
+                backButton.style.padding = '0';
+                backButton.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

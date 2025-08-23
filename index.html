@@ -358,6 +358,8 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             background: white;
+			cursor: pointer;
+			transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .car-image {
@@ -374,6 +376,8 @@
         
         .car-card:hover .car-image img {
             transform: scale(1.05);
+			transform: translateY(-5px);
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         
         .car-info {
@@ -403,6 +407,25 @@
             color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
+		
+		.back-button {
+			display: inline-block;
+			margin-bottom: 2rem;
+			color: var(--primary-color);
+			font-weight: bold;
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+		}
+
+		.back-button i {
+			margin-right: 0.5rem;
+			transition: transform 0.3s;
+		}
+
+		.back-button:hover i {
+			transform: translateX(-5px);
+		}
         
         /* 团队成员样式 */
         .team-members {
@@ -886,13 +909,13 @@
                 <h2>赛车展示</h2>
             </div>
             <div class="cars-container">
-                <div class="car-card">
+                <div class="car-card" onclick="location.href='EV_detail.html'">
                     <div class="car-image">
-                        <img src="image/vehicle/EF25.webp" alt="EF25">
+                        <img src="image/vehicle/EF25.webp" alt="EF24">
                     </div>
                     <div class="car-info">
                         <h3>E-Future 24 电动方程式赛车</h3>
-                        <p>我们的全新电动赛车，采用碳纤维单体壳，重量仅为235kg，搭载四轮边电机系统，最大输出功率80kW。</p>
+                        <p>我们的全新电动赛车，采用碳纤维单体壳及高效空气动力学套件，搭载四轮边电机系统，最大输出功率80kW。</p>
                         <div class="car-specs">
                             <div class="spec">
                                 <i class="fas fa-tachometer-alt"></i>
@@ -902,13 +925,13 @@
                             <div class="spec">
                                 <i class="fas fa-bolt"></i>
                                 <h4>功率</h4>
-                                <p>80 kW</p>
+                                <p>75 kW</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="car-card">
+                <div class="car-card" onclick="location.href='AV_detail.html'">
                     <div class="car-image">
                         <img src="image/vehicle/AF25.webp" alt="AF25">
                     </div>
@@ -924,7 +947,7 @@
                             <div class="spec">
                                 <i class="fas fa-satellite-dish"></i>
                                 <h4>传感器</h4>
-                                <p>激光雷达+三目摄像头</p>
+                                <p>激光雷达+双目Zed相机</p>
                             </div>
                         </div>
                     </div>
