@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成为赞助伙伴 - Formax方程式赛车队</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #e10600;
+            --secondary-color: #000;
+            --accent-color: #fff;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+          
+        /* 英雄区域样式 */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image/sponsor/hero.jpg') no-repeat center center/cover;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* 部分通用样式 */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* 九宫格样式 */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background-color: var(--accent-color);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card h2 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            transition: all 0.3s;
+        }
+        
+        .benefit-card p {
+            color: #666;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            padding: 0 1.5rem;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-card:hover h2 {
+            transform: translateY(-40px);
+        }
+        
+        .benefit-card:hover p {
+            opacity: 1;
+            transform: translateY(-50%);
+        }
+        
+		/* 社媒平台样式 */
+		.social-platforms {
+			background-color: var(--light-gray);
+		}
+
+		.platforms-container {
+			display: flex;
+			justify-content: center;
+			gap: 5rem;
+			flex-wrap: wrap;
+		}
+
+		.platform {
+			text-align: center;
+			width: 200px;
+		}
+
+		.platform-icon {
+			width: 120px;
+			height: 120px;
+			margin: 0 auto 1rem;
+			transition: all 0.3s;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.platform-icon img {
+			width: 100%;
+			height: auto;
+			transition: all 0.3s;
+		}
+
+		.platform:hover .platform-icon img {
+			transform: scale(1.1);
+		}
+        
+        /* 赞助商级别样式 */
+        .sponsorship-levels {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .level-card {
+            background-color: var(--accent-color);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 160px;
+            max-width: 280px;
+            transition: all 0.3s;
+        }
+        
+        .level-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .level-title {
+            border-top: 4px solid #ffd700;
+        }
+		
+		.level-diamond {
+            border-top: 4px solid #b9f2ff;
+        }
+        
+        .level-gold {
+            border-top: 4px solid #ffd700;
+        }
+        
+        .level-silver {
+            border-top: 4px solid #c0c0c0;
+        }
+        
+        .level-angel {
+            border-top: 4px solid #ff69b4;
+        }
+        
+        .level-friendship {
+            border-top: 4px solid #90ee90;
+        }
+        
+        /* 行动呼吁样式 */
+        .cta-section {
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            text-align: center;
+        }
+        
+        .cta-section .section-title h2 {
+            color: var(--accent-color);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 0 0.5rem;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .social-links i {
+            font-size: 1.2rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .platforms-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .sponsorship-levels {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .level-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>成为我们的合作伙伴</h1>
+            <p>加入我们，共同推动大学生方程式赛车事业的发展</p>
+        </div>
+    </section>
+
+    <!-- 为什么成为赞助商 -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>为什么成为我们的赞助合作伙伴？</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h2>品牌曝光</h2>
+                    <p>通过赛事、媒体报道和校园活动，让您的品牌获得广泛曝光，触达数千名潜在客户。</p>
+                </div>
+                <div class="benefit-card">
+                    <h2>人才招聘</h2>
+                    <p>直接接触顶尖工程人才，为您的企业招募未来领袖和创新者。</p>
+                </div>
+                <div class="benefit-card">
+                    <h2>社会责任</h2>
+                    <p>展示您对教育和技术创新的支持，提升企业社会形象。</p>
+                </div>
+                <div class="benefit-card">
+                    <h2>技术合作</h2>
+                    <p>与我们的技术团队合作，共同开发创新解决方案，测试新产品和技术。</p>
+                </div>
+                <div class="benefit-card">
+                    <h2>网络拓展</h2>
+                    <p>加入我们的赞助商网络，与其他行业领导者建立有价值的联系。</p>
+                </div>
+                <div class="benefit-card">
+                    <h2>营销机会</h2>
+                    <p>利用我们的平台进行定向营销，接触对技术和创新感兴趣的高校人群。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 社媒平台 -->
+    <section class="social-platforms">
+        <div class="container">
+            <div class="section-title">
+                <h2>我们的社媒平台</h2>
+            </div>
+            <div class="platforms-container">
+                <div class="platform">
+                    <div class="platform-icon">
+                        <img src="image/social/douyin.png" alt="抖音">
+                    </div>
+                    <h2>抖音</h2>
+                    <h3>@Formax方程式赛车队</h3>
+                </div>
+                <div class="platform">
+                    <div class="platform-icon">
+                        <img src="image/social/wechat.webp" alt="微信">
+                    </div>
+                    <h2>微信公众号</h2>
+                    <h3>Formax方程式赛车队</h3>
+                </div>
+                <div class="platform">
+                    <div class="platform-icon">
+                        <img src="image/social/bilibili.png" alt="B站">
+                    </div>
+                    <h2>Bilibili</h2>
+                    <h3>Formax方程式赛车队</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赞助商级别 -->
+    <section class="sponsorship">
+        <div class="container">
+            <div class="section-title">
+                <h2>赞助商级别</h2>
+            </div>
+            <div class="sponsorship-levels">
+			    <div class="level-card level-diamond">
+                    <h3>冠名赞助商</h3>
+                </div>
+                <div class="level-card level-diamond">
+                    <h3>钻石级</h3>
+                </div>
+                <div class="level-card level-gold">
+                    <h3>黄金级</h3>
+                </div>
+                <div class="level-card level-silver">
+                    <h3>白银级</h3>
+                </div>
+                <div class="level-card level-angel">
+                    <h3>天使级</h3>
+                </div>
+                <div class="level-card level-friendship">
+                    <h3>友情合作</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行动呼吁 -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>准备好成为我们的赞助伙伴了吗</h2>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>邮箱</h4>
+                        <p>youkairen@formaxracing.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>电话</h4>
+                        <p>+86 195 0206 0130</p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://mp.weixin.qq.com/s/4kNCS-z1ISjhzN9l_gPppA" class="btn">加入我们</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="https://mp.weixin.qq.com/s/4kNCS-z1ISjhzN9l_gPppA" target="_blank"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click" target="_blank"><i class="fab fa-bilibili"></i></a>
+            </div>
+            <p>&copy; 2025 Formax方程式赛车队. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 导航菜单切换
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    if(navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

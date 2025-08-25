@@ -341,6 +341,7 @@
         /* 赛车展示样式 */
         .car-showcase {
             background-color: var(--light-gray);
+			margin-top: 0;
         }
         
         .cars-container {
@@ -363,7 +364,7 @@
         }
         
         .car-image {
-            height: 250px;
+            height: 240px;
             overflow: hidden;
         }
         
@@ -385,7 +386,7 @@
         }
         
         .car-info h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0rem;
             color: var(--secondary-color);
         }
         
@@ -393,7 +394,7 @@
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            margin-top: 1.5rem;
+            margin-top: 0rem;
         }
         
         .spec {
@@ -405,7 +406,7 @@
         .spec i {
             font-size: 2rem;
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0rem;
         }
 		
 		.back-button {
@@ -425,6 +426,19 @@
 
 		.back-button:hover i {
 			transform: translateX(-5px);
+		}
+		
+		.car-detail-btn {
+			margin-top: 0.5rem;
+			text-align: center;
+			width: 100%; /* 确保按钮占据整行 */
+		}
+
+		/* 确保按钮在不同屏幕尺寸下都有适当间距 */
+		@media (min-width: 769px) {
+			.car-detail-btn {
+				margin-top: 0.5rem;
+			}
 		}
         
         /* 团队成员样式 */
@@ -772,7 +786,7 @@
 
 		/* 二级赞助商尺寸 */
 		.gold-sponsors .sponsor {
-			max-width: 180px;
+			max-width: 150px;
 		}
 
 		.gold-sponsors .sponsor img {
@@ -784,7 +798,7 @@
 
 		/* 三级赞助商尺寸 */
 		.silver-sponsors .sponsor {
-			max-width: 120px;
+			max-width: 80px;
 		}
 
 		.silver-sponsors .sponsor img {
@@ -803,6 +817,12 @@
 		.sponsor:hover {
 			opacity: 1;
 			transform: scale(1.05);
+		}
+		
+		.sponsor-cta {
+			text-align: center;
+			margin-top: 3rem;
+			padding-top: 2rem;
 		}
 
 		/* 响应式调整 */
@@ -952,10 +972,10 @@
                     <li><a href="#about">关于我们</a></li>
 					<li><a href="#achievements">成就</a></li>
                     <li><a href="#car">赛车展示</a></li>
-                    <li><a href="#team">团队成员</a></li>
+                    <li><a href="#team">管理团队</a></li>
 					<li><a href="#groups">团队分组</a></li>
 					<li><a href="#news">新闻动态</a></li>
-                    <li><a href="#sponsors">赞助商</a></li>
+                    <li><a href="#sponsors">赞助伙伴</a></li>
                     <li><a href="#contact">联系我们</a></li>
                 </ul>
                 <div class="hamburger">
@@ -1023,7 +1043,9 @@
                     <p>Formax方程式赛车队成立于2009年，是广东省第一辆FSC赛车的制造团队，也是FSC赛事最早的发起者之一，由一群对赛车充满热情的大学生创建。我们团队由来自机械、电气、工商管理等多个专业的本科生组成。每年，我们每年自主设计两辆全新的大学生方程式赛车，参加中国大学生方程式赛车大赛。我们的使命是结合工程实践打造创新型人才培养平台。团队秉承“敢拼敢赢，精益求精”的价值观，不断突破技术极限，在比赛中取得优异成绩，同时为成员提供宝贵的实战经验</p>
                 </div>
                 <div class="about-image">
+				    <a href="https://mp.weixin.qq.com/s/LKOV-GXympn0VP8Wx7U-lQ" target="_blank">
                     <img src="image/misc/allmember.webp" alt="两队合影">
+					</a>
                 </div>
             </div>
         </div>
@@ -1086,6 +1108,9 @@
                                 <p>75 kW</p>
                             </div>
                         </div>
+						<div class="car-detail-btn">
+						<a href="EV_detail.html" class="btn">查看详情</a>
+					</div>
                     </div>
                 </div>
                 
@@ -1105,9 +1130,12 @@
                             <div class="spec">
                                 <i class="fas fa-satellite-dish"></i>
                                 <h4>传感器</h4>
-                                <p>激光雷达+双目Zed相机</p>
+                                <p>Helios32+Zed</p>
                             </div>
                         </div>
+						<div class="car-detail-btn">
+						<a href="AV_detail.html" class="btn">查看详情</a>
+					</div>
                     </div>
                 </div>
             </div>
@@ -1118,7 +1146,7 @@
     <section id="team" class="team">
         <div class="container">
             <div class="section-title">
-                <h2>管理成员</h2>
+                <h2>管理团队</h2>
             </div>
             <div class="team-members">
                 <div class="member">
@@ -1206,56 +1234,88 @@
 					<div class="group-icon">
 						<i class="fas fa-bolt"></i>
 					</div>
-					<h3>电气系统组</h3>
+					<h3>
+					<a href="https://mp.weixin.qq.com/s/GiFFXjnX9QfJzXe90bXwYQ" target="_blank">
+					电气系统组
+					</a>
+					</h3>
 					<p>负责整车电气系统设计、布置和电机系统算法，确保三电系统高效稳定运行。</p>
 				</div>
 				<div class="group-card">
 					<div class="group-icon">
 						<i class="fas fa-wind"></i>
 					</div>
-					<h3>车身空力组</h3>
+					<h3>
+					<a href="https://mp.weixin.qq.com/s/G4p052Ls0Z5t7_RdowDEBw" target="_blank">
+					车身空力组
+					</a>
+					</h3>
 					<p>专注于单体壳设计和空气动力学优化，通过CFD和复合材料提升赛车性能。</p>
 				</div>
 				<div class="group-card">
 					<div class="group-icon">
 						<i class="fas fa-cogs"></i>
 					</div>
-					<h3>底盘组</h3>
+					<h3>
+					<a href="https://mp.weixin.qq.com/s/AwWzKQpM72HGSU5Iz5lTBg" target="_blank">
+					底盘组
+					</a>
+					</h3>
 					<p>负责传动、悬架、转向和制动系统的设计与制造，确保赛车操控性和稳定性。</p>
 				</div>
 				<div class="group-card">
 					<div class="group-icon">
 						<i class="fas fa-robot"></i>
 					</div>
-					<h3>无人系统组</h3>
+					<h3>
+					<a href="https://mp.weixin.qq.com/s/pZiq3W_AjW_ZMYiqAsBLyQ" target="_blank">
+					无人系统组
+					</a>
+					</h3>
 					<p>开发自动驾驶算法和传感器系统，实现赛车的自主规划与决策能力。</p>
 				</div>
 				<div class="group-card">
 					<div class="group-icon">
 						<i class="fas fa-chart-line"></i>
 					</div>
-					<h3>市场部</h3>
+					<h3>
+					<a href="https://mp.weixin.qq.com/s/llWLJVifhjzUc8y10f_emw" target="_blank">
+					市场部
+					</a>
+					</h3>
 					<p>负责团队品牌建设、平台运营和活动协调，确保团队互联网发展。</p>
 				</div>
 				<div class="group-card">
 					<div class="group-icon">
 						<i class="fas fa-book"></i>
 					</div>
-					<h3>秘书部</h3>
+					<h3>
+					<a href="https://mp.weixin.qq.com/s/ro-IhVYSflxrRRkhVWXjOQ" target="_blank">
+					秘书部
+					</a>
+					</h3>
 					<p>负责团队财务记账、活动安排。</p>
 				</div>
 				<div class="group-card">
 					<div class="group-icon">
 						<i class="fas fa-cogs"></i>
 					</div>
-					<h3>质管部</h3>
+					<h3>
+					<a href="https://mp.weixin.qq.com/s/ad1gegI4mhkjN46lq-_CAQ" target="_blank">
+					质管部
+					</a>
+					</h3>
 					<p>负责车间安全管理与质量监控。</p>
 				</div>
 				<div class="group-card">
 					<div class="group-icon">
 						<i class="fas fa-robot"></i>
 					</div>
-					<h3>车手部</h3>
+					<h3>
+					<a href="https://mp.weixin.qq.com/s/VC6iy6W3jhDI264wwLcsQQ" target="_blank">
+					车手部
+					</a>
+					</h3>
 					<p>负责模拟器训练与试车反馈调校。</p>
 				</div>
 			</div>
@@ -1328,15 +1388,144 @@
 	</section>
 
 	<!-- 赞助伙伴 -->
-	<section id="sponsors" class="sponsors-section">
+    <section id="sponsors" class="sponsors-section">
 		<div class="container">
 			<div class="section-title">
 				<h2>赞助伙伴</h2>
 			</div>
-			<div class="sponsors-container">
-				<div class="sponsor">
-				   <img src="image/sponsor/partner1.png" alt="赞助伙伴1">
+			
+			<!-- 一级赞助商 -->
+			<div class="sponsors-level platinum-sponsors">
+				<h3>钻石级</h3>
+				<div class="sponsors-container">
+					<div class="sponsor">
+						<img src="image/sponsor/diamond/cok.png" alt="cok">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/diamond/柏中.png" alt="柏中">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/diamond/广州晓达金属.png" alt="广州晓达金属">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/diamond/华工检测.png" alt="华工检测">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/diamond/卡布尔.png" alt="卡布尔">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/diamond/蓝科.png" alt="蓝科">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/diamond/欧思科光电.png" alt="欧思科光电">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/diamond/优信电子.png" alt="优信电子">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/diamond/通达电气.png" alt="通达电气">
+					</div>
 				</div>
+			</div>
+			
+			<!-- 二级赞助商 -->
+			<div class="sponsors-level gold-sponsors">
+				<h3>黄金级</h3>
+				<div class="sponsors-container">
+					<div class="sponsor">
+						<img src="image/sponsor/gold/dn.png" alt="dn">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/gold/kings.png" alt="kings">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/gold/one车膜.png" alt="one车膜">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/gold/xev.png" alt="xev">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/gold/骏怡汇.png" alt="骏怡汇">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/gold/领克.png" alt="领克">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/gold/cmst.png" alt="cmst">
+					</div>
+				</div>
+			</div>
+			
+			        <div class="sponsors-level silver-sponsors">
+            <h3>白银/天使级</h3>
+				<div class="sponsors-container">
+					<div class="sponsor">
+						<img src="image/sponsor/silver/beta.png" alt="beta">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/cf.png" alt="cf">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/chroma.png" alt="chroma">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/dynatune.png" alt="dynatune">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/imk.png" alt="imk">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/mds.png" alt="mds">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/mdstraining.png" alt="mdstraining">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/melasta.png" alt="melasta">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/moza.png" alt="moza">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/rowe.png" alt="rowe">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/scut20.png" alt="scut20">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/vigrade.png" alt="vigrade">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/wago.png" alt="wago">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/yato.png" alt="yato">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/仿真秀.png" alt="仿真秀">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/丰泰美华.png" alt="丰泰美华">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/华秋.png" alt="华秋">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/捷凯.png" alt="捷凯">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/竞速赛车.png" alt="竞速赛车">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/万家乐.png" alt="万家乐">
+					</div>
+					<div class="sponsor">
+						<img src="image/sponsor/silver/卓宇信息.png" alt="卓宇信息">
+					</div>
+				</div>
+				<!-- 新增的按钮 -->
+                <div class="sponsor-cta">
+                    <a href="sponsor.html" class="btn">成为赞助伙伴</a>
 			</div>
 		</div>
 	</section>
@@ -1366,7 +1555,7 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>电话</h4>
-                            <p>+86 195020601030 </p>
+                            <p>+86 195 0206 0130 </p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1388,9 +1577,8 @@
             <div class="social-links">
                 <a href="#"><i class="fab fa-weibo"></i></a> <!-- 把#替换为要链接的网址 -->
                 <a href="https://mp.weixin.qq.com/s/4kNCS-z1ISjhzN9l_gPppA" target="_blank"><i class="fab fa-weixin"></i></a>
-                <a href="#"><i class="fab fa-qq"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click" target="_blank"><i class="fab fa-bilibili"></i></a>
             </div>
             <p>&copy; 2025 Formax方程式赛车队. 保留所有解释权利.</p>
         </div>
