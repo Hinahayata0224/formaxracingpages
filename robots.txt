@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# 对Googlebot的单独规则
+User-agent: Googlebot
+# 抓取延迟
+Crawl-delay: 1
+
+# 站点地图
+Sitemap: https://scutracing.top/sitemap.xml
