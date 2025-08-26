@@ -122,6 +122,34 @@
             margin-top: 20px;
         }
 		
+		/* 导航栏logo样式 */
+		.logo {
+			display: flex;
+			align-items: center;
+		}
+
+		.logo img {
+			height: 50px; /* 根据您的图片尺寸调整 */
+			width: auto;
+			transition: opacity 0.3s;
+		}
+
+		.logo img:hover {
+			opacity: 0.8;
+		}
+
+		/* 移除原来的文字样式（如果有的话） */
+		.logo i,
+		.logo span {
+			display: none;
+		}
+		
+		@media (max-width: 768px) {
+			.logo img {
+				height: 35px; /* 在移动设备上稍微缩小一点 */
+			}
+		}
+		
         /* hero区域按键样式 */
         
         .btn {
@@ -1004,7 +1032,7 @@
                 <div class="logo">
 				<a href="#home">
 					
-					<span class="logo-text">Formax方程式赛车队</span>
+					<img src="image/logo/logo.png" alt="Formax方程式赛车队">
 				</a>
 			</div>
                 <ul class="nav-links">
@@ -1014,7 +1042,6 @@
                     <li><a href="#car">赛车展示</a></li>
                     <li><a href="#team">管理团队</a></li>
 					<li><a href="#groups">团队分组</a></li>
-					<li><a href="#joinus">加入我们</a></li>
 					<li><a href="#news">车队动态</a></li>
                     <li><a href="#sponsors">合作伙伴</a></li>
                     <li><a href="#contact">联系我们</a></li>
