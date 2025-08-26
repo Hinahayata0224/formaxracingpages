@@ -580,7 +580,39 @@
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
-		
+	
+		/* 加入我们板块样式 */
+		.join-us-section {
+			margin: 0;
+			padding: 0;
+		}
+
+		.join-us-hero {
+			height: 100vh;
+			background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image/misc/hero.jpg') no-repeat center center/cover;
+			color: var(--accent-color);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+
+		.join-us-content h2 {
+			font-size: 2.5rem;
+			margin-bottom: 2rem;
+		}
+
+		/* 响应式调整 */
+		@media (max-width: 768px) {
+			.join-us-hero {
+				height: 100vh;
+			}
+			
+			.join-us-content h2 {
+				font-size: 2rem;
+			}
+		}	
+
 		/* 新闻动态部分样式 */
 		.news {
 			background-color: var(--light-gray);
@@ -982,6 +1014,7 @@
                     <li><a href="#car">赛车展示</a></li>
                     <li><a href="#team">管理团队</a></li>
 					<li><a href="#groups">团队分组</a></li>
+					<li><a href="#joinus">加入我们</a></li>
 					<li><a href="#news">车队动态</a></li>
                     <li><a href="#sponsors">合作伙伴</a></li>
                     <li><a href="#contact">联系我们</a></li>
@@ -1048,7 +1081,9 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Formax方程式赛车队成立于2009年，是广东省第一辆FSC赛车的制造团队，也是FSC赛事最早的发起者之一，由一群对赛车充满热情的大学生创建。我们团队由来自机械、电气、工商管理等多个专业的本科生组成。每年，我们每年自主设计两辆全新的大学生方程式赛车，参加中国大学生方程式赛车大赛。我们的使命是结合工程实践打造创新型人才培养平台。团队秉承“敢拼敢赢，精益求精”的价值观，不断突破技术极限，在比赛中取得优异成绩，同时为成员提供宝贵的实战经验</p>
+                    <p>Formax方程式赛车队成立于2009年，是广东省第一辆FSC赛车的制造团队，也是FSC赛事最早的发起者之一，由一群对赛车充满热情的大学生创建。我们团队由来自机械、电气、工商管理等多个专业的本科生组成。
+					每年，我们每年自主设计两辆全新的大学生方程式赛车，参加中国大学生方程式赛车大赛。我们的使命是结合工程实践打造创新型人才培养平台。
+					团队秉承“敢拼敢赢，精益求精”的价值观，不断突破技术极限，在比赛中取得优异成绩，同时为成员提供宝贵的实战经验。</p>
                 </div>
                 <div class="about-image">
 				    <a href="https://mp.weixin.qq.com/s/LKOV-GXympn0VP8Wx7U-lQ" target="_blank">
@@ -1329,6 +1364,16 @@
 			</div>
 		</div>
 	</section>
+	
+	<!-- 加入我们板块 -->
+	<section id="joinus" class="join-us-section">
+		<div class="join-us-hero">
+			<div class="join-us-content">
+				<h2>想成为Formax团队的一员吗?</h2>
+				<a href="https://mp.weixin.qq.com/s/roGZqXKzPuOOYAc5kzpJRg" target="_blank" class="btn">加入我们</a>
+			</div>
+		</div>
+	</section>
 
 	<!-- 车队动态部分 -->
 	<section id="news" class="news">
@@ -1588,7 +1633,7 @@
                 <a href="https://www.douyin.com/user/MS4wLjABAAAASI_A4qRxl4_qRsqXSEQ-MmYTEQxgWa0QbR-hhTGfYvo" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click" target="_blank"><i class="fab fa-bilibili"></i></a>
             </div>
-			<p>本网站仅作技术展示，出现的Logo仅为友情鸣谢，不构成商业广告.</p>
+			<p>本网站仅作技术展示，合作伙伴Logo为友情鸣谢，不构成商业广告.</p>
             <p>&copy; 2009-2025 Formax方程式赛车队. 保留所有解释权利.</p>
         </div>
     </footer>
