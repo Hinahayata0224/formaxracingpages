@@ -9,22 +9,27 @@
 
 <url>
   <loc>https://scutracing.top/</loc>
-  <lastmod>2025-08-25T18:16:56+00:00</lastmod>
+  <lastmod>2025-09-01T18:16:56+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://scutracing.top/EV_detail.html</loc>
-  <lastmod>2025-08-25T18:16:56+00:00</lastmod>
+  <lastmod>2025-09-01T18:16:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://scutracing.top/AV_detail.html</loc>
-  <lastmod>2025-08-25T18:16:56+00:00</lastmod>
+  <lastmod>2025-09-01T18:16:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://scutracing.top/sponsor.html</loc>
-  <lastmod>2025-08-25T18:16:56+00:00</lastmod>
+  <lastmod>2025-09-01T18:16:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scutracing.top/team.html</loc>
+  <lastmod>2025-09-01T18:16:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 

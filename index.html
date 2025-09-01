@@ -476,57 +476,27 @@
 				margin-top: 0.5rem;
 			}
 		}
-        
-        /* 团队成员样式 */
-        .team-members {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 2rem;
-        }
-        
-        .member {
-            background-color: var(--accent-color);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .member:hover {
-            transform: translateY(-10px);
-        }
-        
-        .member-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .member:hover .member-image img {
-            transform: scale(1.1);
-        }
-        
-        .member-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-        
-        .member-info h3 {
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-        }
-        
-        .member-role {
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
+
+		/* 管理成员板块样式 */
+		.team-section {
+			margin: 0;
+			padding: 0;
+		}
+
+		.team-hero {
+			height: 100vh;
+			background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image/misc/boss.jpg') no-repeat center center/cover;
+			color: var(--accent-color);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+
+		.team-content h2 {
+			font-size: 2.5rem;
+			margin-bottom: 2rem;
+		}       
         
 		/* 团队分组样式 */
 		.groups {
@@ -1109,7 +1079,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>Formax方程式赛车队成立于2009年10月，是广东省第一辆FSC赛车的制造团队，也是FSC赛事最早的发起者之一，由一群对赛车充满热情的大学生创建。我们团队由来自机械、电气、工商管理等多个专业的本科生组成。
-					我们是校院两级共同打造的科研团队。在学校与社会的支持下，每年，我们每年自主设计两辆全新的大学生方程式赛车，分别参加中国大学生电动方程式大赛和中国大学生无人驾驶方程式大赛。我们的使命是结合工程实践打造创新型人才培养平台。
+					我们是由华南理工大学与华工机械与汽车工程学院两级共同打造的科研团队。在学校、学院与社会的大力支持下，每年，我们每年自主设计两辆全新的大学生方程式赛车，分别参加中国大学生电动方程式大赛和中国大学生无人驾驶方程式大赛。我们的使命是结合工程实践打造创新型人才培养平台。
 					“敢拼敢赢，精益求精”是我们的口号，我们与赛车相伴，不断突破技术极限，在比赛中取得优异成绩，积累宝贵的实战经验。十六年间，从油车、电车到无人车，车队见证了无数人的青葱岁月。岁月匆匆，白驹过隙，时间冲刷着历史的印记，
 					但汗水镌刻在荣誉中被所有人铭记。</p>
                 </div>
@@ -1213,92 +1183,22 @@
         </div>
     </section>
 
-    <!-- 团队成员 -->
-    <section id="team" class="team">
-        <div class="container">
-            <div class="section-title">
-                <h2>管理团队</h2>
-            </div>
-            <div class="team-members">
-                <div class="member">
-                    <div class="member-image">
-                        <img src="image/member/1.png" alt="车队经理">
-                    </div>
-                    <div class="member-info">
-                        <h3>游凯任</h3>
-                        <div class="member-role">车队经理</div>
-                        <p>车队品牌搭建与商业合作</p>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="member-image">
-                        <img src="image/member/2.png" alt="电车队长">
-                    </div>
-                    <div class="member-info">
-                        <h3>汪明阳</h3>
-                        <div class="member-role">电车队长</div>
-                        <p>电车团队整体管理与统筹</p>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="member-image">
-                        <img src="image/member/3.png" alt="无人车队长">
-                    </div>
-                    <div class="member-info">
-                        <h3>刘志贤</h3>
-                        <div class="member-role">无人车队长</div>
-                        <p>无人车团队整体管理与统筹</p>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="member-image">
-                        <img src="image/member/4.png" alt="电车设计总监">
-                    </div>
-                    <div class="member-info">
-                        <h3>许卓涵</h3>
-                        <div class="member-role">电车技术总监</div>
-                        <p>电车设计技术领导与统筹</p>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="member-image">
-                        <img src="image/member/5.png" alt="无人设计总监">
-                    </div>
-                    <div class="member-info">
-                        <h3>苌子林</h3>
-                        <div class="member-role">无人设计总监</div>
-                        <p>无人车设计技术领导与统筹</p>
-                    </div>
-                </div>
-                <div class="member">
-                    <div class="member-image">
-                        <img src="image/member/6.png" alt="无人系统总监">
-                    </div>
-                    <div class="member-info">
-                        <h3>帅正胤</h3>
-                        <div class="member-role">无人系统总监</div>
-                        <p>无人车设计技术领导与统筹</p>
-					</div>
-				</div>	
-				<div class="member">
-                    <div class="member-image">
-                        <img src="image/member/7.png" alt="财务总监">
-                    </div>
-                    <div class="member-info">
-                        <h3>何阳</h3>
-                        <div class="member-role">财务总监</div>
-                        <p>团队资金管理与收支审核</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-	<!-- 团队组成 -->
+	<!-- 团队成员板块 -->
+	<section id="team" class="team-section">
+		<div class="team-hero">
+			<div class="team-content">
+				<h2>指导老师团队与核心成员</h2>
+				<a href="team.html" target="_blank" class="btn">查看详情</a>
+			</div>
+		</div>
+	</section>
+	
+	
+	<!-- 团队分组 -->
 	<section id="groups" class="groups">
 		<div class="container">
 			<div class="section-title">
-				<h2>团队组成</h2>
+				<h2>团队分组</h2>
 			</div>
 			<div class="group-container">
 				<div class="group-card">
@@ -1658,7 +1558,6 @@
 					</a>
 					</div>
 				</div>
-				<!-- 新增的按钮 -->
                 <div class="sponsor-cta">
                     <a href="sponsor.html" class="btn">成为合作伙伴</a>
 			</div>
