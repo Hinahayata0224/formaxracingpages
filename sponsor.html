@@ -639,11 +639,11 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form action="9f76dba6857b1261fc76ea1c7c3ffeb2" method="POST" enctype="multipart/form-data" id="contact-form">
+                    <form action="https://formsubmit.co/9f76dba6857b1261fc76ea1c7c3ffeb2" method="POST" enctype="multipart/form-data" id="contact-form">
                         <input type="hidden" name="_subject" value="Formax车队 - 新联系表单提交">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
-                        
+                        <input type="hidden" name="_next" value="/thank-you.html">
                         <div class="form-group">
                             <label for="name">姓名 *</label>
                             <input type="text" id="name" name="name" class="form-control" required>
@@ -720,29 +720,6 @@
                 }
             });
         });
-		
-		// 隐藏之前的消息
-		if(formMessage) {
-			formMessage.style.display = 'none';
-		}
-		
-		// 表单验证
-		const fileInput = this.querySelector('input[type="file"]');
-		if(fileInput && fileInput.files.length > 0) {
-			const fileSize = fileInput.files[0].size / 1024 / 1024; // MB
-			if(fileSize > 10) {
-				e.preventDefault();
-				if(formMessage) {
-					formMessage.textContent = '文件大小不能超过10MB';
-					formMessage.style.backgroundColor = '#ffebee';
-					formMessage.style.color = '#c62828';
-					formMessage.style.display = 'block';
-				}
-				submitBtn.textContent = originalText;
-				submitBtn.disabled = false;
-				return;
-			}
-		}
     </script>
 </body>
 </html>
