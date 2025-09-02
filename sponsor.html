@@ -253,34 +253,130 @@
 			border-top: 1px solid #eee;
 		}
         
-        /* 行动呼吁样式 */
-        .cta-section {
-            background-color: var(--secondary-color);
-            color: var(--accent-color);
-            text-align: center;
-        }
-        
-        .cta-section .section-title h2 {
-            color: var(--accent-color);
+        /* 联系内容样式 */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
         }
         
         .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .info-item {
             display: flex;
-            justify-content: center;
-            gap: 3rem;
+            align-items: flex-start;
             margin-bottom: 2rem;
-            flex-wrap: wrap;
         }
         
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .contact-item i {
+        .info-item i {
             font-size: 1.5rem;
             color: var(--primary-color);
+            margin-right: 1rem;
+            min-width: 30px;
+            text-align: center;
+            margin-top: 0.3rem;
+        }
+        
+        .info-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        /* 表单样式 */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        select.form-control {
+            padding: 0.8rem;
+            background-color: white;
+        }
+        
+        /* 文件上传样式 */
+        input[type="file"] {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            width: 100%;
+        }
+        
+        input[type="file"]::file-selector-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            margin-right: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        input[type="file"]::file-selector-button:hover {
+            background-color: #c10000;
+        }
+        
+        small {
+            display: block;
+            margin-top: 0.5rem;
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        /* 消息提示样式 */
+        #form-message {
+            display: none;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        /* 图片样式 */
+        .image-container {
+		    flex: 1;
+            margin-top: 3rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+			height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+		
+		.image-container:hover img {
+            transform: scale(1.05);
         }
         
         /* 页脚样式 */
@@ -493,29 +589,104 @@
         </div>
     </section>
 
-    <!-- 行动呼吁 -->
-    <section class="cta-section">
+    <!-- 联系我们 -->
+    <section class="contact">
         <div class="container">
             <div class="section-title">
                 <h2>准备好与我们深入交流了吗</h2>
             </div>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>邮箱</h4>
-                        <p>formax@scutracing.com</p>
+            
+            <div id="form-message"></div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <h3>地址</h3>
+                            <p>广东省广州市天河区华南理工大学（五山校区）汽车科技大楼1楼</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-content">
+                            <h3>邮箱</h3>
+                            <p>formax@scutracing.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-content">
+                            <h3>电话</h3>
+                            <p>+86 195 0206 0130</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-content">
+                            <h3>工作时间</h3>
+                            <p>周一至周五: 9:00 - 17:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="image/hero/hero-slide-1.webp" alt="EF24">
                     </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <h4>电话</h4>
-                        <p>+86 195 0206 0130</p>
-                    </div>
+                
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/707305086@qq.com" method="POST" enctype="multipart/form-data" id="contact-form">
+                        <input type="hidden" name="_subject" value="Formax车队 - 新联系表单提交">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="http://scutracing.top/thank-you.html">
+                        
+                        <div class="form-group">
+                            <label for="name">姓名 *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">邮箱 *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">公司/组织名称</label>
+                            <input type="text" id="company" name="company" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest">咨询类型</label>
+                            <select id="interest" name="interest" class="form-control">
+                                <option value="">请选择</option>
+                                <option value="赞助合作">赞助合作</option>
+                                <option value="加入团队">加入团队</option>
+                                <option value="媒体咨询">媒体咨询</option>
+                                <option value="技术支持">技术支持</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">您的消息 *</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="attachment">相关文件（可选）</label>
+                            <input type="file" id="attachment" name="attachment" class="form-control">
+                            <small>支持格式: PDF, DOC, DOCX, JPG, PNG (最大10MB)</small>
+                        </div>
+                        
+                        <button type="submit" class="btn">发送消息</button>
+                    </form>
                 </div>
             </div>
-            <a href="https://mp.weixin.qq.com/s/4kNCS-z1ISjhzN9l_gPppA" class="btn">联系我们</a>
         </div>
     </section>
 
