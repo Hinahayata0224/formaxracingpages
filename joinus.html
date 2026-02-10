@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加入我们 - Formax方程式赛车队</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #e10600;
+            --secondary-color: #000;
+            --accent-color: #fff;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* 导航栏样式 */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* 英雄区域样式 */
+        .hero {
+            height: 40vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* 部分通用样式 */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* 招新信息样式 */
+        .recruitment-info {
+            background-color: var(--light-gray);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .info-card {
+            background-color: var(--accent-color);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .info-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .info-card h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        /* 团队分组样式 */
+        .team-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .group-card {
+            background-color: var(--accent-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .group-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .group-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .group-card ul {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+        
+        .group-card li {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+        
+        /* 表单样式 */
+        .application-form {
+            background-color: var(--accent-color);
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        select.form-control {
+            padding: 0.8rem;
+            background-color: white;
+        }
+        
+        /* 文件上传样式 */
+        input[type="file"] {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            width: 100%;
+        }
+        
+        input[type="file"]::file-selector-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            margin-right: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        input[type="file"]::file-selector-button:hover {
+            background-color: #c10000;
+        }
+        
+        small {
+            display: block;
+            margin-top: 0.5rem;
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        /* 消息提示样式 */
+        #form-message {
+            display: none;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        /* 常见问题样式 */
+        .faq-section {
+            background-color: var(--light-gray);
+        }
+        
+        .faq-item {
+            background-color: var(--accent-color);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            display: none;
+        }
+        
+        .faq-active .faq-answer {
+            display: block;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+        
+        .faq-active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 0 0.5rem;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .social-links i {
+            font-size: 1.2rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .application-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-car-side"></i>
+                    <span>Formax</span>车队
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#about">关于我们</a></li>
+                    <li><a href="index.html#car">赛车展示</a></li>
+                    <li><a href="index.html#team">团队成员</a></li>
+                    <li><a href="index.html#sponsors">赞助商</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                    <li><a href="join.html">加入我们</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>加入Formax车队</h1>
+            <p>与我们一起创造速度与激情的传奇，开启你的工程师生涯</p>
+        </div>
+    </section>
+
+    <!-- 招新信息 -->
+    <section class="recruitment-info">
+        <div class="container">
+            <div class="section-title">
+                <h2>为什么加入我们</h2>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>实践学习</h3>
+                    <p>将课堂理论知识应用于实际工程项目，获得宝贵实践经验</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>团队合作</h3>
+                    <p>与志同道合的伙伴一起工作，培养团队协作和沟通能力</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>赛事经历</h3>
+                    <p>参加国内外大学生方程式大赛，与全球顶尖车队同台竞技</p>
+                </div>
+            </div>
+            
+            <div class="section-title">
+                <h2>团队分组</h2>
+            </div>
+            
+            <div class="team-groups">
+                <div class="group-card">
+                    <h3>电气组</h3>
+                    <ul>
+                        <li>整车电气系统设计</li>
+                        <li>数据采集与传感器集成</li>
+                        <li>电池管理与能量优化</li>
+                        <li>电机控制与驱动系统</li>
+                    </ul>
+                </div>
+                
+                <div class="group-card">
+                    <h3>车身空力组</h3>
+                    <ul>
+                        <li>车身设计与制造</li>
+                        <li>空气动力学分析</li>
+                        <li>复合材料应用</li>
+                        <li>CFD模拟与优化</li>
+                    </ul>
+                </div>
+                
+                <div class="group-card">
+                    <h3>底盘组</h3>
+                    <ul>
+                        <li>悬挂系统设计</li>
+                        <li>转向系统优化</li>
+                        <li>制动系统开发</li>
+                        <li>底盘调校与测试</li>
+                    </ul>
+                </div>
+                
+                <div class="group-card">
+                    <h3>无人系统组</h3>
+                    <ul>
+                        <li>自动驾驶算法</li>
+                        <li>传感器融合技术</li>
+                        <li>路径规划与控制</li>
+                        <li>计算机视觉应用</li>
+                    </ul>
+                </div>
+                
+                <div class="group-card">
+                    <h3>市场部</h3>
+                    <ul>
+                        <li>品牌建设与推广</li>
+                        <li>赞助商关系维护</li>
+                        <li>活动策划与执行</li>
+                        <li>社交媒体运营</li>
+                    </ul>
+                </div>
+                
+                <div class="group-card">
+                    <h3>秘书部</h3>
+                    <ul>
+                        <li>团队日常管理</li>
+                        <li>文档整理与归档</li>
+                        <li>会议组织与记录</li>
+                        <li>资源协调与分配</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 报名表单 -->
+    <section class="application">
+        <div class="container">
+            <div class="section-title">
+                <h2>加入申请</h2>
+            </div>
+            
+            <div id="form-message"></div>
+            
+            <div class="application-form">
+                <form action="https://formsubmit.co/your-email@gmail.com" method="POST" enctype="multipart/form-data" id="application-form">
+                    <input type="hidden" name="_subject" value="Formax车队 - 新成员申请">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="http://yourdomain.com/thank-you.html">
+                    
+                    <div class="form-group">
+                        <label for="name">姓名 *</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">邮箱 *</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">电话 *</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="school">学校 *</label>
+                        <input type="text" id="school" name="school" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="major">专业 *</label>
+                        <input type="text" id="major" name="major" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="grade">年级 *</label>
+                        <select id="grade" name="grade" class="form-control" required>
+                            <option value="">请选择</option>
+                            <option value="大一">大一</option>
+                            <option value="大二">大二</option>
+                            <option value="大三">大三</option>
+                            <option value="大四">大四</option>
+                            <option value="研究生">研究生</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">感兴趣的分组 *</label>
+                        <select id="interest" name="interest" class="form-control" required>
+                            <option value="">请选择</option>
+                            <option value="电气组">电气组</option>
+                            <option value="车身空力组">车身空力组</option>
+                            <option value="底盘组">底盘组</option>
+                            <option value="无人系统组">无人系统组</option>
+                            <option value="市场部">市场部</option>
+                            <option value="秘书部">秘书部</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">相关经验或技能</label>
+                        <textarea id="experience" name="experience" class="form-control" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="motivation">为什么想加入我们 *</label>
+                        <textarea id="motivation" name="motivation" class="form-control" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resume">上传简历（可选）</label>
+                        <input type="file" id="resume" name="resume" class="form-control" accept=".pdf,.doc,.docx">
+                        <small>支持格式: PDF, DOC, DOCX (最大10MB)</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="portfolio">作品集或项目经验（可选）</label>
+                        <input type="file" id="portfolio" name="portfolio" class="form-control">
+                        <small>可上传相关项目文件、设计图或代码示例</small>
+                    </div>
+                    
+                    <button type="submit" class="btn">提交申请</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>常见问题</h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>加入车队需要什么条件？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们欢迎所有对赛车有热情的同学加入，无论专业背景。重要的是要有学习热情、团队合作精神和责任心。技术岗位需要一定的相关基础知识，非技术岗位则更注重沟通和组织能力。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>车队每周需要投入多少时间？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>一般情况下，队员每周需要投入8-15小时。在赛季准备期间（比赛前2-3个月），时间投入可能会增加到15-25小时/周。我们会尽量协调大家的课程时间，合理安排工作。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>没有相关经验可以加入吗？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>当然可以！我们提供系统的培训和指导，帮助新队员快速成长。许多现役队员在加入时也没有相关经验，通过车队的学习和实践，他们现在已成为各组的核心成员。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>加入车队有什么 benefits？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>加入车队可以获得：实践经验、技术培训、团队协作经验、赛事经历、 networking 机会、优先实习推荐，以及难忘的大学经历和友谊。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-qq"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2009-2026 Formax方程式赛车队. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 导航菜单切换
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // 表单提交处理
+        const applicationForm = document.getElementById('application-form');
+        if(applicationForm) {
+            applicationForm.addEventListener('submit', function(e) {
+                const formMessage = document.getElementById('form-message');
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                
+                // 显示加载状态
+                submitBtn.textContent = '提交中...';
+                submitBtn.disabled = true;
+                
+                // 隐藏之前的消息
+                if(formMessage) {
+                    formMessage.style.display = 'none';
+                }
+                
+                // 表单验证
+                const fileInputs = this.querySelectorAll('input[type="file"]');
+                let valid = true;
+                
+                fileInputs.forEach(input => {
+                    if(input.files.length > 0) {
+                        const fileSize = input.files[0].size / 1024 / 1024; // MB
+                        if(fileSize > 10) {
+                            valid = false;
+                            if(formMessage) {
+                                formMessage.textContent = `文件 ${input.name} 大小不能超过10MB`;
+                                formMessage.style.backgroundColor = '#ffebee';
+                                formMessage.style.color = '#c62828';
+                                formMessage.style.display = 'block';
+                            }
+                        }
+                    }
+                });
+                
+                if(!valid) {
+                    e.preventDefault();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    return;
+                }
+                
+                // 在实际应用中，FormSubmit会处理表单提交
+                // 这里只是模拟成功消息
+                setTimeout(function() {
+                    if(formMessage) {
+                        formMessage.textContent = '申请已提交，我们会尽快审核并与您联系！';
+                        formMessage.style.backgroundColor = '#e8f5e9';
+                        formMessage.style.color = '#2e7d32';
+                        formMessage.style.display = 'block';
+                    }
+                    applicationForm.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    
+                    // 滚动到消息位置
+                    if(formMessage) {
+                        formMessage.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 2000);
+            });
+        }
+        
+        // 常见问题切换
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('faq-active');
+            });
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    if(navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

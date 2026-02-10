@@ -380,16 +380,43 @@
 			margin-top: 0;
         }
         
-        .cars-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-        }
+		.cars-container {
+			display: flex;
+			flex-wrap: nowrap;       /* 禁止换行，强制在同一行 */
+			gap: 2rem;               /* 卡片之间的间距 */
+			overflow-x: auto;        /* 允许横向滚动 */
+			padding: 1rem 0.5rem 2rem 0.5rem; /* 底部增加padding给滚动条留空间 */
+			
+			/* 滚动条优化体验 */
+			-webkit-overflow-scrolling: touch; /* 移动端顺滑滚动 */
+			scroll-behavior: smooth; /* 平滑滚动 */
+			
+			/* 初始对齐 */
+			justify-content: flex-start; 
+		}
+
+		/* 自定义滚动条样式 (Webkit内核浏览器，如Chrome/Safari) */
+		.cars-container::-webkit-scrollbar {
+			height: 8px; /* 滚动条高度 */
+		}
+
+		.cars-container::-webkit-scrollbar-track {
+			background: #e0e0e0;
+			border-radius: 4px;
+		}
+
+		.cars-container::-webkit-scrollbar-thumb {
+			background: var(--primary-color); /* 使用你的主色调红色 */
+			border-radius: 4px;
+		}
+
+		.cars-container::-webkit-scrollbar-thumb:hover {
+			background: #b30500; /* 悬停变深 */
+		}
         
         .car-card {
             flex: 1;
-            min-width: 300px;
+            min-width: 400px;
             max-width: 500px;
             border-radius: 10px;
             overflow: hidden;
@@ -399,6 +426,13 @@
 			transition: transform 0.3s, box-shadow 0.3s;
         }
         
+				/* 针对移动端的调整 */
+		@media (max-width: 768px) {
+			.car-card {
+				flex: 0 0 85vw; /* 移动端卡片宽度占屏幕的85%，让用户看到一点下一张卡片 */
+			}
+		}
+
         .car-image {
             height: 240px;
             overflow: hidden;
@@ -1129,7 +1163,59 @@
             <div class="section-title">
                 <h2>赛车展示</h2>
             </div>
+			
             <div class="cars-container">
+
+                <div class="car-card" onclick="location.href='EF25_detail.html'">
+                    <div class="car-image">
+                        <img src="image/vehicle/EF25.webp" alt="EF25">
+                    </div>
+                    <div class="car-info">
+                        <h3>E-Future 25 电动方程式赛车</h3>
+                        <p>新一代电动赛车，采用碳纤维单体壳及高效空气动力学套件，搭载四轮边电机系统，最大输出功率80kW。</p>
+                        <div class="car-specs">
+                            <div class="spec">
+                                <i class="fas fa-wind"></i>
+                                <h4>CLA</h4>
+                                <p>6.0</p>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-bolt"></i>
+                                <h4>功率</h4>
+                                <p>80 kW</p>
+                            </div>
+                        </div>
+						<div class="car-detail-btn">
+						<a href="EF25_detail.html" class="btn">查看详情</a>
+					</div>
+                    </div>
+                </div>
+				
+				                <div class="car-card" onclick="location.href='AF25_detail.html'">
+                    <div class="car-image">
+                        <img src="image/vehicle/AF25.webp" alt="AF25">
+                    </div>
+                    <div class="car-info">
+                        <h3>A-Future 25 电动方程式赛车</h3>
+                        <p>2025赛季无人赛车，配备先进的传感器系统和算法，能够自主完成赛道识别、路径规划和实时控制。</p>
+                        <div class="car-specs">
+                            <div class="spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <h4>惯导</h4>
+                                <p>INS570D</p>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-bolt"></i>
+                                <h4>雷达</h4>
+                                <p>HeSAI AT128P</p>
+                            </div>
+                        </div>
+						<div class="car-detail-btn">
+						<a href="AF25_detail.html" class="btn">查看详情</a>
+					</div>
+                    </div>
+                </div>
+				
                 <div class="car-card" onclick="location.href='EF24_detail.html'">
                     <div class="car-image">
                         <img src="image/vehicle/EF24.webp" alt="EF24">
@@ -1141,12 +1227,12 @@
                             <div class="spec">
                                 <i class="fas fa-tachometer-alt"></i>
                                 <h4>最高速度</h4>
-                                <p>135 km/h</p>
+                                <p>135km/h</p>
                             </div>
                             <div class="spec">
                                 <i class="fas fa-bolt"></i>
                                 <h4>功率</h4>
-                                <p>75 kW</p>
+                                <p>80 kW</p>
                             </div>
                         </div>
 						<div class="car-detail-btn">
@@ -1160,7 +1246,7 @@
                         <img src="image/vehicle/AF24.webp" alt="AF24">
                     </div>
                     <div class="car-info">
-                        <h3>Auto-Future 24 无人驾驶方程式赛车</h3>
+                        <h3>A-Future 24 无人驾驶方程式赛车</h3>
                         <p>2024赛季无人驾驶赛车，配备先进的传感器系统和算法，能够自主完成赛道识别、路径规划和实时控制。</p>
                         <div class="car-specs">
                             <div class="spec">
@@ -1589,7 +1675,7 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>电话</h4>
-                            <p>+86 195 0206 0130 </p>
+                            <p>+86 151 4756 0196 </p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1614,7 +1700,7 @@
                 <a href="https://www.douyin.com/user/MS4wLjABAAAASI_A4qRxl4_qRsqXSEQ-MmYTEQxgWa0QbR-hhTGfYvo" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click" target="_blank"><i class="fab fa-bilibili"></i></a>
             </div>
-            <p>&copy; 2009-2025 Formax方程式赛车队. 保留所有解释权利.</p>
+            <p>&copy; 2009-2026 Formax方程式赛车队. 保留所有解释权利.</p>
         </div>
     </footer>
 
