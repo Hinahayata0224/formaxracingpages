@@ -7,22 +7,23 @@
     <title>A-Future24 Racing Car Details - Formax Racing Team</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/effects.css">
     <style>
         /* ===== Page-specific Styles: Detail Pages ===== */
         .car-detail-header { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem; }
-        .car-detail-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .car-detail-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); }
         .car-detail-image img { width: 100%; height: auto; display: block; }
         .car-detail-specs { flex: 1; min-width: 300px; }
         .car-detail-specs h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--secondary-color); position: relative; padding-bottom: 1rem; }
         .car-detail-specs h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: var(--primary-color); }
         .specs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1.5rem; }
-        .spec-item { background-color: var(--light-gray); border-radius: 10px; padding: 1.5rem; text-align: center; transition: transform 0.3s; }
-        .spec-item:hover { transform: translateY(-3px); }
+        .spec-item { background-color: var(--light-gray); border-radius: 10px; padding: 1.5rem; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+        .spec-item:hover { transform: translateY(-3px); box-shadow: 0 6px 20px var(--card-shadow-hover); }
         .spec-value { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin-bottom: 0.5rem; }
         .spec-label { color: #666; font-size: 0.9rem; }
         .innovation-section { margin-bottom: 4rem; }
         .innovation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .innovation-card { position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); cursor: pointer; }
+        .innovation-card { position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); cursor: pointer; }
         .innovation-image { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.5s; }
         .innovation-card:hover .innovation-image { transform: scale(1.1); }
         .innovation-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); color: var(--accent-color); padding: 1.5rem; transform: translateY(calc(100% - 3.8rem)); transition: transform 0.3s; }
@@ -33,13 +34,13 @@
         .story-content { flex: 1; min-width: 300px; }
         .story-content h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--secondary-color); }
         .story-content p { margin-bottom: 1rem; line-height: 1.8; }
-        .story-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .story-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); }
         .story-image img { width: 100%; height: 100%; object-fit: cover; }
         .awards-section { margin-bottom: 4rem; }
         .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .award-card { background-color: var(--accent-color); border-radius: 10px; padding: 2rem; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+        .award-card { background-color: var(--accent-color); border-radius: 10px; padding: 2rem; text-align: center; box-shadow: 0 5px 15px var(--card-shadow); transition: transform 0.3s; }
         .award-card:hover { transform: translateY(-5px); }
-        .award-icon { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .award-icon { font-size: 2.5rem; color: var(--glow-color); margin-bottom: 1rem; }
         .award-title { font-size: 1.2rem; font-weight: bold; color: var(--secondary-color); margin-bottom: 0.5rem; }
         .award-year { color: #777; }
         @media (max-width: 768px) {
@@ -47,16 +48,18 @@
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <a href="/" class="back-button"><i class="fas fa-arrow-left"></i> <span data-i18n="detail.common.back">返回主页</span></a>
-
+<body data-theme="av">
+    <a href="/" class="floating-back-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span data-i18n="common.back">返回主页</span>
+    </a>
+    <div class="container" style="padding-top: 100px;">
         <!-- Car Detail Header -->
         <section class="car-detail-header">
             <div class="car-detail-image"><img src="image/vehicle/AF24_detail.png" alt="AF24" data-i18n-alt="detail.AF24.imageAlt"></div>
             <div class="car-detail-specs">
                 <h2 data-i18n="detail.AF24.name">A-Future24 技术规格</h2>
-                <div class="specs-grid">
+                <div class="specs-grid" data-reveal-stagger>
                     <div class="spec-item"><div class="spec-value">220kg</div><div class="spec-label" data-i18n="detail.common.curbWeight">整备质量</div></div>
                     <div class="spec-item"><div class="spec-value">40:60</div><div class="spec-label" data-i18n="detail.common.weightDist">前后轴荷比</div></div>
                     <div class="spec-item"><div class="spec-value">1600mm</div><div class="spec-label" data-i18n="detail.common.wheelbase">整车轴距</div></div>
@@ -72,44 +75,44 @@
         <!-- Innovations -->
         <section class="innovation-section">
             <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="detail.common.innovations">技术创新亮点</h2>
-            <div class="innovation-grid">
+            <div class="innovation-grid" data-reveal-stagger>
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF24/1.png" alt="PillarNet 3D Detection" class="innovation-image">
+                    <img src="image/innovations/AV/AF24/1.png" alt="PillarNet 3D Detection" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title" data-i18n="detail.AF24.innovations.0.title">基于PillarNet的三维目标检测</h3>
                         <p data-i18n="detail.AF24.innovations.0.desc">使用更低线数的雷达实现了更优的效果</p>
                     </div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF24/2.png" alt="TCone-YOLO Perception" class="innovation-image">
+                    <img src="image/innovations/AV/AF24/2.png" alt="TCone-YOLO Perception" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title" data-i18n="detail.AF24.innovations.1.title">基于TCone-YOLO的环境感知</h3>
                         <p data-i18n="detail.AF24.innovations.1.desc">改善帧率，提升视觉感知范围，最大感知距离大于21m</p>
                     </div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF24/3.png" alt="Auto Exposure" class="innovation-image">
+                    <img src="image/innovations/AV/AF24/3.png" alt="Auto Exposure" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title" data-i18n="detail.AF24.innovations.2.title">自动曝光调节算法</h3>
                         <p data-i18n="detail.AF24.innovations.2.desc">基于动态收敛判定，带来更加稳定的视觉识别效果</p>
                     </div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF24/4.png" alt="ICP Matching" class="innovation-image">
+                    <img src="image/innovations/AV/AF24/4.png" alt="ICP Matching" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title" data-i18n="detail.AF24.innovations.3.title">中点ICP匹配</h3>
                         <p data-i18n="detail.AF24.innovations.3.desc">匹配相对误差小于0.1%，正余弦加速的速度规划</p>
                     </div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF24/5.png" alt="Multi-modal Fusion" class="innovation-image">
+                    <img src="image/innovations/AV/AF24/5.png" alt="Multi-modal Fusion" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title" data-i18n="detail.AF24.innovations.4.title">多模态信息融合数据预处理</h3>
                         <p data-i18n="detail.AF24.innovations.4.desc">实现高速运动状态下精准数据匹配，点云去畸变仅需20ms</p>
                     </div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF24/6.png" alt="SLAM Path Optimization" class="innovation-image">
+                    <img src="image/innovations/AV/AF24/6.png" alt="SLAM Path Optimization" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title" data-i18n="detail.AF24.innovations.5.title">SLAM建图与路径优化</h3>
                         <p data-i18n="detail.AF24.innovations.5.desc">采用基于三次样条曲线拟合的最小曲率路径优化，提高最高车速</p>
@@ -124,13 +127,13 @@
                 <h2 data-i18n="detail.common.story">赛车故事</h2>
                 <p data-i18n="detail.AF24.story">A-Future24是我们历时12个月研发的第五代无人驾驶方程式赛车。这是一辆开拓的赛车。从概念设计到最终测试，整个团队投入了超过5,000小时的工作。 作为我队第一台采用碳纤维单体壳和轮边双AMK电机的无人赛车，在设计与加工过程中，我们面临了诸多前所未有的挑战。通过无数次的模拟和测试，夙兴夜寐，我们最终开发出了这辆稳定又精准的无人驾驶赛车。 最令人难忘的是在最后阶段的高速循迹赛项中，顶着赛场突降大雨的压力，团队成员轮流值守，确保每一个系统都达到最佳状态。骤雨霶霈难抑热忱，云销雨霁得见月明。 这种敢拼敢赢，精益求精的精神，使我们不负众望，在2024年全国大学生方程式大赛中成功守擂全国季军，为下一代无人驾驶方程式赛车守护了A03的车号。24赛季已然落幕，25赛季我们砥砺前行。</p>
             </div>
-            <div class="story-image"><img src="image/misc/AF24story.jpg" alt="AF24 Racing Story"></div>
+            <div class="story-image"><img src="image/misc/AF24story.jpg" alt="AF24 Racing Story" loading="lazy"></div>
         </section>
 
         <!-- Awards -->
         <section class="awards-section">
             <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="detail.common.awards">获得奖项</h2>
-            <div class="awards-grid">
+            <div class="awards-grid" data-reveal-stagger>
                 <div class="award-card"><div class="award-icon"><i class="fas fa-trophy"></i></div><h3 class="award-title" data-i18n="detail.AF24.awards.0.title">全国一等奖</h3><p class="award-year" data-i18n="detail.AF24.awards.0.year">2024年</p></div>
                 <div class="award-card"><div class="award-icon"><i class="fas fa-medal"></i></div><h3 class="award-title" data-i18n="detail.AF24.awards.1.title">全国季军</h3><p class="award-year" data-i18n="detail.AF24.awards.1.year">2024年</p></div>
                 <div class="award-card"><div class="award-icon"><i class="fas fa-bolt"></i></div><h3 class="award-title" data-i18n="detail.AF24.awards.2.title">Matlab&Simulink建模仿真一等奖</h3><p class="award-year" data-i18n="detail.AF24.awards.2.year">2024年</p></div>
@@ -139,6 +142,7 @@
         </section>
     </div>
 
+    <script src="js/effects.js"></script>
     <script src="js/components.js"></script>
     <script src="js/common.js"></script>
     <script src="js/i18n.js"></script>

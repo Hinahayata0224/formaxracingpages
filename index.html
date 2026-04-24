@@ -11,9 +11,15 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="image/hero/hero-slide-1.webp" as="image" type="image/webp">
+    <link rel="preload" href="image/hero/hero-slide-2.webp" as="image" type="image/webp">
+    <link rel="preload" href="image/hero/hero-slide-3.webp" as="image" type="image/webp">
     <title data-i18n="index.pageTitle">Formax方程式赛车队</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/effects.css">
     <style>
         /* ===== Page-specific Styles: index.html ===== */
 
@@ -155,14 +161,14 @@
         .cars-container::-webkit-scrollbar { height: 8px; }
         .cars-container::-webkit-scrollbar-track { background: #e0e0e0; border-radius: 4px; }
         .cars-container::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 4px; }
-        .cars-container::-webkit-scrollbar-thumb:hover { background: #b30500; }
+        .cars-container::-webkit-scrollbar-thumb:hover { background: var(--primary-light); }
         .car-card {
             flex: 1;
             min-width: 350px;
             max-width: 500px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px var(--card-shadow);
             background: white;
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -170,7 +176,7 @@
         .car-image { height: 240px; overflow: hidden; }
         .car-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .car-card:hover .car-image img { transform: scale(1.05); }
-        .car-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); }
+        .car-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px var(--card-shadow-hover); }
         .car-info { padding: 1.5rem; }
         .car-info h3 { margin-bottom: 0; color: var(--secondary-color); }
         .car-specs { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 0; }
@@ -199,7 +205,7 @@
             border-radius: 10px;
             padding: 2rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px var(--card-shadow);
             transition: transform 0.3s;
         }
         .group-card:hover { transform: translateY(-5px); }
@@ -218,12 +224,14 @@
         .group-card p { color: #666; }
 
         /* Achievements */
-        .achievements { background-color: var(--secondary-color); color: var(--accent-color); }
+        .achievements { background-color: var(--dark-bg); color: var(--accent-color); }
         .achievements .section-title h2 { color: var(--accent-color); }
         .stats { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; }
-        .stat { text-align: center; padding: 1.5rem; }
-        .stat i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
-        .stat-number { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+        .stat { text-align: center; padding: 1.8rem 1.5rem; background: rgba(255,255,255,0.06); border-radius: 12px; min-width: 140px; transition: transform 0.3s, background 0.3s; }
+        .stat:hover { transform: translateY(-3px); background: rgba(255,255,255,0.1); }
+        .stat i { font-size: 2.5rem; color: var(--glow-color); margin-bottom: 0.8rem; }
+        .stat-number { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.3rem; }
+        .stat-name { color: rgba(255,255,255,0.65); font-size: 0.95rem; }
 
         /* Join Us */
         .join-us-section { margin: 0; padding: 0; }
@@ -245,11 +253,11 @@
             background-color: var(--accent-color);
             padding: 1rem;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 3px 10px var(--card-shadow);
             transition: transform 0.3s, box-shadow 0.3s;
             border-left: 4px solid var(--primary-color);
         }
-        .news-item:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .news-item:hover { transform: translateY(-3px); box-shadow: 0 5px 15px var(--card-shadow-hover); }
         .news-date { color: #666; font-size: 0.9rem; margin-bottom: 0.5rem; }
         .news-title { margin-bottom: 0.8rem; }
         .news-title a { color: var(--secondary-color); text-decoration: none; transition: color 0.3s; }
@@ -291,6 +299,16 @@
         /* Contact */
         .contact { background-color: var(--light-gray); }
 
+        /* EV & AV car card VI colors */
+        .car-card-ev { border-left: 4px solid #d40000; }
+        .car-card-ev .spec i { color: #d40000; }
+        .car-card-ev .btn { background-color: #d40000; }
+        .car-card-ev .btn:hover { background-color: #fff; color: #ffd700; }
+        .car-card-av { border-left: 4px solid #1b8a3d; }
+        .car-card-av .spec i { color: #1b8a3d; }
+        .car-card-av .btn { background-color: #1b8a3d; }
+        .car-card-av .btn:hover { background-color: #fff; color: #00b0ff; }
+
         /* Responsive */
         @media (max-width: 768px) {
             .carousel-prev, .carousel-next { padding: 0.8rem; font-size: 1.2rem; }
@@ -307,7 +325,7 @@
         }
     </style>
 </head>
-<body>
+<body data-theme="team">
     <!-- Hero Carousel -->
     <section class="carousel" id="home">
         <div class="carousel-container">
@@ -318,7 +336,7 @@
                         <p data-i18n="index.hero.slide1.desc">我们是一支充满激情与创新精神的大学生方程式赛车队，致力于设计和制造高性能的方程式赛车。</p>
                         <a href="#about" class="btn" data-i18n="index.hero.slide1.cta">了解更多</a>
                     </div>
-                    <div class="slide-image" style="background-image: url('image/hero/hero-slide-1.webp')"></div>
+                    <div class="slide-image" data-parallax="0.2" style="background-image: url('image/hero/hero-slide-1.webp')"></div>
                 </div>
                 <div class="carousel-slide">
                     <div class="slide-content">
@@ -326,7 +344,7 @@
                         <p data-i18n="index.hero.slide2.desc">我们的电动赛车采用先进复材技术和高效轮边电机系统，实现卓越性能表现。</p>
                         <a href="#car" class="btn" data-i18n="index.hero.slide2.cta">查看赛车</a>
                     </div>
-                    <div class="slide-image" style="background-image: url('image/hero/hero-slide-2.webp')"></div>
+                    <div class="slide-image" data-parallax="0.2" style="background-image: url('image/hero/hero-slide-2.webp')"></div>
                 </div>
                 <div class="carousel-slide">
                     <div class="slide-content">
@@ -334,7 +352,7 @@
                         <p data-i18n="index.hero.slide3.desc">我们的无人驾驶赛车配备先进的传感器和AI算法，能够自主完成赛道识别和决策。</p>
                         <a href="#car" class="btn" data-i18n="index.hero.slide3.cta">技术详情</a>
                     </div>
-                    <div class="slide-image" style="background-image: url('image/hero/hero-slide-3.webp')"></div>
+                    <div class="slide-image" data-parallax="0.2" style="background-image: url('image/hero/hero-slide-3.webp')"></div>
                 </div>
             </div>
             <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
@@ -354,12 +372,12 @@
                 <h2 data-i18n="index.about.title">关于我们</h2>
             </div>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" data-reveal-left>
                     <p data-i18n="index.about.desc">Formax方程式赛车队成立于2009年10月，是广东省第一辆FSC赛车的制造团队，也是FSC赛事最早的发起者之一，由一群对赛车充满热情的大学生创建。我们团队由来自机械、电气、工商管理等多个专业的本科生组成。 我们是由华南理工大学与华工机械与汽车工程学院两级共同打造的科研团队。在学校、学院与社会的大力支持下，每年，我们每年自主设计两辆全新的大学生方程式赛车，分别参加中国大学生电动方程式大赛和中国大学生无人驾驶方程式大赛。我们的使命是结合工程实践打造创新型人才培养平台。 "敢拼敢赢，精益求精"是我们的口号，我们与赛车相伴，不断突破技术极限，在比赛中取得优异成绩，积累宝贵的实战经验。十六年间，从油车、电车到无人车，车队见证了无数人的青葱岁月。岁月匆匆，白驹过隙，时间冲刷着历史的印记， 但汗水镌刻在荣誉中被所有人铭记。</p>
                 </div>
-                <div class="about-image">
+                <div class="about-image img-hover-zoom" data-reveal-right>
                     <a href="https://mp.weixin.qq.com/s/LKOV-GXympn0VP8Wx7U-lQ" target="_blank">
-                        <img src="image/misc/allmember.webp" alt="两队合影" data-i18n-alt="index.about.imageAlt">
+                        <img src="image/misc/allmember.webp" alt="两队合影" loading="lazy" decoding="async" data-i18n-alt="index.about.imageAlt">
                     </a>
                 </div>
             </div>
@@ -372,25 +390,25 @@
             <div class="section-title">
                 <h2 data-i18n="index.achievements.title">我们的成就</h2>
             </div>
-            <div class="stats">
+            <div class="stats" data-reveal-stagger>
                 <div class="stat">
                     <i class="fas fa-trophy"></i>
-                    <div class="stat-number">50+</div>
+                    <div class="stat-number count-up" data-count="50" data-suffix="+">50+</div>
                     <div class="stat-name" data-i18n="index.achievements.items.0.name">全国奖项</div>
                 </div>
                 <div class="stat">
                     <i class="fas fa-car"></i>
-                    <div class="stat-number">20+</div>
+                    <div class="stat-number count-up" data-count="20" data-suffix="+">20+</div>
                     <div class="stat-name" data-i18n="index.achievements.items.1.name">赛车制造</div>
                 </div>
                 <div class="stat">
                     <i class="fas fa-book"></i>
-                    <div class="stat-number">80+</div>
+                    <div class="stat-number count-up" data-count="80" data-suffix="+">80+</div>
                     <div class="stat-name" data-i18n="index.achievements.items.2.name">专利数量</div>
                 </div>
                 <div class="stat">
                     <i class="fas fa-users"></i>
-                    <div class="stat-number">1000+</div>
+                    <div class="stat-number count-up" data-count="1000" data-suffix="+">1000+</div>
                     <div class="stat-name" data-i18n="index.achievements.items.3.name">团队成员</div>
                 </div>
             </div>
@@ -404,8 +422,8 @@
                 <h2 data-i18n="index.carShowcase.title">赛车展示</h2>
             </div>
             <div class="cars-container">
-                <div class="car-card" onclick="location.href='EF25_detail.html'">
-                    <div class="car-image"><img src="image/vehicle/EF25.webp" alt="E-Future 25"></div>
+                <div class="car-card car-card-ev" onclick="location.href='EF25_detail.html'">
+                    <div class="car-image"><img src="image/vehicle/EF25.webp" alt="E-Future 25" loading="lazy"></div>
                     <div class="car-info">
                         <h3 data-i18n="index.carShowcase.cars.0.name">E-Future 25 电动方程式赛车</h3>
                         <p data-i18n="index.carShowcase.cars.0.desc">新一代电动赛车，采用碳纤维单体壳及高效空气动力学套件，搭载四轮边电机系统，最大输出功率80kW。</p>
@@ -416,8 +434,8 @@
                         <div class="car-detail-btn"><a href="EF25_detail.html" class="btn" data-i18n="common.viewDetail">查看详情</a></div>
                     </div>
                 </div>
-                <div class="car-card" onclick="location.href='AF25_detail.html'">
-                    <div class="car-image"><img src="image/vehicle/AF25.webp" alt="A-Future 25"></div>
+                <div class="car-card car-card-av" onclick="location.href='AF25_detail.html'">
+                    <div class="car-image"><img src="image/vehicle/AF25.webp" alt="A-Future 25" loading="lazy"></div>
                     <div class="car-info">
                         <h3 data-i18n="index.carShowcase.cars.1.name">A-Future 25 无人驾驶方程式赛车</h3>
                         <p data-i18n="index.carShowcase.cars.1.desc">2025赛季无人赛车，配备先进的传感器系统和算法，能够自主完成赛道识别、路径规划和实时控制。</p>
@@ -428,8 +446,8 @@
                         <div class="car-detail-btn"><a href="AF25_detail.html" class="btn" data-i18n="common.viewDetail">查看详情</a></div>
                     </div>
                 </div>
-                <div class="car-card" onclick="location.href='EF24_detail.html'">
-                    <div class="car-image"><img src="image/vehicle/EF24.webp" alt="E-Future 24"></div>
+                <div class="car-card car-card-ev" onclick="location.href='EF24_detail.html'">
+                    <div class="car-image"><img src="image/vehicle/EF24.webp" alt="E-Future 24" loading="lazy"></div>
                     <div class="car-info">
                         <h3 data-i18n="index.carShowcase.cars.2.name">E-Future 24 电动方程式赛车</h3>
                         <p data-i18n="index.carShowcase.cars.2.desc">2024赛季电动赛车，采用碳纤维单体壳及高效空气动力学套件，搭载四轮边电机系统，最大输出功率75kW。</p>
@@ -440,8 +458,8 @@
                         <div class="car-detail-btn"><a href="EF24_detail.html" class="btn" data-i18n="common.viewDetail">查看详情</a></div>
                     </div>
                 </div>
-                <div class="car-card" onclick="location.href='AF24_detail.html'">
-                    <div class="car-image"><img src="image/vehicle/AF24.webp" alt="A-Future 24"></div>
+                <div class="car-card car-card-av" onclick="location.href='AF24_detail.html'">
+                    <div class="car-image"><img src="image/vehicle/AF24.webp" alt="A-Future 24" loading="lazy"></div>
                     <div class="car-info">
                         <h3 data-i18n="index.carShowcase.cars.3.name">A-Future 24 无人驾驶方程式赛车</h3>
                         <p data-i18n="index.carShowcase.cars.3.desc">2024赛季无人驾驶赛车，配备先进的传感器系统和算法，能够自主完成赛道识别、路径规划和实时控制。</p>
@@ -470,7 +488,7 @@
     <section id="groups" class="groups">
         <div class="container">
             <div class="section-title"><h2 data-i18n="index.groups.title">团队分组</h2></div>
-            <div class="group-container">
+            <div class="group-container" data-reveal-stagger>
                 <div class="group-card">
                     <a href="https://mp.weixin.qq.com/s/GiFFXjnX9QfJzXe90bXwYQ" target="_blank">
                         <div class="group-icon"><i class="fas fa-bolt"></i></div>
@@ -536,7 +554,7 @@
         <div class="join-us-hero">
             <div class="join-us-content">
                 <h2 data-i18n="index.joinUs.title">想成为Formax团队的一员吗?</h2>
-                <a href="https://mp.weixin.qq.com/s/roGZqXKzPuOOYAc5kzpJRg" target="_blank" class="btn" data-i18n="index.joinUs.cta">加入我们</a>
+                <a href="https://mp.weixin.qq.com/s/roGZqXKzPuOOYAc5kzpJRg" target="_blank" class="btn pulse-btn" data-i18n="index.joinUs.cta">加入我们</a>
             </div>
         </div>
     </section>
@@ -545,7 +563,7 @@
     <section id="news" class="news">
         <div class="container">
             <div class="section-title"><h2 data-i18n="index.news.title">车队动态</h2></div>
-            <div class="news-container">
+            <div class="news-container" data-reveal-stagger>
                 <div class="news-item">
                     <div class="news-date">2025-08-15</div>
                     <h3 class="news-title"><a href="https://mp.weixin.qq.com/s/IwdGH9tOSgCYG0ZcSDftdQ" target="_blank" data-i18n="index.news.items.0.title">回顾｜捷凯车队创始人许家泰走进华工Formax，共燃赛车梦！</a></h3>
@@ -586,7 +604,7 @@
             <div class="section-title"><h2 data-i18n="index.sponsors.title">合作伙伴</h2></div>
             <div class="sponsors-level platinum-sponsors">
                 <h3 data-i18n="index.sponsors.diamond">钻石级</h3>
-                <div class="sponsors-container">
+                <div class="sponsors-container" data-reveal-stagger>
                     <div class="sponsor"><a href="#" target="_blank"><img src="image/sponsor/diamond/cok.png" alt="cok"></a></div>
                     <div class="sponsor"><a href="https://mp.weixin.qq.com/s/iJvgx4LJRtnTAX_fknbTNg" target="_blank"><img src="image/sponsor/diamond/柏中.png" alt="柏中"></a></div>
                     <div class="sponsor"><a href="https://mp.weixin.qq.com/s/bu50GD8-mq4ChlgxY8F54w" target="_blank"><img src="image/sponsor/diamond/广州晓达金属.png" alt="广州晓达金属"></a></div>
@@ -600,7 +618,7 @@
             </div>
             <div class="sponsors-level gold-sponsors">
                 <h3 data-i18n="index.sponsors.gold">黄金级</h3>
-                <div class="sponsors-container">
+                <div class="sponsors-container" data-reveal-stagger>
                     <div class="sponsor"><a href="https://mp.weixin.qq.com/s/CDSxzfYmA0eAlgwgeZwb-Q" target="_blank"><img src="image/sponsor/gold/dn.png" alt="dn"></a></div>
                     <div class="sponsor"><a href="https://mp.weixin.qq.com/s/7jt-03Kz-qOqbECp8MeLyA" target="_blank"><img src="image/sponsor/gold/kings.png" alt="kings"></a></div>
                     <div class="sponsor"><a href="#" target="_blank"><img src="image/sponsor/gold/one车膜.png" alt="one车膜"></a></div>
@@ -612,7 +630,7 @@
             </div>
             <div class="sponsors-level silver-sponsors">
                 <h3 data-i18n="index.sponsors.silverAngel">白银/天使级</h3>
-                <div class="sponsors-container">
+                <div class="sponsors-container" data-reveal-stagger>
                     <div class="sponsor"><a href="https://mp.weixin.qq.com/s/0gJ32SrsgkWj0lLQsr0Gmg" target="_blank"><img src="image/sponsor/silver/beta.png" alt="beta"></a></div>
                     <div class="sponsor"><img src="image/sponsor/silver/cf.png" alt="cf"></div>
                     <div class="sponsor"><a href="https://mp.weixin.qq.com/s/UOZ3bLJjI6j5MzVEdlvleQ" target="_blank"><img src="image/sponsor/silver/chroma.png" alt="chroma"></a></div>
@@ -637,7 +655,7 @@
                 </div>
             </div>
             <div class="sponsor-cta">
-                <a href="sponsor.html" class="btn" data-i18n="index.sponsors.cta">成为合作伙伴</a>
+                <a href="sponsor.html" class="btn pulse-btn" data-i18n="index.sponsors.cta">成为合作伙伴</a>
             </div>
         </div>
     </section>
@@ -646,28 +664,28 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title"><h2 data-i18n="index.contact.title">联系我们</h2></div>
-            <div class="info-item">
+            <div class="info-item" data-reveal>
                 <i class="fas fa-map-marker-alt"></i>
                 <div>
                     <h4 data-i18n="index.contact.address">地址</h4>
                     <p data-i18n="index.contact.addressValue">广东省广州市天河区华南理工大学（五山校区）汽车科技大楼1楼</p>
                 </div>
             </div>
-            <div class="info-item">
+            <div class="info-item" data-reveal>
                 <i class="fas fa-envelope"></i>
                 <div>
                     <h4 data-i18n="index.contact.email">邮箱</h4>
                     <p>formax@scutracing.com</p>
                 </div>
             </div>
-            <div class="info-item">
+            <div class="info-item" data-reveal>
                 <i class="fas fa-phone"></i>
                 <div>
                     <h4 data-i18n="index.contact.phone">电话</h4>
                     <p>+86 151 4756 0196</p>
                 </div>
             </div>
-            <div class="info-item">
+            <div class="info-item" data-reveal>
                 <i class="fas fa-clock"></i>
                 <div>
                     <h4 data-i18n="index.contact.hours">工作时间</h4>
@@ -677,6 +695,7 @@
         </div>
     </section>
 
+    <script src="js/effects.js"></script>
     <script src="js/components.js"></script>
     <script src="js/common.js"></script>
     <script src="js/i18n.js"></script>

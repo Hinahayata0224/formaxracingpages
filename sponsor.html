@@ -7,6 +7,7 @@
     <title data-i18n="sponsorPage.pageTitle">成为合作伙伴 - Formax方程式赛车队</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/effects.css">
     <style>
         /* ===== Page-specific Styles: sponsor.html ===== */
         .hero {
@@ -26,7 +27,7 @@
             border-radius: 10px;
             padding: 2rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px var(--card-shadow);
             transition: all 0.3s;
             height: 250px;
             display: flex;
@@ -54,7 +55,7 @@
             border-radius: 10px;
             padding: 2rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px var(--card-shadow);
             flex: 1;
             min-width: 160px;
             max-width: 280px;
@@ -69,7 +70,7 @@
 
         .download-section { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; }
 
-        .image-container { margin-top: 3rem; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .image-container { margin-top: 3rem; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); }
         .image-container img { width: 100%; height: auto; display: block; transition: transform 0.5s; }
         .image-container:hover img { transform: scale(1.05); }
 
@@ -85,7 +86,7 @@
         }
     </style>
 </head>
-<body>
+<body data-theme="team">
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
@@ -98,7 +99,7 @@
     <section class="benefits">
         <div class="container">
             <div class="section-title"><h2 data-i18n="sponsorPage.benefits.title">为什么成为我们的合作伙伴？</h2></div>
-            <div class="benefits-grid">
+            <div class="benefits-grid" data-reveal-stagger>
                 <div class="benefit-card">
                     <h2 data-i18n="sponsorPage.benefits.cards.0.title">品牌曝光</h2>
                     <p data-i18n="sponsorPage.benefits.cards.0.desc">通过赛事、媒体报道和校园活动，让您的品牌获得广泛曝光。</p>
@@ -161,7 +162,7 @@
     <section class="sponsorship">
         <div class="container">
             <div class="section-title"><h2 data-i18n="sponsorPage.levels.title">合作伙伴级别</h2></div>
-            <div class="sponsorship-levels">
+            <div class="sponsorship-levels" data-reveal-stagger>
                 <div class="level-card level-diamond"><h3 data-i18n="sponsorPage.levels.titleSponsor">冠名合作</h3></div>
                 <div class="level-card level-diamond"><h3 data-i18n="sponsorPage.levels.diamond">钻石级</h3></div>
                 <div class="level-card level-gold"><h3 data-i18n="sponsorPage.levels.gold">黄金级</h3></div>
@@ -257,6 +258,7 @@
         </div>
     </section>
 
+    <script src="js/effects.js"></script>
     <script src="js/components.js"></script>
     <script src="js/common.js"></script>
     <script src="js/i18n.js"></script>

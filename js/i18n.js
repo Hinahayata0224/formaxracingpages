@@ -149,20 +149,19 @@ var I18n = (function () {
 
     // ---------- 注入语言切换器 ----------
     function injectSwitcher() {
-        // Try to inject into nav first
+        // Inject into nav
         var navLinks = document.querySelector('.nav-links');
         if (navLinks) {
             var switcherContainer = document.createElement('li');
             switcherContainer.innerHTML = buildSwitcher(true);
-            // The innerHTML contains a div.lang-switch; append it directly
             var switcherDiv = switcherContainer.firstChild;
             navLinks.appendChild(switcherDiv);
-        } else {
-            // Floating switcher for pages without nav
-            var floatDiv = document.createElement('div');
-            floatDiv.innerHTML = buildSwitcher(false);
-            document.body.appendChild(floatDiv.firstChild);
         }
+
+        // Always inject floating switcher as mobile fallback
+        var floatDiv = document.createElement('div');
+        floatDiv.innerHTML = buildSwitcher(false);
+        document.body.appendChild(floatDiv.firstChild);
     }
 
     // ---------- 绑定语言切换事件 ----------

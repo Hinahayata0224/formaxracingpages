@@ -7,21 +7,22 @@
     <title>E-Future24 Racing Car Details - Formax Racing Team</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/effects.css">
     <style>
         .car-detail-header { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem; }
-        .car-detail-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .car-detail-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); }
         .car-detail-image img { width: 100%; height: auto; display: block; }
         .car-detail-specs { flex: 1; min-width: 300px; }
         .car-detail-specs h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--secondary-color); position: relative; padding-bottom: 1rem; }
         .car-detail-specs h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: var(--primary-color); }
         .specs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1.5rem; }
-        .spec-item { background-color: var(--light-gray); border-radius: 10px; padding: 1.5rem; text-align: center; transition: transform 0.3s; }
-        .spec-item:hover { transform: translateY(-3px); }
+        .spec-item { background-color: var(--light-gray); border-radius: 10px; padding: 1.5rem; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+        .spec-item:hover { transform: translateY(-3px); box-shadow: 0 6px 20px var(--card-shadow-hover); }
         .spec-value { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin-bottom: 0.5rem; }
         .spec-label { color: #666; font-size: 0.9rem; }
         .innovation-section { margin-bottom: 4rem; }
         .innovation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .innovation-card { position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); cursor: pointer; }
+        .innovation-card { position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); cursor: pointer; }
         .innovation-image { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.5s; }
         .innovation-card:hover .innovation-image { transform: scale(1.1); }
         .innovation-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); color: var(--accent-color); padding: 1.5rem; transform: translateY(calc(100% - 3.8rem)); transition: transform 0.3s; }
@@ -32,27 +33,30 @@
         .story-section .story-content { flex: 1; min-width: 300px; }
         .story-section .story-content h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--secondary-color); }
         .story-section .story-content p { margin-bottom: 1rem; line-height: 1.8; }
-        .story-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .story-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); }
         .story-image img { width: 100%; height: 100%; object-fit: cover; }
         .awards-section { margin-bottom: 4rem; }
         .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .award-card { background-color: var(--accent-color); border-radius: 10px; padding: 2rem; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+        .award-card { background-color: var(--accent-color); border-radius: 10px; padding: 2rem; text-align: center; box-shadow: 0 5px 15px var(--card-shadow); transition: transform 0.3s; }
         .award-card:hover { transform: translateY(-5px); }
-        .award-icon { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .award-icon { font-size: 2.5rem; color: var(--glow-color); margin-bottom: 1rem; }
         .award-title { font-size: 1.2rem; font-weight: bold; color: var(--secondary-color); margin-bottom: 0.5rem; }
         .award-year { color: #777; }
         @media (max-width: 768px) { .car-detail-header { flex-direction: column; } }
     </style>
 </head>
-<body>
-    <div class="container">
-        <a href="/" class="back-button"><i class="fas fa-arrow-left"></i> <span data-i18n="detail.common.back">返回主页</span></a>
+<body data-theme="ev">
+    <a href="/" class="floating-back-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span data-i18n="common.back">返回主页</span>
+    </a>
+    <div class="container" style="padding-top: 100px;">
 
         <section class="car-detail-header">
             <div class="car-detail-image"><img src="image/vehicle/EF24_detail.png" alt="EF24"></div>
             <div class="car-detail-specs">
                 <h2>E-Future24 技术规格</h2>
-                <div class="specs-grid">
+                <div class="specs-grid" data-reveal-stagger>
                     <div class="spec-item"><div class="spec-value">259kg</div><div class="spec-label" data-i18n="detail.common.curbWeight">整备质量</div></div>
                     <div class="spec-item"><div class="spec-value">44:56</div><div class="spec-label" data-i18n="detail.common.weightDist">前后轴荷比</div></div>
                     <div class="spec-item"><div class="spec-value">7.426kWh</div><div class="spec-label">额定电量</div></div>
@@ -67,29 +71,29 @@
 
         <section class="innovation-section">
             <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="detail.common.innovations">技术创新亮点</h2>
-            <div class="innovation-grid">
+            <div class="innovation-grid" data-reveal-stagger>
                 <div class="innovation-card">
-                    <img src="image/innovations/EV/EF24/1.png" alt="Lightweight" class="innovation-image">
+                    <img src="image/innovations/EV/EF24/1.png" alt="Lightweight" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay"><h3 class="innovation-title">轻量化</h3><p>整车质量从270kg降至259kg，提高了整车动态性能</p></div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/EV/EF24/2.png" alt="Motor Layout" class="innovation-image">
+                    <img src="image/innovations/EV/EF24/2.png" alt="Motor Layout" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay"><h3 class="innovation-title">电机系统布置</h3><p>四轮边电机提高加速性能，控制器分置改善EMC及载荷分布</p></div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/EV/EF24/3.png" alt="Aerodynamics" class="innovation-image">
+                    <img src="image/innovations/EV/EF24/3.png" alt="Aerodynamics" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay"><h3 class="innovation-title">空气动力学套件</h3><p>高下压力空气动力学套件带来稳定抓地</p></div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/EV/EF24/4.png" alt="Decoupled Suspension" class="innovation-image">
+                    <img src="image/innovations/EV/EF24/4.png" alt="Decoupled Suspension" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay"><h3 class="innovation-title">前后双解耦</h3><p>实现了俯仰侧倾的解耦控制，提升赛车运动性能</p></div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/EV/EF24/5.png" alt="Custom BMS" class="innovation-image">
+                    <img src="image/innovations/EV/EF24/5.png" alt="Custom BMS" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay"><h3 class="innovation-title">自制动力电池管理系统</h3><p>分布式架构的自制BMS可高效管理电池</p></div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/EV/EF24/6.png" alt="e-Diff" class="innovation-image">
+                    <img src="image/innovations/EV/EF24/6.png" alt="e-Diff" class="innovation-image" loading="lazy">
                     <div class="innovation-overlay"><h3 class="innovation-title">电子差速算法</h3><p>基于载荷实时分配力矩，提升赛车过弯性能</p></div>
                 </div>
             </div>
@@ -103,12 +107,12 @@
                 <p>时间来到24赛季。这是队史上无前例的设计制造两辆全新赛车的赛季，在这一年里，队友们薪火相传并带来许多创新的设计。 然而，各种各样的问题也接踵而至。加工商货不对板，单体壳因设备问题强度不足……为此，队友们牺牲自己的休息时间，采取各种补救措施。车身空力部门甚至重新铺制了一个更高强度的单体壳。 历经重重困难，我们的EF-24飞驰在赛场之上。EF-24因其创新的设计和极高的完成度迎来了许多友队围观。全新设计的空气动力学套件得到了前F1威廉姆斯车队工程师裁判的认可。 赛场上，这辆赛车没有辜负队友们的期望，静态检查期间，几乎所有检查项目都一遍通过，并在最后的耐久赛斩获全国第三。</p>
                 <p>这一刻，队友们等了三年。那天赛场的暴雨无法阻挡这一刻队友们的热情，在赛车冲过终点线并复检通过的那一刻，队友们互相拥抱，泣不成声，互相诉说着这一年的辛酸不易。 领奖台上震耳欲聋的是我们的口号："敢拼敢赢，精益求精！"在欢喜和遗憾的交织中，我们的24赛季以全国一等奖画上圆满句号，24赛季的故事落下帷幕，25赛季我们蓄势待发！</p>
             </div>
-            <div class="story-image"><img src="image/misc/EF24story.jpg" alt="EF24 Racing Story"></div>
+            <div class="story-image"><img src="image/misc/EF24story.jpg" alt="EF24 Racing Story" loading="lazy"></div>
         </section>
 
         <section class="awards-section">
             <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="detail.common.awards">获得奖项</h2>
-            <div class="awards-grid">
+            <div class="awards-grid" data-reveal-stagger>
                 <div class="award-card"><div class="award-icon"><i class="fas fa-trophy"></i></div><h3 class="award-title">全国一等奖</h3><p class="award-year">2024年</p></div>
                 <div class="award-card"><div class="award-icon"><i class="fas fa-medal"></i></div><h3 class="award-title">耐久赛季军</h3><p class="award-year">2024年</p></div>
                 <div class="award-card"><div class="award-icon"><i class="fas fa-bolt"></i></div><h3 class="award-title">Matlab&Simulink建模仿真一等奖</h3><p class="award-year">2024年</p></div>
@@ -117,6 +121,7 @@
         </section>
     </div>
 
+    <script src="js/effects.js"></script>
     <script src="js/components.js"></script>
     <script src="js/common.js"></script>
     <script src="js/i18n.js"></script>

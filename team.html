@@ -7,6 +7,7 @@
     <title data-i18n="teamPage.pageTitle">团队成员与指导老师 - Formax方程式赛车队</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/effects.css">
     <style>
         /* ===== Page-specific Styles: team.html ===== */
         .sub-hero {
@@ -29,7 +30,7 @@
             background-color: var(--accent-color);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px var(--card-shadow);
             transition: transform 0.3s;
         }
         .member:hover { transform: translateY(-10px); }
@@ -46,7 +47,7 @@
             background-color: var(--accent-color);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px var(--card-shadow);
             transition: transform 0.3s;
             border-left: 4px solid var(--primary-color);
         }
@@ -67,7 +68,7 @@
         }
     </style>
 </head>
-<body>
+<body data-theme="team">
     <a href="/" class="floating-back-btn">
         <i class="fas fa-arrow-left"></i>
         <span data-i18n="common.back">返回主页</span>
@@ -85,7 +86,7 @@
     <section id="advisors" class="advisors">
         <div class="container">
             <div class="section-title"><h2 data-i18n="teamPage.advisors.title">指导老师</h2></div>
-            <div class="team-members">
+            <div class="team-members" data-reveal-stagger>
                 <div class="member">
                     <a href="https://www2.scut.edu.cn/smae/2016/0728/c21156a302736/page.htm" target="_blank">
                         <div class="member-image"><img src="image/advisor/advisor1.png" alt="Li Weihua"></div>
@@ -144,7 +145,7 @@
     <section id="team" class="team">
         <div class="container">
             <div class="section-title"><h2 data-i18n="teamPage.management.title">管理团队</h2></div>
-            <div class="team-members">
+            <div class="team-members" data-reveal-stagger>
                 <div class="member">
                     <div class="member-image"><img src="image/member/1.jpg" alt="Bao Junjing"></div>
                     <div class="member-info">
@@ -201,7 +202,7 @@
     <section id="stories" class="stories">
         <div class="container">
             <div class="section-title"><h2 data-i18n="teamPage.alumni.title">历届人物故事</h2></div>
-            <div class="stories-container">
+            <div class="stories-container" data-reveal-stagger>
                 <div class="story-card">
                     <a href="https://mp.weixin.qq.com/s/1pHtlZsag8JPcznB0-uSzw" class="read-more">
                         <div class="story-content">
@@ -247,6 +248,7 @@
         </div>
     </section>
 
+    <script src="js/effects.js"></script>
     <script src="js/components.js"></script>
     <script src="js/common.js"></script>
     <script src="js/i18n.js"></script>
