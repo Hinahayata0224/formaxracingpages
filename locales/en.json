@@ -1,0 +1,395 @@
+{
+    "common": {
+        "back": "Back to Home",
+        "viewDetail": "View Details",
+        "learnMore": "Learn More",
+        "submit": "Send Message",
+        "sending": "Sending...",
+        "close": "Close",
+        "downloadPDF": "Download Details (PDF)",
+        "sendSuccess": "Message sent! We will get back to you soon.",
+        "fileTooLarge": "File size must not exceed 10MB",
+        "logoAlt": "Formax Racing Team",
+        "formaxTitle": "Formax Racing Team",
+        "wechatQR": "Formax Racing WeChat QR Code"
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About Us",
+        "achievements": "Achievements",
+        "cars": "Our Cars",
+        "team": "Team",
+        "groups": "Groups",
+        "news": "News",
+        "sponsors": "Sponsors",
+        "contact": "Contact"
+    },
+    "footer": {
+        "copyright": "\u00a9 2009-2026 Formax Racing Team",
+        "rights": "All Rights Reserved."
+    },
+    "index": {
+        "pageTitle": "Formax Racing Team",
+        "pageDescription": "SCUT Formax Formula Student Racing Team Official Website - Home",
+        "hero": {
+            "slide1": {
+                "title": "Formax Racing Team",
+                "desc": "We are a passionate and innovative Formula Student team dedicated to designing and manufacturing high-performance formula race cars.",
+                "cta": "Learn More"
+            },
+            "slide2": {
+                "title": "E-Future Electric Race Car",
+                "desc": "Our electric race car features advanced composite materials and efficient in-wheel motor systems for exceptional performance.",
+                "cta": "View Cars"
+            },
+            "slide3": {
+                "title": "Auto-Future Driverless Race Car",
+                "desc": "Equipped with advanced sensors and AI algorithms, our driverless race car autonomously handles track recognition and decision-making.",
+                "cta": "Technical Details"
+            }
+        },
+        "about": {
+            "title": "About Us",
+            "desc": "Formax Racing Team was founded in October 2009. We built the first FSC race car in Guangdong Province and were among the earliest initiators of the FSC competition. Founded by a group of passionate university students, our team comprises undergraduates from mechanical engineering, electrical engineering, business administration, and other disciplines. We are a university-level research team co-supported by South China University of Technology and its School of Mechanical and Automotive Engineering. With strong backing from the university, the school, and society, we independently design and build two brand-new Formula Student cars each year, competing in the Formula Student Electric China (FSEC) and Formula Student Autonomous China (FSAC). Our mission is to cultivate innovative talent through hands-on engineering practice. 'Dare to fight, dare to win, strive for excellence' is our motto. Together with our race cars, we continuously push technical limits, achieve outstanding results in competitions, and accumulate invaluable practical experience. Over sixteen years, from combustion to electric to autonomous, the team has witnessed countless youthful journeys. Time passes swiftly, washing away the traces of history, but the sweat engraved in our honors is remembered by all.",
+            "imageAlt": "Team Group Photo"
+        },
+        "achievements": {
+            "title": "Our Achievements",
+            "items": [
+                { "number": "50+", "name": "National Awards" },
+                { "number": "20+", "name": "Cars Built" },
+                { "number": "80+", "name": "Patents" },
+                { "number": "1000+", "name": "Team Members" }
+            ]
+        },
+        "carShowcase": {
+            "title": "Our Cars",
+            "cars": [
+                {
+                    "name": "E-Future 25 Electric Race Car",
+                    "desc": "Next-generation electric race car featuring carbon fiber monocoque and high-efficiency aero package, powered by four in-wheel motors with 80kW max output.",
+                    "spec1label": "CLA",
+                    "spec2label": "Power"
+                },
+                {
+                    "name": "A-Future 25 Driverless Race Car",
+                    "desc": "2025 season driverless race car with advanced sensor systems and algorithms for autonomous track recognition, path planning, and real-time control.",
+                    "spec1label": "INS",
+                    "spec2label": "LiDAR"
+                },
+                {
+                    "name": "E-Future 24 Electric Race Car",
+                    "desc": "2024 season electric race car with carbon fiber monocoque and high-efficiency aero package, four in-wheel motors, 75kW max output.",
+                    "spec1label": "Top Speed",
+                    "spec2label": "Power"
+                },
+                {
+                    "name": "A-Future 24 Driverless Race Car",
+                    "desc": "2024 season driverless race car equipped with advanced sensor systems and algorithms for autonomous track recognition, path planning, and real-time control.",
+                    "spec1label": "Processor",
+                    "spec2label": "Sensors"
+                }
+            ]
+        },
+        "team": {
+            "title": "Advisors & Core Members",
+            "cta": "View Details"
+        },
+        "groups": {
+            "title": "Team Groups",
+            "cards": [
+                { "name": "Electrical Systems", "desc": "Responsible for vehicle electrical system design, layout, and motor control algorithms, ensuring efficient and stable operation of the three-electric system." },
+                { "name": "Body & Aerodynamics", "desc": "Focused on monocoque design and aerodynamic optimization, using CFD and composite materials to enhance race car performance." },
+                { "name": "Chassis", "desc": "Responsible for drivetrain, suspension, steering, and braking system design and manufacturing to ensure handling and stability." },
+                { "name": "Autonomous Systems", "desc": "Develops autonomous driving algorithms and sensor systems for self-planning and decision-making capabilities." },
+                { "name": "Marketing", "desc": "Responsible for team branding, platform operations, and event coordination to drive online development." },
+                { "name": "Secretariat", "desc": "Responsible for team financial accounting and event planning." },
+                { "name": "Quality Control", "desc": "Responsible for workshop safety management and quality monitoring." },
+                { "name": "Driver Department", "desc": "Responsible for simulator training and test feedback tuning." }
+            ]
+        },
+        "joinUs": {
+            "title": "Want to Join the Formax Team?",
+            "cta": "Join Us"
+        },
+        "news": {
+            "title": "Team News",
+            "viewMore": "View More",
+            "items": [
+                { "date": "2025-08-15", "title": "Recap | Founder of Jiekai Racing Visits SCUT Formax, Igniting Racing Dreams!" },
+                { "date": "2025-05-24", "title": "Recap | Tripartite Partnership Sponsorship Signing Ceremony Successfully Held" },
+                { "date": "2025-01-25", "title": "Who We Are" },
+                { "date": "2024-10-14", "title": "Recap | AF24 & EF24 New Car Launch Event" }
+            ],
+            "wechatTitle": "Follow Our WeChat Official Account",
+            "wechatDesc": "Scan the QR code for more team updates",
+            "wechatTip": "Open WeChat to scan and follow us"
+        },
+        "sponsors": {
+            "title": "Our Partners",
+            "diamond": "Diamond Level",
+            "gold": "Gold Level",
+            "silverAngel": "Silver/Angel Level",
+            "cta": "Become a Partner"
+        },
+        "contact": {
+            "title": "Contact Us",
+            "address": "Address",
+            "addressValue": "1st Floor, Automotive Technology Building, South China University of Technology (Wushan Campus), Tianhe District, Guangzhou, Guangdong",
+            "email": "Email",
+            "phone": "Phone",
+            "hours": "Working Hours",
+            "hoursValue": "Mon-Fri: 9:00 AM - 5:00 PM"
+        }
+    },
+    "teamPage": {
+        "pageTitle": "Team Members & Advisors - Formax Racing Team",
+        "pageDescription": "SCUT Formax Racing Team Official Website - Management Team",
+        "hero": {
+            "title": "Team Members & Advisors",
+            "subtitle": "Meet the advisors and core members of the Formax Racing Team"
+        },
+        "advisors": {
+            "title": "Academic Advisors",
+            "members": [
+                { "name": "Li Weihua", "dept": "School of Mechanical & Automotive Engineering", "desc": "Dean, Professor, Doctoral Supervisor" },
+                { "name": "He Guolin", "dept": "School of Mechanical & Automotive Engineering", "desc": "Associate Professor, Doctoral Supervisor, Dept. of Automotive Engineering" },
+                { "name": "Ding Kang", "dept": "School of Mechanical & Automotive Engineering", "desc": "Vice Dean, Professor, Doctoral Supervisor" },
+                { "name": "Yang Zhijian", "dept": "School of Mechanical & Automotive Engineering", "desc": "Associate Professor, Master's Supervisor" },
+                { "name": "Huang Zhicong", "dept": "Wuxianming School of Intelligent Engineering", "desc": "Associate Professor, Doctoral Supervisor" }
+            ]
+        },
+        "management": {
+            "title": "Management Team",
+            "members": [
+                { "name": "Bao Junjing", "role": "Team Manager", "desc": "Team branding and business cooperation" },
+                { "name": "Jin Yuchen", "role": "Electric Team Leader", "desc": "Overall management and coordination of the electric team" },
+                { "name": "Zhao Ziqian", "role": "Driverless Team Leader", "desc": "Overall management and coordination of the driverless team" },
+                { "name": "Zhao Ruiqi", "role": "Electric Technical Director", "desc": "Technical leadership and coordination of electric car design" },
+                { "name": "Jiang Junhui", "role": "Driverless Technical Director", "desc": "Technical leadership and coordination of driverless car design" },
+                { "name": "Huang Hongyu", "role": "Administrative Leader", "desc": "Team financial management and administrative affairs" }
+            ]
+        },
+        "alumni": {
+            "title": "Alumni Stories",
+            "stories": [
+                { "date": "August 6, 2025", "title": "Profile | Gong Junjie \u2014 The Soul of Materials, Driving Dreams Forward", "excerpt": "He is the 'Welding Emperor' of the Body & Aero group, the 'Monocoque Photography Minister', and the 'Carbon Plate Killer'..." },
+                { "date": "July 15, 2025", "title": "Profile | From Firm Choice to Persistent Realization \u2014 Driverless Team Leader Wu Jiahao", "excerpt": "He knows the 3 AM workshop sky best, recording his dream of building a new driverless car and the long road from firm choice to persistent realization..." },
+                { "date": "July 13, 2025", "title": "Profile | Chasing Dreams in Formula, Racing with Electric Power \u2014 Electric Team Leader Chen Xitong", "excerpt": "On the journey of SCUT Formula Racing Team, a passionate young man with a burning dream for racing grew from a newcomer into a pillar of the electric team..." }
+            ],
+            "viewMore": "View More Stories",
+            "wechatTitle": "Follow Our WeChat Official Account",
+            "wechatDesc": "Scan the QR code for more team stories",
+            "wechatTip": "Open WeChat to scan and follow us"
+        }
+    },
+    "sponsorPage": {
+        "pageTitle": "Become a Partner - Formax Racing Team",
+        "pageDescription": "SCUT Formula Racing Team - Become Our Partner",
+        "hero": {
+            "title": "Become Our Partner",
+            "subtitle": "Join us in advancing Formula Student racing together"
+        },
+        "benefits": {
+            "title": "Why Partner With Us?",
+            "cards": [
+                { "title": "Brand Exposure", "desc": "Gain extensive brand exposure through competitions, media coverage, and campus events." },
+                { "title": "Talent Development", "desc": "Connect directly with top engineering talent and help develop future leaders and innovators." },
+                { "title": "Social Responsibility", "desc": "Demonstrate your support for education and technological innovation, enhancing your social image." },
+                { "title": "Technical Cooperation", "desc": "Collaborate with our technical team to develop innovative solutions and test new products and technologies." },
+                { "title": "Network Expansion", "desc": "Join our partner network and build valuable connections with other industry leaders." },
+                { "title": "Promotional Opportunities", "desc": "Leverage our social media platforms to reach university audiences interested in technology and innovation." }
+            ]
+        },
+        "socialPlatforms": {
+            "title": "Our Social Platforms",
+            "douyin": "Douyin",
+            "douyinHandle": "@Formax Racing Team",
+            "wechat": "WeChat Official Account",
+            "wechatHandle": "Formax Racing Team",
+            "bilibili": "Bilibili",
+            "bilibiliHandle": "Formax Racing Team"
+        },
+        "levels": {
+            "title": "Sponsorship Levels",
+            "diamond": "Diamond Level",
+            "gold": "Gold Level",
+            "silver": "Silver Level",
+            "angel": "Angel Level",
+            "friendship": "Friendship Partnership",
+            "titleSponsor": "Title Sponsorship"
+        },
+        "contact": {
+            "title": "Ready for an In-Depth Conversation?",
+            "address": "Address",
+            "addressValue": "1st Floor, Automotive Technology Building, South China University of Technology (Wushan Campus), Tianhe District, Guangzhou, Guangdong",
+            "email": "Email",
+            "phone": "Phone",
+            "hours": "Working Hours",
+            "hoursValue": "Mon-Fri: 9:00 AM - 5:00 PM"
+        },
+        "form": {
+            "name": "Name",
+            "nameRequired": "Name *",
+            "email": "Email",
+            "emailRequired": "Email *",
+            "company": "Company / Organization",
+            "interest": "Type of Inquiry",
+            "interestPlaceholder": "Please select",
+            "interestSponsor": "Sponsorship",
+            "interestMedia": "Media Inquiry",
+            "interestTech": "Technical Support",
+            "interestOther": "Other",
+            "message": "Your Message",
+            "messageRequired": "Your Message *",
+            "attachment": "Related Files (Optional)",
+            "fileSupport": "Supported formats: PDF, DOC, DOCX, JPG, PNG (Max 10MB)",
+            "submit": "Send Message"
+        }
+    },
+    "contactusPage": {
+        "pageTitle": "Contact Us - Formax Racing Team",
+        "pageDescription": "SCUT Formax Racing Team Official Website - Join Us",
+        "title": "Ready for an In-Depth Conversation?",
+        "address": "Address",
+        "addressValue": "1st Floor, Automotive Technology Building, South China University of Technology (Wushan Campus), Tianhe District, Guangzhou, Guangdong",
+        "email": "Email",
+        "phone": "Phone",
+        "hours": "Working Hours",
+        "hoursValue": "Mon-Fri: 9:00 AM - 5:00 PM",
+        "form": {
+            "name": "Name",
+            "nameRequired": "Name *",
+            "email": "Email",
+            "emailRequired": "Email *",
+            "company": "Company / Organization",
+            "interest": "Type of Inquiry",
+            "interestPlaceholder": "Please select",
+            "interestSponsor": "Sponsorship",
+            "interestJoin": "Join the Team",
+            "interestMedia": "Media Inquiry",
+            "interestTech": "Technical Support",
+            "interestOther": "Other",
+            "message": "Your Message",
+            "messageRequired": "Your Message *",
+            "attachment": "Related Files (Optional)",
+            "fileSupport": "Supported formats: PDF, DOC, DOCX, JPG, PNG (Max 10MB)",
+            "submit": "Send Message"
+        }
+    },
+    "thankyouPage": {
+        "pageTitle": "Thank You - Formax Racing Team",
+        "title": "Thank You for Your Submission!",
+        "message": "We have received your information and will contact you soon. Thank you for your interest and support of the Formax Racing Team. We look forward to writing an exciting racing story together!",
+        "backHome": "Back to Home"
+    },
+    "detail": {
+        "common": {
+            "back": "Back to Home",
+            "techSpecs": "Technical Specifications",
+            "innovations": "Technical Innovations",
+            "story": "Racing Story",
+            "awards": "Awards",
+            "curbWeight": "Curb Weight",
+            "weightDist": "Weight Distribution",
+            "wheelbase": "Wheelbase",
+            "peakPower": "Peak Power",
+            "liftDragRatio": "Lift-Drag Ratio",
+            "cLA": "Total CLA",
+            "lidar": "LiDAR",
+            "camera": "Camera",
+            "totalEnergy": "Total Energy",
+            "peakTorque": "Peak Torque",
+            "peakLatAccel": "Peak Lateral Acceleration",
+            "maxSpeed": "Max Speed",
+            "processor": "Processor",
+            "sensor": "Sensors"
+        },
+        "AF24": {
+            "name": "A-Future24 Technical Specifications",
+            "imageAlt": "AF24 Image",
+            "innovations": [
+                { "title": "3D Object Detection Based on PillarNet", "desc": "Achieved better results using lower-line-count LiDAR" },
+                { "title": "Environmental Perception Based on TCone-YOLO", "desc": "Improved frame rate, expanded visual perception range with max detection distance over 21m" },
+                { "title": "Automatic Exposure Adjustment Algorithm", "desc": "Based on dynamic convergence decision, providing more stable visual recognition" },
+                { "title": "Midpoint ICP Matching", "desc": "Matching relative error under 0.1%, velocity planning with sine-cosine acceleration" },
+                { "title": "Multi-modal Data Fusion Preprocessing", "desc": "Achieves precise data matching under high-speed motion, point cloud de-skewing in only 20ms" },
+                { "title": "SLAM Mapping and Path Optimization", "desc": "Minimum curvature path optimization using cubic spline fitting, increasing top speed" }
+            ],
+            "storyTitle": "Racing Story",
+            "story": "A-Future24 is the fifth-generation driverless Formula Student race car we developed over 12 months. This is a pioneering vehicle. From concept design to final testing, the entire team invested over 5,000 hours of work. As our team's first driverless car featuring a carbon fiber monocoque and dual AMK in-wheel motors, we faced unprecedented challenges during design and manufacturing. Through countless simulations and tests, working day and night, we ultimately developed this stable and precise driverless race car. The most unforgettable moment was during the final high-speed track drive event, when we persevered through sudden heavy rain with team members taking shifts to ensure every system was at its best. Torrential rain could not dampen our passion, and after the storm came the moonlight. This spirit of 'dare to fight, dare to win, strive for excellence' allowed us to defend our national third-place title at the 2024 Formula Student China competition, preserving the A03 car number for the next generation of driverless race cars. Season 24 has concluded; we will forge ahead in Season 25.",
+            "awards": [
+                { "title": "National First Prize", "year": "2024" },
+                { "title": "National Third Place", "year": "2024" },
+                { "title": "Matlab & Simulink Modeling First Prize", "year": "2024" },
+                { "title": "Design Presentation Third Place", "year": "2024" }
+            ]
+        },
+        "AF25": {
+            "name": "A-Future25 Technical Specifications",
+            "imageAlt": "AF25 Image",
+            "specs": [
+                { "value": "225kg", "label": "Curb Weight" },
+                { "value": "45:55", "label": "Weight Distribution" },
+                { "value": "6.12kWh", "label": "Total Energy" },
+                { "value": "62.19kW", "label": "Peak Power" },
+                { "value": "750N\u00b7m", "label": "Peak Torque" },
+                { "value": "5.27", "label": "Total CLA" },
+                { "value": "INS570D", "label": "INS" },
+                { "value": "AT128P", "label": "LiDAR" }
+            ],
+            "innovations": [
+                { "title": "3D Object Detection Based on PillarNet", "desc": "Achieved better results using lower-line-count LiDAR" },
+                { "title": "Environmental Perception Based on TCone-YOLO", "desc": "Improved frame rate, expanded visual perception range with max detection distance over 25m" },
+                { "title": "Automatic Exposure Adjustment Algorithm", "desc": "Based on dynamic convergence decision, providing more stable visual recognition" },
+                { "title": "Improved ICP Matching", "desc": "Real-time matching to build point cloud maps" },
+                { "title": "Multi-modal Data Fusion Preprocessing", "desc": "Achieves precise data matching under high-speed motion, point cloud de-skewing in only 20ms" },
+                { "title": "SLAM Mapping Centerline Generation", "desc": "Iterative optimization algorithm, improving low-speed passing efficiency" }
+            ],
+            "storyTitle": "Racing Story",
+            "story": "A-Future25 is the sixth-generation driverless Formula Student race car we developed over 12 months. As the successor to the previous year's national third-place winner, we aimed for new breakthroughs with this generation. Compared to the previous generation, we optimized and iterated on the entire perception system. Through design and iteration, we maintained unwavering passion, further developing perception algorithms so the car's understanding of the environment and scene modeling transcends traditional object detection, incorporating lane lines, boundary lines, and other traffic scene factors, giving us the capability to complete track recognition challenges at higher speeds. Facing new challenges in the latest competition rules including 'single-plank bridge' track environments and 'muddy road' simulation scenarios, we upgraded our offline algorithm library and completed a brand-new virtual simulation scenario for the single-plank bridge environment. This spirit of 'dare to fight, dare to win, strive for excellence' will ultimately lead us to new heights.",
+            "awards": [
+                { "title": "National Second Prize", "year": "2025" },
+                { "title": "Matlab & Simulink Modeling First Prize", "year": "2025" }
+            ]
+        },
+        "EF24": {
+            "name": "E-Future24 Technical Specifications",
+            "imageAlt": "EF24 Image",
+            "innovations": [
+                { "title": "Carbon Fiber Monocoque (Sandwich Structure)", "desc": "Significantly improved stiffness-to-weight ratio, total vehicle weight only 260kg" },
+                { "title": "Four In-Wheel Motor System", "desc": "80kW peak power, distributed drive for superior handling" },
+                { "title": "Aerodynamics Package", "desc": "High-downforce aero package for stable grip" },
+                { "title": "High Anti-Dive Characteristics", "desc": "Achieves high anti-dive rate, providing excellent aerodynamic platform stability" },
+                { "title": "Custom BMS", "desc": "Distributed architecture custom BMS for efficient battery management" },
+                { "title": "Electronic TVC Algorithm", "desc": "Independently developed torque vectoring control algorithm to enhance cornering performance" }
+            ],
+            "storyTitle": "Racing Story",
+            "story": "E-Future24 is the eleventh-generation electric Formula Student race car we developed over 12 months. From concept design to final testing, the entire team invested over 5,000 hours of work. During the design process, we faced numerous technical challenges, including drivetrain optimization, battery management system improvements, and aerodynamic design. Through countless simulations and tests, we ultimately developed an electric race car with outstanding performance. The most unforgettable moments were during the final testing phase, when all team members took shifts and spent countless sleepless nights in the workshop. This spirit of 'dare to fight, dare to win, strive for excellence' enabled us to achieve excellent results at the Formula Student China competition.",
+            "awards": [
+                { "title": "National First Prize", "year": "2024" },
+                { "title": "Design Presentation Third Place", "year": "2024" }
+            ]
+        },
+        "EF25": {
+            "name": "E-Future25 Technical Specifications",
+            "imageAlt": "EF25 Image",
+            "innovations": [
+                { "title": "High Torsional Stiffness", "desc": "7000+Nm/deg high torsional stiffness for fast vehicle dynamic response" },
+                { "title": "Motor System Layout", "desc": "Four in-wheel motors improve acceleration; separate controllers improve EMC and load distribution" },
+                { "title": "Aerodynamics Package", "desc": "High-downforce aero package for stable grip" },
+                { "title": "High Anti-Dive Characteristics", "desc": "Achieves 35% anti-dive rate, providing excellent aerodynamic platform stability" },
+                { "title": "Custom Battery Management System", "desc": "Distributed architecture custom BMS for efficient battery management" },
+                { "title": "Electronic TVC Algorithm", "desc": "Real-time torque distribution based on load to enhance cornering performance" }
+            ],
+            "storyTitle": "Racing Story",
+            "story": "E-Future24 was the eleventh-generation electric Formula Student race car we developed over 12 months. In Season 23, we designed the team's first-ever four-motor race car, but it dramatically failed just 100 meters before the endurance finish line, unable to complete the race. In Season 24, we quickly passed all static inspections, but due to some design flaws, we couldn't push the car to its true limits before the endurance events, and we encountered unexpected issues during the static presentation. Then came Season 25. EF25, or as we prefer to call it, EF24B \u2014 born out of both budget constraints and the unresolved feelings from the EF24 competition, it was the answer our teammates delivered for their dream EF24. It features a redesigned aerodynamics package, repositioned front suspension, optimized TVC algorithm... every innovation crystallizes the lessons learned by teammates during the Season 24 competition. Through various challenges, our EF-25 raced on the track. EF-25 attracted attention from many rival teams due to its extremely high level of completion. We also gained recognition from judges during the static presentation, advancing to the design finals and securing fourth place, along with the Outstanding Aerodynamics Award. During static inspection, almost all items passed on the first attempt. On the dynamic track, this race car did not disappoint our teammates \u2014 it claimed fifth place in the Autocross event, earned a Top starting position, and ultimately took third place nationwide in the endurance event. At the moment the car crossed the finish line and passed re-inspection, teammates embraced each other, tears streaming down, sharing the hardships of the past year. Our motto thundered from the podium: 'Dare to fight, dare to win, strive for excellence!' Amidst joy and regret, our Season 25 concluded with a National First Prize. The story of Season 25 has drawn to a close; we are gearing up for Season 26!",
+            "awards": [
+                { "title": "National First Prize", "year": "2025" },
+                { "title": "Endurance Third Place", "year": "2025" },
+                { "title": "Matlab & Simulink Modeling Second Prize", "year": "2025" },
+                { "title": "Outstanding Aerodynamics Award", "year": "2025" }
+            ]
+        }
+    }
+}

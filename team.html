@@ -2,44 +2,13 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-	<meta name='description' content='华南理工大学Formax方程式赛车队官方网站-管理团队页面'>
+    <meta name="description" data-i18n-placeholder="teamPage.pageDescription" content="华南理工大学Formax方程式赛车队官方网站-管理团队页面">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>团队成员与指导老师 - Formax方程式赛车队</title>
+    <title data-i18n="teamPage.pageTitle">团队成员与指导老师 - Formax方程式赛车队</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        :root {
-            --primary-color: #e10600;
-            --secondary-color: #000;
-            --accent-color: #fff;
-            --text-color: #333;
-            --light-gray: #f5f5f5;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        /* 英雄区域样式 */
+        /* ===== Page-specific Styles: team.html ===== */
         .sub-hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image/misc/hero.jpg') no-repeat center center/cover;
@@ -49,95 +18,13 @@
             text-align: center;
             position: relative;
         }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .sub-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        
-        /* 部分通用样式 */
-        section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-        
-		/* 悬浮返回按钮样式 */
-		.floating-back-btn {
-		    display: inline-block;
-            margin: 2rem 0;
-            font-weight: bold;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-			position: fixed;
-			top: 20px;
-			left: 19px;
-			background-color: var(--accent-color);
-			color: var(--primary-color);
-			padding: 0.6rem 1rem;
-			border-radius: 5px;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-			z-index: 1000;
-			gap: 0.5rem;
-			transition: all 0.3s ease;
-		}
+        .sub-hero h1 { font-size: 3rem; margin-bottom: 1rem; }
 
-		.floating-back-btn:hover {
-			background-color: var(--primary-color);
-			color: var(--accent-color);
-			transform: translateY(-2px);
-			box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-		}
-
-		/* 响应式调整 */
-		@media (max-width: 768px) {
-			.floating-back-btn {
-				top: 15px;
-				left: 15px;
-				padding: 0.6rem 1.2rem;
-				font-size: 0.9rem;
-			}
-		}
-
-        /* 团队成员样式 */
         .team-members {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 2rem;
         }
-        
         .member {
             background-color: var(--accent-color);
             border-radius: 10px;
@@ -145,596 +32,230 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
-        
-        .member:hover {
-            transform: translateY(-10px);
-        }
-        
-        .member-image {
-            height: 260px;
-            overflow: hidden;
-        }
-        
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .member:hover .member-image img {
-            transform: scale(1.1);
-        }
-        
-        .member-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-        
-        .member-info h3 {
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-        }
-        
-        .member-role {
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        /* 历届人物故事样式 */
-        .stories {
-            background-color: var(--light-gray);
-        }
-        
-        .stories-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
+        .member:hover { transform: translateY(-10px); }
+        .member-image { height: 260px; overflow: hidden; }
+        .member-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .member:hover .member-image img { transform: scale(1.1); }
+        .member-info { padding: 1.5rem; text-align: center; }
+        .member-info h3 { margin-bottom: 0.5rem; color: var(--secondary-color); }
+        .member-role { color: var(--primary-color); font-weight: bold; margin-bottom: 1rem; }
+
+        .stories { background-color: var(--light-gray); }
+        .stories-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .story-card {
             background-color: var(--accent-color);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
-			border-left: 4px solid var(--primary-color);
+            border-left: 4px solid var(--primary-color);
         }
-        
-        .story-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .story-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .story-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .story-card:hover .story-image img {
-            transform: scale(1.05);
-        }
-        
-        .story-content {
-            padding: 1.5rem;
-        }
-        
-        .story-date {
-            color: #777;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .story-content h3 {
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-        }
-        
-        .story-excerpt {
-            margin-bottom: 1.5rem;
-            color: #555;
-        }
-        
-        .read-more {
-            display: inline-block;
-            color: var(--primary-color);
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        
-        .read-more:hover {
-            color: var(--secondary-color);
-        }
-        
-		.btn {
-		    text-align: center;
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-            padding: 0.8rem 1.8rem;
-            border-radius: 30px;
-            text-transform: uppercase;
-            font-weight: bold;
-            transition: all 0.3s;
-			cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-		
-		.story {
-			text-align: center;
-			margin-top: 3rem;
-		}
-		
-		/* 微信公众号二维码模态框样式 */
-		.wechat-btn {
-			position: relative;
-			cursor: pointer;
-		}
+        .story-card:hover { transform: translateY(-5px); }
+        .story-image { height: 200px; overflow: hidden; }
+        .story-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .story-card:hover .story-image img { transform: scale(1.05); }
+        .story-content { padding: 1.5rem; }
+        .story-date { color: #777; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .story-content h3 { margin-bottom: 1rem; color: var(--secondary-color); }
+        .story-excerpt { margin-bottom: 1.5rem; color: #555; }
+        .read-more { display: inline-block; color: var(--primary-color); font-weight: bold; transition: color 0.3s; }
+        .read-more:hover { color: var(--secondary-color); }
+        .story { text-align: center; margin-top: 3rem; }
 
-		.wechat-qr-modal {
-			display: none;
-			position: fixed;
-			z-index: 1000;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, 0.7);
-			align-items: center;
-			justify-content: center;
-		}
-
-		.qr-modal-content {
-			background-color: var(--accent-color);
-			margin: auto;
-			padding: 2rem;
-			border-radius: 10px;
-			width: 90%;
-			max-width: 400px;
-			text-align: center;
-			position: relative;
-			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-			animation: modalFadeIn 0.3s;
-		}
-
-		@keyframes modalFadeIn {
-			from {
-				opacity: 0;
-				transform: translateY(-50px);
-			}
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-
-		.close-modal {
-			position: absolute;
-			top: 15px;
-			right: 15px;
-			font-size: 1.5rem;
-			font-weight: bold;
-			cursor: pointer;
-			color: #999;
-			transition: color 0.3s;
-		}
-
-		.close-modal:hover {
-			color: var(--primary-color);
-		}
-
-		.qr-modal-content h3 {
-			margin-bottom: 0.5rem;
-			color: var(--secondary-color);
-		}
-
-		.qr-modal-content > p {
-			margin-bottom: 1.5rem;
-			color: #666;
-		}
-
-		.qr-code {
-			margin: 1.5rem 0;
-			padding: 1rem;
-			background-color: var(--light-gray);
-			border-radius: 8px;
-			display: inline-block;
-		}
-
-		.qr-code img {
-			width: 200px;
-			height: 200px;
-			display: block;
-		}
-
-		.qr-tip {
-			font-size: 0.9rem;
-			margin-bottom: 1.5rem;
-			color: #888;
-		}
-
-		/* 响应式调整 */
-		@media (max-width: 480px) {
-			.qr-modal-content {
-				padding: 1.5rem;
-			}
-			
-			.qr-code img {
-				width: 180px;
-				height: 180px;
-			}
-		}
-
-        /* 页脚样式 */
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--accent-color);
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .social-links a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            margin: 0 0.5rem;
-            transition: background-color 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--primary-color);
-        }
-        
-        .social-links i {
-            font-size: 1.2rem;
-        }
-        
-        /* 响应式设计 */
         @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background-color: var(--secondary-color);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: left 0.3s;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 1.5rem 0;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-            
-            .sub-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
+            .sub-hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
+    <a href="/" class="floating-back-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span data-i18n="common.back">返回主页</span>
+    </a>
 
-	 <a href="/" class="floating-back-btn">
-			<i class="fas fa-arrow-left"></i>
-			返回主页
-	</a>
-		
-    <!-- 子页面英雄区域 -->
+    <!-- Hero -->
     <section class="sub-hero">
         <div class="hero-content">
-            <h1>团队成员与指导老师</h1>
-            <p>认识Formax方程式赛车队的指导老师团队和核心成员</p>
+            <h1 data-i18n="teamPage.hero.title">团队成员与指导老师</h1>
+            <p data-i18n="teamPage.hero.subtitle">认识Formax方程式赛车队的指导老师团队和核心成员</p>
         </div>
     </section>
-	
-		<!-- 指导老师 -->
-	<section id="advisors" class="advisors">
-		<div class="container">
-			<div class="section-title">
-				<h2>指导老师</h2>
-			</div>
-			<div class="team-members">
-				<div class="member">
-				<a href="https://www2.scut.edu.cn/smae/2016/0728/c21156a302736/page.htm" target="_blank">
-					<div class="member-image">
-						<img src="image/advisor/advisor1.png" alt="指导老师1">
-					</div>
-					<div class="member-info">
-						<h3>李巍华</h3>
-						<div class="member-role">机械与汽车工程学院</div>
-						<p>机械与汽车工程学院院长、教授、博士生导师</p>
-					</div>
-				</a>
-				</div>
-				<div class="member">
-				<a href="https://www2.scut.edu.cn/smae/2018/0523/c21156a302683/page.htm" target="_blank">
-					<div class="member-image">
-						<img src="image/advisor/advisor2.png" alt="指导老师2">
-					</div>
-					<div class="member-info">
-						<h3>何国林</h3>
-						<div class="member-role">机械与汽车工程学院</div>
-						<p>机械与汽车工程学院汽车工程系副教授、博士生导师</p>
-					</div>
-				</a>
-				</div>
-				<div class="member">
-				<a href="https://www2.scut.edu.cn/smae/2016/0728/c21156a302724/page.htm" target="_blank">
-					<div class="member-image">
-						<img src="image/advisor/advisor3.png" alt="指导老师3">
-					</div>
-					<div class="member-info">
-						<h3>丁康</h3>
-						<div class="member-role">机械与汽车工程学院</div>
-						<p>机械与汽车工程学院副院长、教授、博士生导师</p>
-					</div>
-				</a>
-				</div>
-				<div class="member">
-				<a href="https://www2.scut.edu.cn/smae/2016/1031/c21156a302704/page.htm" target="_blank">
-					<div class="member-image">
-						<img src="image/advisor/advisor4.png" alt="指导老师4">
-					</div>
-					<div class="member-info">
-						<h3>杨志坚</h3>
-						<div class="member-role">机械与汽车工程学院</div>
-						<p>机械与汽车工程学院副教授、硕士生导师</p>
-					</div>
-				</a>
-				</div>
-				<div class="member">
-				<a href="https://www2.scut.edu.cn/wusie/2020/0425/c25374a489901/page.htm" target="_blank">
-					<div class="member-image">
-						<img src="image/advisor/advisor5.png" alt="指导老师5">
-					</div>
-					<div class="member-info">
-						<h3>黄智聪</h3>
-						<div class="member-role">吴贤铭智能工程学院</div>
-						<p>吴贤铭智能工程学院副教授、博士生导师</p>
-					</div>
-				</a>
-				</div>
-			</div>
-		</div>
-	</section>
 
-    <!-- 管理团队 -->
-    <section id="team" class="team">
+    <!-- Advisors -->
+    <section id="advisors" class="advisors">
         <div class="container">
-            <div class="section-title">
-                <h2>管理团队</h2>
-            </div>
+            <div class="section-title"><h2 data-i18n="teamPage.advisors.title">指导老师</h2></div>
             <div class="team-members">
                 <div class="member">
-                    <div class="member-image">
-                        <img src="image/member/1.jpg" alt="车队经理">
-                    </div>
+                    <a href="https://www2.scut.edu.cn/smae/2016/0728/c21156a302736/page.htm" target="_blank">
+                        <div class="member-image"><img src="image/advisor/advisor1.png" alt="Li Weihua"></div>
+                        <div class="member-info">
+                            <h3 data-i18n="teamPage.advisors.members.0.name">李巍华</h3>
+                            <div class="member-role" data-i18n="teamPage.advisors.members.0.dept">机械与汽车工程学院</div>
+                            <p data-i18n="teamPage.advisors.members.0.desc">机械与汽车工程学院院长、教授、博士生导师</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="member">
+                    <a href="https://www2.scut.edu.cn/smae/2018/0523/c21156a302683/page.htm" target="_blank">
+                        <div class="member-image"><img src="image/advisor/advisor2.png" alt="He Guolin"></div>
+                        <div class="member-info">
+                            <h3 data-i18n="teamPage.advisors.members.1.name">何国林</h3>
+                            <div class="member-role" data-i18n="teamPage.advisors.members.1.dept">机械与汽车工程学院</div>
+                            <p data-i18n="teamPage.advisors.members.1.desc">机械与汽车工程学院汽车工程系副教授、博士生导师</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="member">
+                    <a href="https://www2.scut.edu.cn/smae/2016/0728/c21156a302724/page.htm" target="_blank">
+                        <div class="member-image"><img src="image/advisor/advisor3.png" alt="Ding Kang"></div>
+                        <div class="member-info">
+                            <h3 data-i18n="teamPage.advisors.members.2.name">丁康</h3>
+                            <div class="member-role" data-i18n="teamPage.advisors.members.2.dept">机械与汽车工程学院</div>
+                            <p data-i18n="teamPage.advisors.members.2.desc">机械与汽车工程学院副院长、教授、博士生导师</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="member">
+                    <a href="https://www2.scut.edu.cn/smae/2016/1031/c21156a302704/page.htm" target="_blank">
+                        <div class="member-image"><img src="image/advisor/advisor4.png" alt="Yang Zhijian"></div>
+                        <div class="member-info">
+                            <h3 data-i18n="teamPage.advisors.members.3.name">杨志坚</h3>
+                            <div class="member-role" data-i18n="teamPage.advisors.members.3.dept">机械与汽车工程学院</div>
+                            <p data-i18n="teamPage.advisors.members.3.desc">机械与汽车工程学院副教授、硕士生导师</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="member">
+                    <a href="https://www2.scut.edu.cn/wusie/2020/0425/c25374a489901/page.htm" target="_blank">
+                        <div class="member-image"><img src="image/advisor/advisor5.png" alt="Huang Zhicong"></div>
+                        <div class="member-info">
+                            <h3 data-i18n="teamPage.advisors.members.4.name">黄智聪</h3>
+                            <div class="member-role" data-i18n="teamPage.advisors.members.4.dept">吴贤铭智能工程学院</div>
+                            <p data-i18n="teamPage.advisors.members.4.desc">吴贤铭智能工程学院副教授、博士生导师</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Management Team -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title"><h2 data-i18n="teamPage.management.title">管理团队</h2></div>
+            <div class="team-members">
+                <div class="member">
+                    <div class="member-image"><img src="image/member/1.jpg" alt="Bao Junjing"></div>
                     <div class="member-info">
-                        <h3>包俊静</h3>
-                        <div class="member-role">车队经理</div>
-                        <p>车队品牌搭建与商业合作</p>
+                        <h3 data-i18n="teamPage.management.members.0.name">包俊静</h3>
+                        <div class="member-role" data-i18n="teamPage.management.members.0.role">车队经理</div>
+                        <p data-i18n="teamPage.management.members.0.desc">车队品牌搭建与商业合作</p>
                     </div>
                 </div>
                 <div class="member">
-                    <div class="member-image">
-                        <img src="image/member/2.jpg" alt="电车队长">
-                    </div>
+                    <div class="member-image"><img src="image/member/2.jpg" alt="Jin Yuchen"></div>
                     <div class="member-info">
-                        <h3>靳雨辰</h3>
-                        <div class="member-role">电车队长</div>
-                        <p>电车团队整体管理与统筹</p>
+                        <h3 data-i18n="teamPage.management.members.1.name">靳雨辰</h3>
+                        <div class="member-role" data-i18n="teamPage.management.members.1.role">电车队长</div>
+                        <p data-i18n="teamPage.management.members.1.desc">电车团队整体管理与统筹</p>
                     </div>
                 </div>
                 <div class="member">
-                    <div class="member-image">
-                        <img src="image/member/3.jpg" alt="无人车队长">
-                    </div>
+                    <div class="member-image"><img src="image/member/3.jpg" alt="Zhao Ziqian"></div>
                     <div class="member-info">
-                        <h3>赵梓谦</h3>
-                        <div class="member-role">无人车队长</div>
-                        <p>无人车团队整体管理与统筹</p>
+                        <h3 data-i18n="teamPage.management.members.2.name">赵梓谦</h3>
+                        <div class="member-role" data-i18n="teamPage.management.members.2.role">无人车队长</div>
+                        <p data-i18n="teamPage.management.members.2.desc">无人车团队整体管理与统筹</p>
                     </div>
                 </div>
                 <div class="member">
-                    <div class="member-image">
-                        <img src="image/member/4.jpg" alt="电车设计总监">
-                    </div>
+                    <div class="member-image"><img src="image/member/4.jpg" alt="Zhao Ruiqi"></div>
                     <div class="member-info">
-                        <h3>赵锐淇</h3>
-                        <div class="member-role">电车技术总监</div>
-                        <p>电车设计技术领导与统筹</p>
+                        <h3 data-i18n="teamPage.management.members.3.name">赵锐淇</h3>
+                        <div class="member-role" data-i18n="teamPage.management.members.3.role">电车技术总监</div>
+                        <p data-i18n="teamPage.management.members.3.desc">电车设计技术领导与统筹</p>
                     </div>
                 </div>
                 <div class="member">
-                    <div class="member-image">
-                        <img src="image/member/5.jpg" alt="无人设计总监">
-                    </div>
+                    <div class="member-image"><img src="image/member/5.jpg" alt="Jiang Junhui"></div>
                     <div class="member-info">
-                        <h3>蒋俊晖</h3>
-                        <div class="member-role">无人设计总监</div>
-                        <p>无人车设计技术领导与统筹</p>
+                        <h3 data-i18n="teamPage.management.members.4.name">蒋俊晖</h3>
+                        <div class="member-role" data-i18n="teamPage.management.members.4.role">无人设计总监</div>
+                        <p data-i18n="teamPage.management.members.4.desc">无人车设计技术领导与统筹</p>
                     </div>
                 </div>
-				<div class="member">
-                    <div class="member-image">
-                        <img src="image/member/6.jpg" alt="行政队长">
-                    </div>
+                <div class="member">
+                    <div class="member-image"><img src="image/member/6.jpg" alt="Huang Hongyu"></div>
                     <div class="member-info">
-                        <h3>黄鸿宇</h3>
-                        <div class="member-role">行政队长</div>
-                        <p>团队资金管理与行政事务</p>
+                        <h3 data-i18n="teamPage.management.members.5.name">黄鸿宇</h3>
+                        <div class="member-role" data-i18n="teamPage.management.members.5.role">行政队长</div>
+                        <p data-i18n="teamPage.management.members.5.desc">团队资金管理与行政事务</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 历届人物故事 -->
+    <!-- Alumni Stories -->
     <section id="stories" class="stories">
         <div class="container">
-            <div class="section-title">
-                <h2>历届人物故事</h2>
+            <div class="section-title"><h2 data-i18n="teamPage.alumni.title">历届人物故事</h2></div>
+            <div class="stories-container">
+                <div class="story-card">
+                    <a href="https://mp.weixin.qq.com/s/1pHtlZsag8JPcznB0-uSzw" class="read-more">
+                        <div class="story-content">
+                            <div class="story-date" data-i18n="teamPage.alumni.stories.0.date">2025年8月6日</div>
+                            <h3 data-i18n="teamPage.alumni.stories.0.title">人物｜巩俊杰——材子车魂，驭梦前行</h3>
+                            <p class="story-excerpt" data-i18n="teamPage.alumni.stories.0.excerpt">他是车身空力组的"焊武帝""单体壳摄影部长"与"碳板杀手"，也是队友心目中《超能陆战队》里的"大白"，《疯狂动物城》里的"闪电"……</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="story-card">
+                    <a href="https://mp.weixin.qq.com/s/uf7LKaFS6c81jvDfAAsn7A" class="read-more">
+                        <div class="story-content">
+                            <div class="story-date" data-i18n="teamPage.alumni.stories.1.date">2025年7月15日</div>
+                            <h3 data-i18n="teamPage.alumni.stories.1.title">人物｜从坚定选择到坚持实现——无人车队长吴嘉豪</h3>
+                            <p class="story-excerpt" data-i18n="teamPage.alumni.stories.1.excerpt">车间凌晨三点的天空他最熟悉，记录着他想要造一台新无人车的梦想，和他从坚定选择到坚持实现的漫漫长路和不眠之夜……</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="story-card">
+                    <a href="https://mp.weixin.qq.com/s/EygEIg199KdC28RBD5GEMQ" class="read-more">
+                        <div class="story-content">
+                            <div class="story-date" data-i18n="teamPage.alumni.stories.2.date">2025年7月13日</div>
+                            <h3 data-i18n="teamPage.alumni.stories.2.title">人物｜逐梦方程式，驭电驰骋——电车队长陈熙潼</h3>
+                            <p class="story-excerpt" data-i18n="teamPage.alumni.stories.2.excerpt">在华南理工大学方程式赛车队的征程中，有这样一位热血青年，他怀揣着对赛车的炽热梦想，从懵懂新生成长为电车队的中流砥柱……</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-				<div class="stories-container">
-					<div class="story-card">
-					<a href="https://mp.weixin.qq.com/s/1pHtlZsag8JPcznB0-uSzw" class="read-more">
-						<div class="story-content">
-							<div class="story-date">2025年8月6日</div>
-							<h3>人物｜巩俊杰——材子车魂，驭梦前行</h3>
-							<p class="story-excerpt">他是车身空力组的“焊武帝”“单体壳摄影部长”与“碳板杀手”，也是队友心目中《超能陆战队》里的“大白”，
-							《疯狂动物城》里的“闪电”……</p>
-							
-						</div>
-					</a>	
-					</div>
-					<div class="story-card">
-					<a href="https://mp.weixin.qq.com/s/uf7LKaFS6c81jvDfAAsn7A" class="read-more">
-						<div class="story-content">
-							<div class="story-date">2025年7月15日</div>
-							<h3>人物｜从坚定选择到坚持实现——无人车队长吴嘉豪</h3>
-							<p class="story-excerpt">车间凌晨三点的天空他最熟悉，记录着他想要造一台新无人车的梦想，和他从坚定选择到坚持实现的漫漫长路和不眠之夜……</p>
-						</div>
-					</a>
-					</div>
-					<div class="story-card">
-					<a href="https://mp.weixin.qq.com/s/EygEIg199KdC28RBD5GEMQ" class="read-more">
-						<div class="story-content">
-							<div class="story-date">2025年7月13日</div>
-							<h3>人物｜逐梦方程式，驭电驰骋——电车队长陈熙潼</h3>
-							<p class="story-excerpt">在华南理工大学方程式赛车队的征程中，有这样一位热血青年，他怀揣着对赛车的炽热梦想，从懵懂新生成长为电车队的中流砥柱……</p>
-						</div>
-					</a>
-					</div>	
-				</div>
-			<div class="story">
-			<div class="wechat-qr-modal" id="wechatQrModal">
-				<div class="qr-modal-content">
-					<span class="close-modal">&times;</span>
-					<h3>关注我们的微信公众号</h3>
-					<p>扫描二维码查看更多车队故事</p>
-					<div class="qr-code">
-						<img src="image/misc/wechat_QRcode.png" alt="Formax车队微信公众号二维码">
-					</div>
-					<p class="qr-tip">打开微信扫一扫，关注我们</p>
-					</a>
-				</div>
-			</div>
-			<div class="btn" id="showWechatQr">
-				关注更多故事
-			</div>
-			</div>
-		</div>
+            <div class="story">
+                <button class="btn wechat-btn" id="showWechatQr">
+                    <span data-i18n="teamPage.alumni.viewMore">查看更多故事</span> <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="wechat-qr-modal" id="wechatQrModal">
+                    <div class="qr-modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3 data-i18n="teamPage.alumni.wechatTitle">关注我们的微信公众号</h3>
+                        <p data-i18n="teamPage.alumni.wechatDesc">扫描二维码查看更多车队故事</p>
+                        <div class="qr-code"><img src="image/misc/wechat_QRcode.png" alt="Formax车队微信公众号二维码" data-i18n-alt="common.wechatQR"></div>
+                        <p class="qr-tip" data-i18n="teamPage.alumni.wechatTip">打开微信扫一扫，关注我们</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- 页脚 -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://weibo.com/u/7822135530" target="_blank"><i class="fab fa-weibo"></i></a>
-                <a href="https://mp.weixin.qq.com/s/4kNCS-z1ISjhzN9l_gPppA" target="_blank"><i class="fab fa-weixin"></i></a>
-                <a href="https://www.douyin.com/user/MS4wLjABAAAASI_A4qRxl4_qRsqXSEQ-MmYTEQxgWa0QbR-hhTGfYvo" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click" target="_blank"><i class="fab fa-bilibili"></i></a>
-            </div>
-            <p>&copy; 2009-2026 Formax方程式赛车队. 保留所有解释权利.</p>
-        </div>
-    </footer>
-
-    <script>       
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // 关闭移动端菜单
-                    if(navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                    }
-                }
-            });
-        });
-		// 微信公众号二维码模态框功能
-		document.addEventListener('DOMContentLoaded', function() {
-			const showQrBtn = document.getElementById('showWechatQr');
-			const qrModal = document.getElementById('wechatQrModal');
-			const closeModal = document.querySelector('.close-modal');
-			
-			if (showQrBtn && qrModal) {
-				// 显示模态框
-				showQrBtn.addEventListener('click', function() {
-					qrModal.style.display = 'flex';
-					document.body.style.overflow = 'hidden'; // 防止背景滚动
-				});
-				
-				// 关闭模态框
-				closeModal.addEventListener('click', function() {
-					qrModal.style.display = 'none';
-					document.body.style.overflow = 'auto';
-				});
-				
-				// 点击模态框背景关闭
-				qrModal.addEventListener('click', function(e) {
-					if (e.target === qrModal) {
-						qrModal.style.display = 'none';
-						document.body.style.overflow = 'auto';
-					}
-				});
-				
-				// 按ESC键关闭模态框
-				document.addEventListener('keydown', function(e) {
-					if (e.key === 'Escape' && qrModal.style.display === 'flex') {
-						qrModal.style.display = 'none';
-						document.body.style.overflow = 'auto';
-					}
-				});
-			}
-		});
-		
+    <script src="js/components.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
+    <script>
+        (function() {
+            'use strict';
+            Components.injectAll(false);
+            I18n.init().then(function() { I18n.translatePage(); });
+        })();
     </script>
 </body>
 </html>

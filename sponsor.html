@@ -3,42 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name='description' content='华南理工大学方程式赛车队-成为我们的合作伙伴'>
-    <title>成为合作伙伴 - Formax方程式赛车队</title>
+    <meta name="description" data-i18n-placeholder="sponsorPage.pageDescription" content="华南理工大学方程式赛车队-成为我们的合作伙伴">
+    <title data-i18n="sponsorPage.pageTitle">成为合作伙伴 - Formax方程式赛车队</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        :root {
-            --primary-color: #e10600;
-            --secondary-color: #000;
-            --accent-color: #fff;
-            --text-color: #333;
-            --light-gray: #f5f5f5;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-		
-        /* 英雄区域样式 */
+        /* ===== Page-specific Styles: sponsor.html ===== */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image/sponsor/hero.jpg') no-repeat center center/cover;
@@ -48,73 +18,9 @@
             text-align: center;
             margin-top: 0;
         }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-            padding: 0.8rem 1.8rem;
-            border-radius: 30px;
-            text-transform: uppercase;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        /* 部分通用样式 */
-        section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-        
-        /* 九宫格样式 */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-        
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+
+        .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
         .benefit-card {
             background-color: var(--accent-color);
             border-radius: 10px;
@@ -129,83 +35,20 @@
             position: relative;
             overflow: hidden;
         }
-        
-        .benefit-card h2 {
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-            transition: all 0.3s;
-        }
-        
-        .benefit-card p {
-            color: #666;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            padding: 0 1.5rem;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .benefit-card:hover h2 {
-            transform: translateY(-40px);
-        }
-        
-        .benefit-card:hover p {
-            opacity: 1;
-            transform: translateY(-50%);
-        }
-        
-		/* 社媒平台样式 */
-		.social-platforms {
-			background-color: var(--light-gray);
-		}
+        .benefit-card h2 { margin-bottom: 1rem; color: var(--secondary-color); transition: all 0.3s; }
+        .benefit-card p { color: #666; opacity: 0; transform: translateY(20px); transition: all 0.3s; position: absolute; top: 50%; left: 0; right: 0; padding: 0 1.5rem; }
+        .benefit-card:hover { transform: translateY(-10px); }
+        .benefit-card:hover h2 { transform: translateY(-40px); }
+        .benefit-card:hover p { opacity: 1; transform: translateY(-50%); }
 
-		.platforms-container {
-			display: flex;
-			justify-content: center;
-			gap: 5rem;
-			flex-wrap: wrap;
-		}
+        .social-platforms { background-color: var(--light-gray); }
+        .platforms-container { display: flex; justify-content: center; gap: 5rem; flex-wrap: wrap; }
+        .platform { text-align: center; width: 200px; }
+        .platform-icon { width: 120px; height: 120px; margin: 0 auto 1rem; transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
+        .platform-icon img { width: 100%; height: auto; transition: all 0.3s; }
+        .platform:hover .platform-icon img { transform: scale(1.1); }
 
-		.platform {
-			text-align: center;
-			width: 200px;
-		}
-
-		.platform-icon {
-			width: 120px;
-			height: 120px;
-			margin: 0 auto 1rem;
-			transition: all 0.3s;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.platform-icon img {
-			width: 100%;
-			height: auto;
-			transition: all 0.3s;
-		}
-
-		.platform:hover .platform-icon img {
-			transform: scale(1.1);
-		}
-        
-        /* 赞助商级别样式 */
-        .sponsorship-levels {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-        
+        .sponsorship-levels { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
         .level-card {
             background-color: var(--accent-color);
             border-radius: 10px;
@@ -217,545 +60,240 @@
             max-width: 280px;
             transition: all 0.3s;
         }
-        
-        .level-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .level-title {
-            border-top: 4px solid #ffd700;
-        }
-		
-		.level-diamond {
-            border-top: 4px solid #b9f2ff;
-        }
-        
-        .level-gold {
-            border-top: 4px solid #ffd700;
-        }
-        
-        .level-silver {
-            border-top: 4px solid #c0c0c0;
-        }
-        
-        .level-angel {
-            border-top: 4px solid #ff69b4;
-        }
-        
-        .level-friendship {
-            border-top: 4px solid #90ee90;
-        }
-		
-		.download-section {
-			text-align: center;
-			margin-top: 3rem;
-			padding-top: 2rem;
-			border-top: 1px solid #eee;
-		}
-        
-        /* 联系内容样式 */
-        .contact-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 2rem;
-        }
-        
-        .info-item i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-right: 1rem;
-            min-width: 30px;
-            text-align: center;
-            margin-top: 0.3rem;
-        }
-        
-        .info-content h3 {
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-        }
-        
-        /* 表单样式 */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        select.form-control {
-            padding: 0.8rem;
-            background-color: white;
-        }
-        
-        /* 文件上传样式 */
-        input[type="file"] {
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            width: 100%;
-        }
-        
-        input[type="file"]::file-selector-button {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 5px;
-            margin-right: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        input[type="file"]::file-selector-button:hover {
-            background-color: #c10000;
-        }
-        
-        small {
-            display: block;
-            margin-top: 0.5rem;
-            color: #666;
-            font-size: 0.8rem;
-        }
-        
-        /* 消息提示样式 */
-        #form-message {
-            display: none;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border-radius: 5px;
-            text-align: center;
-        }
-        
-        /* 图片样式 */
-        .image-container {
-		    flex: 1;
-            margin-top: 3rem;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .image-container img {
-            width: 100%;
-			height: auto;
-            display: block;
-            transition: transform 0.5s;
-        }
-		
-		.image-container:hover img {
-            transform: scale(1.05);
-        }
-        
-        /* 页脚样式 */
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--accent-color);
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .social-links a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            margin: 0 0.5rem;
-            transition: background-color 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--primary-color);
-        }
-        
-        .social-links i {
-            font-size: 1.2rem;
-        }
-        
-        /* 响应式设计 */
+        .level-card:hover { transform: translateY(-10px); }
+        .level-diamond { border-top: 4px solid #b9f2ff; }
+        .level-gold { border-top: 4px solid #ffd700; }
+        .level-silver { border-top: 4px solid #c0c0c0; }
+        .level-angel { border-top: 4px solid #ff69b4; }
+        .level-friendship { border-top: 4px solid #90ee90; }
+
+        .download-section { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; }
+
+        .image-container { margin-top: 3rem; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .image-container img { width: 100%; height: auto; display: block; transition: transform 0.5s; }
+        .image-container:hover img { transform: scale(1.05); }
+
         @media (max-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background-color: var(--secondary-color);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: left 0.3s;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 1.5rem 0;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 2.5rem; }
         }
-        
         @media (max-width: 576px) {
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .platforms-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .sponsorship-levels {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .level-card {
-                width: 100%;
-            }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .platforms-container { flex-direction: column; align-items: center; }
+            .sponsorship-levels { flex-direction: column; align-items: center; }
+            .level-card { width: 100%; }
         }
     </style>
 </head>
 <body>
-		
-    <!-- 英雄区域 -->
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <h1>成为我们的合作伙伴</h1>
-            <p>加入我们，共同推动大学生方程式赛车事业的发展</p>
+            <h1 data-i18n="sponsorPage.hero.title">成为我们的合作伙伴</h1>
+            <p data-i18n="sponsorPage.hero.subtitle">加入我们，共同推动大学生方程式赛车事业的发展</p>
         </div>
     </section>
 
-    <!-- 为什么成为赞助商 -->
+    <!-- Why Sponsor -->
     <section class="benefits">
         <div class="container">
-            <div class="section-title">
-                <h2>为什么成为我们的合作伙伴？</h2>
-            </div>
+            <div class="section-title"><h2 data-i18n="sponsorPage.benefits.title">为什么成为我们的合作伙伴？</h2></div>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <h2>品牌曝光</h2>
-                    <p>通过赛事、媒体报道和校园活动，让您的品牌获得广泛曝光。</p>
+                    <h2 data-i18n="sponsorPage.benefits.cards.0.title">品牌曝光</h2>
+                    <p data-i18n="sponsorPage.benefits.cards.0.desc">通过赛事、媒体报道和校园活动，让您的品牌获得广泛曝光。</p>
                 </div>
                 <div class="benefit-card">
-                    <h2>人才培养</h2>
-                    <p>直接接触顶尖工程人才，为您的事业培养未来领袖和创新者。</p>
+                    <h2 data-i18n="sponsorPage.benefits.cards.1.title">人才培养</h2>
+                    <p data-i18n="sponsorPage.benefits.cards.1.desc">直接接触顶尖工程人才，为您的事业培养未来领袖和创新者。</p>
                 </div>
                 <div class="benefit-card">
-                    <h2>社会责任</h2>
-                    <p>展示您对教育和技术创新的支持，提升您的社会形象。</p>
+                    <h2 data-i18n="sponsorPage.benefits.cards.2.title">社会责任</h2>
+                    <p data-i18n="sponsorPage.benefits.cards.2.desc">展示您对教育和技术创新的支持，提升您的社会形象。</p>
                 </div>
                 <div class="benefit-card">
-                    <h2>技术合作</h2>
-                    <p>与我们的技术团队合作，共同开发创新解决方案，测试新产品和技术。</p>
+                    <h2 data-i18n="sponsorPage.benefits.cards.3.title">技术合作</h2>
+                    <p data-i18n="sponsorPage.benefits.cards.3.desc">与我们的技术团队合作，共同开发创新解决方案，测试新产品和技术。</p>
                 </div>
                 <div class="benefit-card">
-                    <h2>网络拓展</h2>
-                    <p>加入我们的合作网络，与其他行业领导者建立有价值的联系。</p>
+                    <h2 data-i18n="sponsorPage.benefits.cards.4.title">网络拓展</h2>
+                    <p data-i18n="sponsorPage.benefits.cards.4.desc">加入我们的合作网络，与其他行业领导者建立有价值的联系。</p>
                 </div>
                 <div class="benefit-card">
-                    <h2>宣传机会</h2>
-                    <p>利用我们的社媒平台进行宣传，接触对技术和创新感兴趣的高校人群。</p>
+                    <h2 data-i18n="sponsorPage.benefits.cards.5.title">宣传机会</h2>
+                    <p data-i18n="sponsorPage.benefits.cards.5.desc">利用我们的社媒平台进行宣传，接触对技术和创新感兴趣的高校人群。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 社媒平台 -->
+    <!-- Social Platforms -->
     <section class="social-platforms">
         <div class="container">
-            <div class="section-title">
-                <h2>我们的社媒平台</h2>
-            </div>
+            <div class="section-title"><h2 data-i18n="sponsorPage.socialPlatforms.title">我们的社媒平台</h2></div>
             <div class="platforms-container">
                 <div class="platform">
-				<a href="https://www.douyin.com/user/MS4wLjABAAAASI_A4qRxl4_qRsqXSEQ-MmYTEQxgWa0QbR-hhTGfYvo" target="_blank">
-                    <div class="platform-icon">
-                        <img src="image/social/douyin.png" alt="抖音">
-                    </div>
-                    <h2>抖音</h2>
-                    <h3>@Formax方程式赛车队</h3>
-				</a>
+                    <a href="https://www.douyin.com/user/MS4wLjABAAAASI_A4qRxl4_qRsqXSEQ-MmYTEQxgWa0QbR-hhTGfYvo" target="_blank">
+                        <div class="platform-icon"><img src="image/social/douyin.png" alt="Douyin"></div>
+                        <h2 data-i18n="sponsorPage.socialPlatforms.douyin">抖音</h2>
+                        <h3 data-i18n="sponsorPage.socialPlatforms.douyinHandle">@Formax方程式赛车队</h3>
+                    </a>
                 </div>
                 <div class="platform">
-				<a href="https://mp.weixin.qq.com/s/4kNCS-z1ISjhzN9l_gPppA" target="_blank">
-                    <div class="platform-icon">
-                        <img src="image/social/wechat.webp" alt="微信">
-                    </div>
-                    <h2>微信公众号</h2>
-                    <h3>Formax方程式赛车队</h3>
-				</a>
+                    <a href="https://mp.weixin.qq.com/s/4kNCS-z1ISjhzN9l_gPppA" target="_blank">
+                        <div class="platform-icon"><img src="image/social/wechat.webp" alt="WeChat"></div>
+                        <h2 data-i18n="sponsorPage.socialPlatforms.wechat">微信公众号</h2>
+                        <h3 data-i18n="sponsorPage.socialPlatforms.wechatHandle">Formax方程式赛车队</h3>
+                    </a>
                 </div>
                 <div class="platform">
-				<a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click" target="_blank">
-                    <div class="platform-icon">
-                        <img src="image/social/bilibili.png" alt="B站">
-                    </div>
-                    <h2>Bilibili</h2>
-                    <h3>Formax方程式赛车队</h3>
-				</a>
+                    <a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click" target="_blank">
+                        <div class="platform-icon"><img src="image/social/bilibili.png" alt="Bilibili"></div>
+                        <h2 data-i18n="sponsorPage.socialPlatforms.bilibili">Bilibili</h2>
+                        <h3 data-i18n="sponsorPage.socialPlatforms.bilibiliHandle">Formax方程式赛车队</h3>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 赞助商级别 -->
+    <!-- Sponsorship Levels -->
     <section class="sponsorship">
         <div class="container">
-            <div class="section-title">
-                <h2>合作伙伴级别</h2>
-            </div>
+            <div class="section-title"><h2 data-i18n="sponsorPage.levels.title">合作伙伴级别</h2></div>
             <div class="sponsorship-levels">
-			    <div class="level-card level-diamond">
-                    <h3>冠名合作</h3>
-                </div>
-                <div class="level-card level-diamond">
-                    <h3>钻石级</h3>
-                </div>
-                <div class="level-card level-gold">
-                    <h3>黄金级</h3>
-                </div>
-                <div class="level-card level-silver">
-                    <h3>白银级</h3>
-                </div>
-                <div class="level-card level-angel">
-                    <h3>天使级</h3>
-                </div>
-                <div class="level-card level-friendship">
-                    <h3>友情合作</h3>
-                </div>
+                <div class="level-card level-diamond"><h3 data-i18n="sponsorPage.levels.titleSponsor">冠名合作</h3></div>
+                <div class="level-card level-diamond"><h3 data-i18n="sponsorPage.levels.diamond">钻石级</h3></div>
+                <div class="level-card level-gold"><h3 data-i18n="sponsorPage.levels.gold">黄金级</h3></div>
+                <div class="level-card level-silver"><h3 data-i18n="sponsorPage.levels.silver">白银级</h3></div>
+                <div class="level-card level-angel"><h3 data-i18n="sponsorPage.levels.angel">天使级</h3></div>
+                <div class="level-card level-friendship"><h3 data-i18n="sponsorPage.levels.friendship">友情合作</h3></div>
             </div>
-			<div class="download-section">
-			<a href="docs/sponsor/detail.pdf" target="_blank" class="btn">下载详情文件</a>
-			</div>
+            <div class="download-section">
+                <a href="docs/sponsor/detail.pdf" target="_blank" class="btn" data-i18n="common.downloadPDF">下载详情文件</a>
+            </div>
         </div>
     </section>
 
-    <!-- 联系我们 -->
+    <!-- Contact -->
     <section class="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>准备好与我们深入交流了吗</h2>
-            </div>
-            
+            <div class="section-title"><h2 data-i18n="sponsorPage.contact.title">准备好与我们深入交流了吗</h2></div>
             <div id="form-message"></div>
-            
             <div class="contact-content">
-                <div class="contact-info">
-                    
+                <div class="contact-info-col">
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div class="info-content">
-                            <h3>地址</h3>
-                            <p>广东省广州市天河区华南理工大学（五山校区）汽车科技大楼1楼</p>
+                            <h3 data-i18n="sponsorPage.contact.address">地址</h3>
+                            <p data-i18n="sponsorPage.contact.addressValue">广东省广州市天河区华南理工大学（五山校区）汽车科技大楼1楼</p>
                         </div>
                     </div>
-                    
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
                         <div class="info-content">
-                            <h3>邮箱</h3>
+                            <h3 data-i18n="sponsorPage.contact.email">邮箱</h3>
                             <p>formax@scutracing.com</p>
                         </div>
                     </div>
-                    
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
                         <div class="info-content">
-                            <h3>电话</h3>
+                            <h3 data-i18n="sponsorPage.contact.phone">电话</h3>
                             <p>+86 195 0206 0130</p>
                         </div>
                     </div>
-                    
                     <div class="info-item">
                         <i class="fas fa-clock"></i>
                         <div class="info-content">
-                            <h3>工作时间</h3>
-                            <p>周一至周五: 9:00 - 17:00</p>
+                            <h3 data-i18n="sponsorPage.contact.hours">工作时间</h3>
+                            <p data-i18n="sponsorPage.contact.hoursValue">周一至周五: 9:00 - 17:00</p>
                         </div>
                     </div>
-                    
-                    <div class="image-container">
-                        <img src="image/hero/hero-slide-1.webp" alt="EF24">
-                    </div>
+                    <div class="image-container"><img src="image/hero/hero-slide-1.webp" alt="EF24"></div>
                 </div>
-                
-                <div class="contact-form">
+                <div class="contact-form-col">
                     <form action="https://formsubmit.co/9f76dba6857b1261fc76ea1c7c3ffeb2" method="POST" enctype="multipart/form-data" id="contact-form">
                         <input type="hidden" name="_subject" value="Formax车队 - 新联系表单提交">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
-						<input type="hidden" name="_cc" value="formax@scutracing.com,youkairen@scutracing.com">
+                        <input type="hidden" name="_cc" value="formax@scutracing.com,youkairen@scutracing.com">
                         <input type="hidden" name="_next" value="https://scutracing.top/thankyou.html">
                         <div class="form-group">
-                            <label for="name">姓名 *</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                            <label for="name" data-i18n="sponsorPage.form.nameRequired">姓名 *</label>
+                            <input type="text" id="name" name="name" class="form-control" required data-i18n-placeholder="sponsorPage.form.name">
                         </div>
-                        
                         <div class="form-group">
-                            <label for="email">邮箱 *</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <label for="email" data-i18n="sponsorPage.form.emailRequired">邮箱 *</label>
+                            <input type="email" id="email" name="email" class="form-control" required data-i18n-placeholder="sponsorPage.form.email">
                         </div>
-                        
                         <div class="form-group">
-                            <label for="company">公司/组织名称</label>
-                            <input type="text" id="company" name="company" class="form-control">
+                            <label for="company" data-i18n="sponsorPage.form.company">公司/组织名称</label>
+                            <input type="text" id="company" name="company" class="form-control" data-i18n-placeholder="sponsorPage.form.company">
                         </div>
-                        
                         <div class="form-group">
-                            <label for="interest">咨询类型</label>
+                            <label for="interest" data-i18n="sponsorPage.form.interest">咨询类型</label>
                             <select id="interest" name="interest" class="form-control">
-                                <option value="">请选择</option>
-                                <option value="赞助合作">赞助合作</option>
-                                <option value="媒体咨询">媒体咨询</option>
-                                <option value="技术支持">技术支持</option>
-                                <option value="其他">其他</option>
+                                <option value="" data-i18n="sponsorPage.form.interestPlaceholder">请选择</option>
+                                <option value="赞助合作" data-i18n="sponsorPage.form.interestSponsor">赞助合作</option>
+                                <option value="媒体咨询" data-i18n="sponsorPage.form.interestMedia">媒体咨询</option>
+                                <option value="技术支持" data-i18n="sponsorPage.form.interestTech">技术支持</option>
+                                <option value="其他" data-i18n="sponsorPage.form.interestOther">其他</option>
                             </select>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="message">您的消息 *</label>
-                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                            <label for="message" data-i18n="sponsorPage.form.messageRequired">您的消息 *</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required data-i18n-placeholder="sponsorPage.form.message"></textarea>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="attachment">相关文件（可选）</label>
+                            <label for="attachment" data-i18n="sponsorPage.form.attachment">相关文件（可选）</label>
                             <input type="file" id="attachment" name="attachment" class="form-control">
-                            <small>支持格式: PDF, DOC, DOCX, JPG, PNG (最大10MB)</small>
+                            <small class="form-hint" data-i18n="sponsorPage.form.fileSupport">支持格式: PDF, DOC, DOCX, JPG, PNG (最大10MB)</small>
                         </div>
-                        
-                        <button type="submit" class="btn">发送消息</button>
+                        <button type="submit" class="btn" data-i18n="sponsorPage.form.submit">发送消息</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://weibo.com/u/7822135530" target="_blank"><i class="fab fa-weibo"></i></a>
-                <a href="https://mp.weixin.qq.com/s/4kNCS-z1ISjhzN9l_gPppA" target="_blank"><i class="fab fa-weixin"></i></a>
-                <a href="https://www.douyin.com/user/MS4wLjABAAAASI_A4qRxl4_qRsqXSEQ-MmYTEQxgWa0QbR-hhTGfYvo" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click" target="_blank"><i class="fab fa-bilibili"></i></a>
-            </div>
-			<p>&copy; 2009-2025 Formax方程式赛车队. 保留所有解释权利.</p>
-        </div>
-    </footer>
-
+    <script src="js/components.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
     <script>
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                }
-            });
-        });
-		
-		// 表单提交处理
-        const contactForm = document.getElementById('contact-form');
-        if(contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                const formMessage = document.getElementById('form-message');
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                
-        // 显示加载状态
-        submitBtn.textContent = '发送中...';
-        submitBtn.disabled = true;
-                
-        // 隐藏之前的消息
-        if(formMessage) {
-            formMessage.style.display = 'none';
-        }
-                
-        // 表单验证
-        const fileInput = this.querySelector('input[type="file"]');
-		if(fileInput && fileInput.files.length > 0) {
-			const fileSize = fileInput.files[0].size / 1024 / 1024; // MB
-			if(fileSize > 10) {
-				e.preventDefault();
-				if(formMessage) {
-					formMessage.textContent = '文件大小不能超过10MB';
-					formMessage.style.backgroundColor = '#ffebee';
-					formMessage.style.color = '#c62828';
-					formMessage.style.display = 'block';
-				}
-				submitBtn.textContent = originalText;
-				submitBtn.disabled = false;
-				return;
-			}
-		}
+        (function() {
+            'use strict';
+            Components.injectAll(false);
+            I18n.init().then(function() { I18n.translatePage(); });
+
+            var contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    var formMessage = document.getElementById('form-message');
+                    var submitBtn = this.querySelector('button[type="submit"]');
+                    var originalText = submitBtn.textContent;
+                    submitBtn.textContent = I18n.t('common.sending');
+                    submitBtn.disabled = true;
+                    if (formMessage) formMessage.style.display = 'none';
+                    var fileInput = this.querySelector('input[type="file"]');
+                    if (fileInput && fileInput.files.length > 0) {
+                        var fileSize = fileInput.files[0].size / 1024 / 1024;
+                        if (fileSize > 10) {
+                            e.preventDefault();
+                            if (formMessage) {
+                                formMessage.textContent = I18n.t('common.fileTooLarge');
+                                formMessage.style.backgroundColor = '#ffebee';
+                                formMessage.style.color = '#c62828';
+                                formMessage.style.display = 'block';
+                            }
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                            return;
+                        }
+                    }
+                });
+            }
+        })();
     </script>
 </body>
 </html>

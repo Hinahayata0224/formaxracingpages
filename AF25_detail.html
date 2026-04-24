@@ -3,387 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name='description' content='华南理工大学Formax方程式赛车队-无人车介绍'>
-    <title>A-Future25赛车详情 - Formax方程式赛车队</title>
+    <meta name="description" content="华南理工大学Formax方程式赛车队-无人车介绍">
+    <title>A-Future25 Racing Car Details - Formax Racing Team</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        /* 与主页面相同 */
-        :root {
-            --primary-color: #e10600;
-            --secondary-color: #000;
-            --accent-color: #fff;
-            --text-color: #333;
-            --light-gray: #f5f5f5;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        /* 返回按钮 */
-        .back-button {
-            display: inline-block;
-            margin: 2rem 0;
-            color: var(--primary-color);
-            font-weight: bold;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .back-button i {
-            margin-right: 0.5rem;
-            transition: transform 0.3s;
-        }
-        
-        .back-button:hover i {
-            transform: translateX(-5px);
-        }
-        
-        /* 车辆详情顶部区域 */
-        .car-detail-header {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        
-        .car-detail-image {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .car-detail-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .car-detail-specs {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .car-detail-specs h2 {
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .spec-item {
-            background-color: var(--light-gray);
-            padding: 0.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .spec-value {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .spec-label {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        /* 技术创新亮点 */
-        .innovation-section {
-            margin: 4rem 0;
-        }
-        
-        .innovation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .innovation-card {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            height: 250px;
-        }
-        
-        .innovation-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .innovation-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            padding: 1.5rem;
-            color: var(--accent-color);
-            transform: translateY(100%);
-            transition: transform 0.3s;
-        }
-        
-        .innovation-card:hover .innovation-overlay {
-            transform: translateY(0);
-        }
-        
-        .innovation-card:hover .innovation-image {
-            transform: scale(1.05);
-        }
-        
-        .innovation-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* 赛车故事部分 */
-        .story-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 4rem 0;
-            align-items: center;
-        }
-        
-        .story-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .story-image {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .story-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-		/* 获得奖项部分 */
-		.awards-section {
-			position: relative;
-			padding: 4rem 0;
-			margin: 0;
-			z-index: 1;
-		}
-
-		.awards-section::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background-color: var(--light-gray);
-			z-index: -1;
-			width: 100vw;
-			margin-left: calc(-50vw + 50%);
-		}
-
-		.awards-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			gap: 2rem;
-		}
-
-		.award-card {
-			background-color: var(--accent-color);
-			padding: 2rem;
-			border-radius: 10px;
-			text-align: center;
-			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-		}
-
-		.award-icon {
-			font-size: 2.5rem;
-			color: var(--primary-color);
-			margin-bottom: 1rem;
-		}
-
-		.award-title {
-			font-size: 1.2rem;
-			margin-bottom: 0.5rem;
-			color: var(--secondary-color);
-		}
-
-		.award-year {
-			color: #666;
-			font-size: 0.9rem;
-		}
-        
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .specs-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .innovation-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-		
-		/* 页脚样式 */
-		footer {
-			background-color: var(--secondary-color);
-			color: var(--accent-color);
-			padding: 3rem 0;
-			text-align: center;
-			margin-top: 0;
-		}
-
-		.social-links {
-			display: flex;
-			justify-content: center;
-			margin-bottom: 1.5rem;
-		}
-
-		.social-links a {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 40px;
-			height: 40px;
-			border-radius: 50%;
-			background-color: rgba(255, 255, 255, 1);
-			margin: 0 0.5rem;
-			transition: background-color 0.3s;
-		}
-
-		.social-links a:hover {
-			background-color: var(--primary-color);
-		}
-
-		.social-links i {
-			font-size: 1.2rem;
-		}
-		
+        .car-detail-header { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem; }
+        .car-detail-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .car-detail-image img { width: 100%; height: auto; display: block; }
+        .car-detail-specs { flex: 1; min-width: 300px; }
+        .car-detail-specs h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--secondary-color); position: relative; padding-bottom: 1rem; }
+        .car-detail-specs h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: var(--primary-color); }
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1.5rem; }
+        .spec-item { background-color: var(--light-gray); border-radius: 10px; padding: 1.5rem; text-align: center; transition: transform 0.3s; }
+        .spec-item:hover { transform: translateY(-3px); }
+        .spec-value { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .spec-label { color: #666; font-size: 0.9rem; }
+        .innovation-section { margin-bottom: 4rem; }
+        .innovation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .innovation-card { position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); cursor: pointer; }
+        .innovation-image { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.5s; }
+        .innovation-card:hover .innovation-image { transform: scale(1.1); }
+        .innovation-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); color: var(--accent-color); padding: 1.5rem; transform: translateY(60%); transition: transform 0.3s; }
+        .innovation-card:hover .innovation-overlay { transform: translateY(0); }
+        .innovation-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .innovation-overlay p { font-size: 0.9rem; opacity: 0.9; }
+        .story-section { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem; }
+        .story-section .story-content { flex: 1; min-width: 300px; }
+        .story-section .story-content h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--secondary-color); }
+        .story-section .story-content p { margin-bottom: 1rem; line-height: 1.8; }
+        .story-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+        .story-image img { width: 100%; height: 100%; object-fit: cover; }
+        .awards-section { margin-bottom: 4rem; }
+        .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .award-card { background-color: var(--accent-color); border-radius: 10px; padding: 2rem; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+        .award-card:hover { transform: translateY(-5px); }
+        .award-icon { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .award-title { font-size: 1.2rem; font-weight: bold; color: var(--secondary-color); margin-bottom: 0.5rem; }
+        .award-year { color: #777; }
+        @media (max-width: 768px) { .car-detail-header { flex-direction: column; } }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 返回按钮 -->
-        <a href="/" class="back-button">
-            <i class="fas fa-arrow-left"></i> 返回主页
-        </a>
-        
-        <!-- 车辆详情顶部区域 -->
+        <a href="/" class="back-button"><i class="fas fa-arrow-left"></i> <span data-i18n="detail.common.back">返回主页</span></a>
+
         <section class="car-detail-header">
-            <div class="car-detail-image">
-                <img src="image/vehicle/AF25_detail.png" alt="AF25大图">
-            </div>
-            
+            <div class="car-detail-image"><img src="image/vehicle/AF25_detail.png" alt="AF25"></div>
             <div class="car-detail-specs">
                 <h2>A-Future25 技术规格</h2>
                 <div class="specs-grid">
-                    <div class="spec-item">
-                        <div class="spec-value">245kg</div>
-                        <div class="spec-label">整备质量</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-value">40:60</div>
-                        <div class="spec-label">前后轴荷比</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-value">1600mm</div>
-                        <div class="spec-label">整车轴距</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-value">62.19kW</div>
-                        <div class="spec-label">峰值功率</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-value">2.80</div>
-                        <div class="spec-label">升阻比</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-value">INS570D</div>
-                        <div class="spec-label">惯性导航</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-value">HeSAI AT128P</div>
-                        <div class="spec-label">激光雷达</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-value">SUA630C三目</div>
-                        <div class="spec-label">相机</div>
-                    </div>
+                    <div class="spec-item"><div class="spec-value">245kg</div><div class="spec-label" data-i18n="detail.common.curbWeight">整备质量</div></div>
+                    <div class="spec-item"><div class="spec-value">40:60</div><div class="spec-label" data-i18n="detail.common.weightDist">前后轴荷比</div></div>
+                    <div class="spec-item"><div class="spec-value">1600mm</div><div class="spec-label" data-i18n="detail.common.wheelbase">整车轴距</div></div>
+                    <div class="spec-item"><div class="spec-value">62.19kW</div><div class="spec-label" data-i18n="detail.common.peakPower">峰值功率</div></div>
+                    <div class="spec-item"><div class="spec-value">2.80</div><div class="spec-label" data-i18n="detail.common.liftDragRatio">升阻比</div></div>
+                    <div class="spec-item"><div class="spec-value">INS570D</div><div class="spec-label">惯性导航</div></div>
+                    <div class="spec-item"><div class="spec-value">HeSAI AT128P</div><div class="spec-label" data-i18n="detail.common.lidar">激光雷达</div></div>
+                    <div class="spec-item"><div class="spec-value">SUA630C三目</div><div class="spec-label" data-i18n="detail.common.camera">相机</div></div>
                 </div>
             </div>
         </section>
-        
-        <!-- 技术创新亮点 -->
+
         <section class="innovation-section">
-            <h2 style="text-align: center; margin-bottom: 2rem;">技术创新亮点</h2>
+            <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="detail.common.innovations">技术创新亮点</h2>
             <div class="innovation-grid">
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF25/1.png" alt="基于CenterPoint网络的锥桶检测" class="innovation-image">
+                    <img src="image/innovations/AV/AF25/1.png" alt="CenterPoint Detection" class="innovation-image">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title">基于CenterPoint网络的锥桶检测</h3>
                         <p>更优越，更可靠，较PillarsNet检测距离提高87%，锥桶识别数量增加35%</p>
                     </div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF25/2.png" alt="基于TCone-YOLO的锥桶感知算法" class="innovation-image">
+                    <img src="image/innovations/AV/AF25/2.png" alt="TCone-YOLO Perception" class="innovation-image">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title">基于TCone-YOLO的锥桶感知算法</h3>
                         <p>最大感知距离大于37.5m，对远处小锥桶的检测能力再获提升</p>
                     </div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF25/3.png" alt="基于强化学习的自动曝光推理模型" class="innovation-image">
+                    <img src="image/innovations/AV/AF25/3.png" alt="RL Exposure Model" class="innovation-image">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title">基于强化学习的自动曝光推理模型</h3>
                         <p>基于动态收敛判定，带来更加稳定快速的视觉识别效果</p>
                     </div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF25/4.png" alt="基于几何约束的一致性圆心估计" class="innovation-image">
+                    <img src="image/innovations/AV/AF25/4.png" alt="Geometric Center Estimation" class="innovation-image">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title">基于几何约束的一致性圆心估计</h3>
                         <p>圆心识别0错误，相比ICP算法精度提升91%</p>
                     </div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF25/5.png" alt="多模态信息融合数据预处理" class="innovation-image">
+                    <img src="image/innovations/AV/AF25/5.png" alt="Multi-modal Fusion" class="innovation-image">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title">多模态信息融合数据预处理</h3>
                         <p>实现高速运动状态下精准数据匹配，点云去畸变仅需20ms</p>
                     </div>
                 </div>
                 <div class="innovation-card">
-                    <img src="image/innovations/AV/AF25/6.png" alt="SLAM最优赛车线生成方法" class="innovation-image">
+                    <img src="image/innovations/AV/AF25/6.png" alt="SLAM Optimal Racing Line" class="innovation-image">
                     <div class="innovation-overlay">
                         <h3 class="innovation-title">SLAM最优赛车线生成方法</h3>
                         <p>采用基于最小曲率约束的多目标QP路径优化，提高圈速表现</p>
@@ -391,83 +112,32 @@
                 </div>
             </div>
         </section>
-        
-        <!-- 赛车故事 -->
+
         <section class="story-section">
             <div class="story-content">
-                <h2>赛车故事</h2>
-                <p>A-Future25是我们历时12个月研发的第六代无人驾驶方程式赛车。
-                作为我队第二台采用碳纤维单体壳和轮边双AMK电机的无人赛车，我们将重心放在无人系统的优化上。通过无数次的模拟和测试，夙兴夜寐，我们最终开发出了这辆稳定又精准的无人驾驶赛车。</p>
-                <p>最令人难忘的是在最后阶段的高速循迹赛项中，顶着赛场突降大雨的压力，团队成员轮流值守，确保每一个系统都达到最佳状态。骤雨霶霈难抑热忱，云销雨霁得见月明。
-				这种敢拼敢赢，精益求精的精神，使我们不负众望，在2025年全国大学生方程式大赛中获得全国一等奖，为下一代无人驾驶方程式赛车拿到了A04的车号。25赛季已然落幕，26赛季我们继续进发。</p>
+                <h2 data-i18n="detail.common.story">赛车故事</h2>
+                <p>A-Future25是我们历时12个月研发的第六代无人驾驶方程式赛车。 作为我队第二台采用碳纤维单体壳和轮边双AMK电机的无人赛车，我们将重心放在无人系统的优化上。通过无数次的模拟和测试，夙兴夜寐，我们最终开发出了这辆稳定又精准的无人驾驶赛车。</p>
+                <p>最令人难忘的是在最后阶段的高速循迹赛项中，顶着赛场突降大雨的压力，团队成员轮流值守，确保每一个系统都达到最佳状态。骤雨霶霈难抑热忱，云销雨霁得见月明。 这种敢拼敢赢，精益求精的精神，使我们不负众望，在2025年全国大学生方程式大赛中获得全国一等奖，为下一代无人驾驶方程式赛车拿到了A04的车号。25赛季已然落幕，26赛季我们继续进发。</p>
             </div>
-            <div class="story-image">
-                <img src="image/misc/AF25story.jpg" alt="赛车故事">
-            </div>
+            <div class="story-image"><img src="image/misc/AF25story.jpg" alt="AF25 Racing Story"></div>
         </section>
-        
-        <!-- 获得奖项 -->
+
         <section class="awards-section">
-            <h2 style="text-align: center; margin-bottom: 2rem;">获得奖项</h2>
+            <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="detail.common.awards">获得奖项</h2>
             <div class="awards-grid">
-                <div class="award-card">
-                    <div class="award-icon"><i class="fas fa-trophy"></i></div>
-                    <h3 class="award-title">全国一等奖</h3>
-                    <p class="award-year">2025年</p>
-                </div>
-                <div class="award-card">
-                    <div class="award-icon"><i class="fas fa-medal"></i></div>
-                    <h3 class="award-title">年度优秀宣传团队</h3>
-                    <p class="award-year">2025年</p>
-                </div>
-                <div class="award-card">
-                    <div class="award-icon"><i class="fas fa-bolt"></i></div>
-                    <h3 class="award-title">高速循迹第二名</h3>
-                    <p class="award-year">2025年</p>
-                </div>
-                <div class="award-card">
-                    <div class="award-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3 class="award-title">设计答辩第二名</h3>
-                    <p class="award-year">2025年</p>
-                </div>
+                <div class="award-card"><div class="award-icon"><i class="fas fa-trophy"></i></div><h3 class="award-title">全国一等奖</h3><p class="award-year">2025年</p></div>
+                <div class="award-card"><div class="award-icon"><i class="fas fa-medal"></i></div><h3 class="award-title">年度优秀宣传团队</h3><p class="award-year">2025年</p></div>
+                <div class="award-card"><div class="award-icon"><i class="fas fa-bolt"></i></div><h3 class="award-title">高速循迹第二名</h3><p class="award-year">2025年</p></div>
+                <div class="award-card"><div class="award-icon"><i class="fas fa-lightbulb"></i></div><h3 class="award-title">设计答辩第二名</h3><p class="award-year">2025年</p></div>
             </div>
         </section>
     </div>
-	
-		<!-- 页脚 -->
-	<footer>
-		<div class="container">
-			<div class="social-links">
-				<a href="https://weibo.com/u/7822135530" target="_blank"><i class="fab fa-weibo"></i></a>
-				<a href="https://mp.weixin.qq.com/s/4kNCS-z1ISjhzN9l_gPppA" target="_blank"><i class="fab fa-weixin"></i></a>
-				<a href="https://www.douyin.com/user/MS4wLjABAAAASI_A4qRxl4_qRsqXSEQ-MmYTEQxgWa0QbR-hhTGfYvo" target="_blank"><i class="fab fa-instagram"></i></a>
-				<a href="https://space.bilibili.com/398023708?spm_id_from=333.337.search-card.all.click" target="_blank"><i class="fab fa-bilibili"></i></a>
-			</div>
-			<p>&copy; 2009-2026 Formax方程式赛车队. 保留所有解释权利.</p>
-		</div>
-	</footer>
 
-
+    <script src="js/components.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
     <script>
-        // 简单的返回顶部按钮功能
-        window.addEventListener('scroll', function() {
-            const backButton = document.querySelector('.back-button');
-            if (window.scrollY > 300) {
-                backButton.style.position = 'fixed';
-                backButton.style.top = '20px';
-                backButton.style.left = '20px';
-                backButton.style.zIndex = '1000';
-                backButton.style.background = 'rgba(255, 255, 255, 0.9)';
-                backButton.style.padding = '10px 15px';
-                backButton.style.borderRadius = '5px';
-                backButton.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                backButton.style.position = 'static';
-                backButton.style.background = 'transparent';
-                backButton.style.padding = '0';
-                backButton.style.boxShadow = 'none';
-            }
-        });
+        (function(){ 'use strict'; Components.injectAll(false); I18n.init().then(function(){ I18n.translatePage(); }); })();
     </script>
 </body>
 </html>
