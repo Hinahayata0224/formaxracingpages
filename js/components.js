@@ -9,7 +9,7 @@ var Components = (function () {
         { key: 'nav.home', href: '/#home', section: 'home' },
         { key: 'nav.about', href: '/#about', section: 'about' },
         { key: 'nav.achievements', href: '/#achievements', section: 'achievements' },
-        { key: 'nav.cars', href: '/#car', section: 'cars' },
+        { key: 'nav.cars', href: '/#car', section: 'car' },
         { key: 'nav.team', href: '/#team', section: 'team' },
         { key: 'nav.groups', href: '/#groups', section: 'groups' },
         { key: 'nav.news', href: '/#news', section: 'news' },
