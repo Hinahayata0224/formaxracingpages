@@ -315,11 +315,14 @@
             "peakLatAccel": "Peak Lateral Acceleration",
             "maxSpeed": "Max Speed",
             "processor": "Processor",
-            "sensor": "Sensors"
+            "sensor": "Sensors",
+            "ins": "INS",
+            "ratedEnergy": "Rated Energy"
         },
         "AF24": {
             "name": "A-Future24 Technical Specifications",
             "imageAlt": "AF24 Image",
+            "cameraModel": "Zed (stereo)",
             "innovations": [
                 { "title": "3D Object Detection Based on PillarNet", "desc": "Achieved better results using lower-line-count LiDAR" },
                 { "title": "Environmental Perception Based on TCone-YOLO", "desc": "Improved frame rate, expanded visual perception range with max detection distance over 21m" },
@@ -340,6 +343,7 @@
         "AF25": {
             "name": "A-Future25 Technical Specifications",
             "imageAlt": "AF25 Image",
+            "cameraModel": "SUA630C (triple camera)",
             "specs": [
                 { "value": "225kg", "label": "Curb Weight" },
                 { "value": "45:55", "label": "Weight Distribution" },
@@ -351,12 +355,12 @@
                 { "value": "AT128P", "label": "LiDAR" }
             ],
             "innovations": [
-                { "title": "3D Object Detection Based on PillarNet", "desc": "Achieved better results using lower-line-count LiDAR" },
-                { "title": "Environmental Perception Based on TCone-YOLO", "desc": "Improved frame rate, expanded visual perception range with max detection distance over 25m" },
-                { "title": "Automatic Exposure Adjustment Algorithm", "desc": "Based on dynamic convergence decision, providing more stable visual recognition" },
-                { "title": "Improved ICP Matching", "desc": "Real-time matching to build point cloud maps" },
-                { "title": "Multi-modal Data Fusion Preprocessing", "desc": "Achieves precise data matching under high-speed motion, point cloud de-skewing in only 20ms" },
-                { "title": "SLAM Mapping Centerline Generation", "desc": "Iterative optimization algorithm, improving low-speed passing efficiency" }
+                { "title": "Cone detection with CenterPoint", "desc": "More robust and more reliable: 87% longer detection range and 35% more cones recognized than PillarNet" },
+                { "title": "Cone perception with TCone-YOLO", "desc": "Perception range beyond 37.5 m, with a further gain on small cones at distance" },
+                { "title": "Reinforcement-learning auto-exposure", "desc": "Dynamic convergence checks give faster, steadier visual recognition" },
+                { "title": "Geometry-constrained circle-centre estimation", "desc": "Zero circle-centre errors, 91% more accurate than ICP" },
+                { "title": "Multi-modal data pre-processing", "desc": "Accurate matching at speed; point-cloud de-skewing in 20 ms" },
+                { "title": "SLAM-based racing-line generation", "desc": "Multi-objective QP path optimization under a minimum-curvature constraint, improving lap times" }
             ],
             "storyTitle": "Racing Story",
             "story": "<p>A-Future25 is our sixth-generation driverless formula car, twelve months in the making. As the team’s second driverless car with a carbon monocoque and dual AMK in-wheel motors, we put the emphasis on the autonomous system. Through countless simulations and tests, working late into the night, we finally produced a stable and precise driverless race car.</p><p>Yet when we walked confidently into the dynamic events, the car on the track was not the car we had practised with.</p><p>In the skidpad the INS drifted strangely and we fell back on offset parameters we had never used before. In the acceleration run we ran into RES interference we had never seen, and AS Ready kept slipping away; on the last — and only — successful run, a Ready timeout meant it did not count.</p><p>The one chance to turn the season around was the high-speed tracking event at the end.</p><p>Our perception held up under the pressure and completed the mapping lap perfectly. But on the second lap the car began to weave, and we knew at once that it was a control problem. We tuned frantically, and then the problems came one after another — a stop distance we had forgotten to change, a speed profile that suddenly failed… none of which had ever appeared in practice. The clock ran on, and after one slow, safe completion lap we knew there was probably no time to try again.</p><p>For everyone there, it was a heavy day. Before it, we had imagined AF25 flying around the track a thousand times; we had not imagined these few hours turning out this way. Compared with the electric car that finished its endurance, what was left here was more red-eyed bitter smiling, more heads held in hands, more bitten lips and self-reproach.</p><p>Even with everyone’s eyes red, we still took a national first prize at the 2025 Formula Student China and secured the number A04 for the next driverless car. For Auto-Future, an unsatisfying 2025 season is over. For 2026, we go again.</p>",
@@ -371,37 +375,39 @@
             "name": "E-Future24 Technical Specifications",
             "imageAlt": "EF24 Image",
             "innovations": [
-                { "title": "Carbon Fiber Monocoque (Sandwich Structure)", "desc": "Significantly improved stiffness-to-weight ratio, total vehicle weight only 260kg" },
-                { "title": "Four In-Wheel Motor System", "desc": "80kW peak power, distributed drive for superior handling" },
-                { "title": "Aerodynamics Package", "desc": "High-downforce aero package for stable grip" },
-                { "title": "High Anti-Dive Characteristics", "desc": "Achieves high anti-dive rate, providing excellent aerodynamic platform stability" },
-                { "title": "Custom BMS", "desc": "Distributed architecture custom BMS for efficient battery management" },
-                { "title": "Electronic TVC Algorithm", "desc": "Independently developed torque vectoring control algorithm to enhance cornering performance" }
+                { "title": "Lightweighting", "desc": "Curb weight cut from 270 kg to 259 kg, sharpening the car’s dynamic performance" },
+                { "title": "Motor system layout", "desc": "Four in-wheel motors improve acceleration; splitting the controllers improves EMC and load distribution" },
+                { "title": "Aerodynamics package", "desc": "A high-downforce aero package for stable grip" },
+                { "title": "Front/rear decoupling", "desc": "Pitch and roll are controlled independently, improving the car’s handling" },
+                { "title": "In-house battery management", "desc": "A distributed, in-house BMS manages the pack efficiently" },
+                { "title": "Electronic differential", "desc": "Torque is distributed by real-time load, improving cornering" }
             ],
             "storyTitle": "Racing Story",
-            "story": "E-Future24 is the eleventh-generation electric Formula Student race car we developed over 12 months. From concept design to final testing, the entire team invested over 5,000 hours of work. During the design process, we faced numerous technical challenges, including drivetrain optimization, battery management system improvements, and aerodynamic design. Through countless simulations and tests, we ultimately developed an electric race car with outstanding performance. The most unforgettable moments were during the final testing phase, when all team members took shifts and spent countless sleepless nights in the workshop. This spirit of 'dare to fight, dare to win, strive for excellence' enabled us to achieve excellent results at the Formula Student China competition.",
+            "story": "<p>E-Future24 is the tenth-generation electric formula car we developed over 12 months.</p><p>In the 2022 season the pandemic kept many teams from building a new car at all; we managed to build one in a very tight window, but design flaws put us out with a DNF and nothing to show for it. In 2023, on the strength of that experience, we designed one of the country’s leading four-motor cars — and then dramatically stopped 100 metres before the endurance finish line, failing to finish once again. The hunger to finish an endurance and stand on the podium settled deep into all of us.</p><p>Then came the 2024 season: the first in our history in which we designed and built two brand-new cars in a single year. The baton passed from one generation of teammates to the next, and plenty of new ideas came with it. So did the problems: suppliers delivered the wrong parts, and the monocoque came back under-strength because of an equipment failure… Teammates gave up their rest time and improvised fixes; the body and aero group even laid up a second, stronger monocoque. Through all of it, EF-24 raced. Her novel design and high level of completion drew crowds of rival teams, and the all-new aero package was recognized by a judge who had worked as an engineer at Williams F1. On track she did not let the team down: almost every static item passed first time, and she took third place nationally in the endurance.</p><p>The team had waited three years for this. Not even that day’s downpour could dampen it: as the car crossed the line and passed re-inspection, teammates hugged and wept, telling each other about the year just gone. Our motto thundered from the podium: “Dare to fight, dare to win, strive for excellence!” Amid joy and regret, the 2024 season closed with a National First Prize. The story of 2024 is over; we are ready for 2025.</p>",
             "awards": [
                 { "title": "National First Prize", "year": "2024" },
-                { "title": "Design Presentation · 3rd Place", "year": "2024" }
+                { "title": "Endurance · 3rd Place", "year": "2024" },
+                { "title": "MATLAB & Simulink Modeling · 1st Prize", "year": "2024" },
+                { "title": "Grade-A Aerodynamics Package", "year": "2024" }
             ]
         },
         "EF25": {
             "name": "E-Future25 Technical Specifications",
             "imageAlt": "EF25 Image",
             "innovations": [
-                { "title": "High Torsional Stiffness", "desc": "7000+Nm/deg high torsional stiffness for fast vehicle dynamic response" },
-                { "title": "Motor System Layout", "desc": "Four in-wheel motors improve acceleration; separate controllers improve EMC and load distribution" },
-                { "title": "Aerodynamics Package", "desc": "High-downforce aero package for stable grip" },
-                { "title": "High Anti-Dive Characteristics", "desc": "Achieves 35% anti-dive rate, providing excellent aerodynamic platform stability" },
-                { "title": "Custom Battery Management System", "desc": "Distributed architecture custom BMS for efficient battery management" },
-                { "title": "Electronic TVC Algorithm", "desc": "Real-time torque distribution based on load to enhance cornering performance" }
+                { "title": "High torsional stiffness", "desc": "7000+ N·m/deg of torsional stiffness gives the car a faster dynamic response" },
+                { "title": "Motor system layout", "desc": "Four in-wheel motors improve acceleration; splitting the controllers improves EMC and load distribution" },
+                { "title": "Aerodynamics package", "desc": "A high-downforce aero package for stable grip" },
+                { "title": "High anti-dive", "desc": "35% anti-dive keeps the aerodynamic platform stable under braking" },
+                { "title": "In-house battery management", "desc": "A distributed, in-house BMS manages the pack efficiently" },
+                { "title": "Electronic torque vectoring", "desc": "Torque is distributed by real-time load, improving cornering" }
             ],
             "storyTitle": "Racing Story",
-            "story": "E-Future25 was the eleventh-generation electric Formula Student race car we developed over 12 months. In Season 23, we designed the team's first-ever four-motor race car, but it dramatically failed just 100 meters before the endurance finish line, unable to complete the race. In Season 24, we quickly passed all static inspections, but due to some design flaws, we couldn't push the car to its true limits before the endurance events, and we encountered unexpected issues during the static presentation. Then came Season 25. EF25, or as we prefer to call it, EF24B \u2014 born out of both budget constraints and the unresolved feelings from the EF24 competition, it was the answer our teammates delivered for their dream EF24. It features a redesigned aerodynamics package, repositioned front suspension, optimized TVC algorithm... every innovation crystallizes the lessons learned by teammates during the Season 24 competition. Through various challenges, our EF-25 raced on the track. EF-25 attracted attention from many rival teams due to its extremely high level of completion. We also gained recognition from judges during the static presentation, advancing to the design finals and securing fourth place, along with the Outstanding Aerodynamics Award. During static inspection, almost all items passed on the first attempt. On the dynamic track, this race car did not disappoint our teammates \u2014 it claimed fifth place in the Autocross event, earned a Top starting position, and ultimately took third place nationwide in the endurance event. At the moment the car crossed the finish line and passed re-inspection, teammates embraced each other, tears streaming down, sharing the hardships of the past year. Our motto thundered from the podium: 'Dare to fight, dare to win, strive for excellence!' Amidst joy and regret, our Season 25 concluded with a National First Prize. The story of Season 25 has drawn to a close; we are gearing up for Season 26!",
+            "story": "<p>E-Future25 is the eleventh-generation electric formula car we developed over 12 months.</p><p>In the 2023 season we designed the team’s first four-motor car, and then dramatically stopped 100 metres before the endurance finish line, unable to complete the race. In 2024 we passed all static inspections quickly, but design flaws kept us from pushing the car to its true limits before the endurance events, and the static presentation threw up problems we had not expected.</p><p>Then came the 2025 season. EF25 — or, as we prefer to call it, EF24B: born of a tight budget on one hand and, on the other, of everything we could not settle on track in 2024, it is the answer our teammates gave to their own idea of EF24. A redesigned aero package, a repositioned front suspension, a reworked TVC algorithm… every one of those ideas grew out of lessons from the 2024 season. Through all the challenges, EF-25 raced. Her sheer level of completion drew crowds of rival teams; the judges recognized her too, sending us into the design final and a fourth place, plus the Outstanding Aerodynamics Award. Almost every scrutineering item passed first time, and on the dynamic side she did not let the team down: fifth in autocross, a top starting position for endurance, and third nationally in the endurance itself.</p><p>When the car crossed the line and passed re-inspection, teammates hugged and wept, telling each other about the year just gone. Our motto thundered from the podium: “Dare to fight, dare to win, strive for excellence!” Amid joy and regret, the 2025 season closed with a National First Prize. The story of 2025 is over; we are ready for 2026.</p>",
             "awards": [
                 { "title": "National First Prize", "year": "2025" },
-                { "title": "Endurance Third Place", "year": "2025" },
-                { "title": "Matlab & Simulink Modeling Second Prize", "year": "2025" },
+                { "title": "Endurance · 3rd Place", "year": "2025" },
+                { "title": "MATLAB & Simulink Modeling · 2nd Prize", "year": "2025" },
                 { "title": "Outstanding Aerodynamics Award", "year": "2025" }
             ]
         },

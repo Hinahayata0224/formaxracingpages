@@ -67,18 +67,18 @@
     <div class="container" style="padding-top: 100px;">
         <!-- Car Detail Header -->
         <section class="car-detail-header">
-            <div class="car-detail-image"><img width="2492" height="1648" src="image/vehicle/AF25_detail.png" alt="AF25" decoding="async" fetchpriority="high"></div>
+            <div class="car-detail-image"><img width="2492" height="1648" src="image/vehicle/AF25_detail.png" alt="AF25" data-i18n-alt="detail.AF25.imageAlt" decoding="async" fetchpriority="high"></div>
             <div class="car-detail-specs">
-                <h2>A-Future25 技术规格</h2>
+                <h2 data-i18n="detail.AF25.name">A-Future25 技术规格</h2>
                 <div class="specs-grid" data-reveal-stagger>
                     <div class="spec-item"><div class="spec-value">245kg</div><div class="spec-label" data-i18n="detail.common.curbWeight">整备质量</div></div>
                     <div class="spec-item"><div class="spec-value">40:60</div><div class="spec-label" data-i18n="detail.common.weightDist">前后轴荷比</div></div>
                     <div class="spec-item"><div class="spec-value">1600mm</div><div class="spec-label" data-i18n="detail.common.wheelbase">整车轴距</div></div>
                     <div class="spec-item"><div class="spec-value">62.19kW</div><div class="spec-label" data-i18n="detail.common.peakPower">峰值功率</div></div>
                     <div class="spec-item"><div class="spec-value">2.80</div><div class="spec-label" data-i18n="detail.common.liftDragRatio">升阻比</div></div>
-                    <div class="spec-item"><div class="spec-value">INS570D</div><div class="spec-label">惯性导航</div></div>
+                    <div class="spec-item"><div class="spec-value">INS570D</div><div class="spec-label" data-i18n="detail.common.ins">惯性导航</div></div>
                     <div class="spec-item"><div class="spec-value">HeSAI AT128P</div><div class="spec-label" data-i18n="detail.common.lidar">激光雷达</div></div>
-                    <div class="spec-item"><div class="spec-value">SUA630C三目</div><div class="spec-label" data-i18n="detail.common.camera">相机</div></div>
+                    <div class="spec-item"><div class="spec-value" data-i18n="detail.AF25.cameraModel">SUA630C三目</div><div class="spec-label" data-i18n="detail.common.camera">相机</div></div>
                 </div>
             </div>
         </section>
@@ -89,43 +89,43 @@
                 <div class="innovation-card">
                     <img width="1007" height="381" src="image/innovations/AV/AF25/1.png" alt="CenterPoint Detection" class="innovation-image" loading="lazy" decoding="async">
                     <div class="innovation-overlay">
-                        <h3 class="innovation-title">基于CenterPoint网络的锥桶检测</h3>
-                        <p>更优越，更可靠，较PillarsNet检测距离提高87%，锥桶识别数量增加35%</p>
+                        <h3 class="innovation-title" data-i18n="detail.AF25.innovations.0.title">基于CenterPoint网络的锥桶检测</h3>
+                        <p data-i18n="detail.AF25.innovations.0.desc">更优越，更可靠，较PillarsNet检测距离提高87%，锥桶识别数量增加35%</p>
                     </div>
                 </div>
                 <div class="innovation-card">
                     <img width="1280" height="720" src="image/innovations/AV/AF25/2.png" alt="TCone-YOLO Perception" class="innovation-image" loading="lazy" decoding="async">
                     <div class="innovation-overlay">
-                        <h3 class="innovation-title">基于TCone-YOLO的锥桶感知算法</h3>
-                        <p>最大感知距离大于37.5m，对远处小锥桶的检测能力再获提升</p>
+                        <h3 class="innovation-title" data-i18n="detail.AF25.innovations.1.title">基于TCone-YOLO的锥桶感知算法</h3>
+                        <p data-i18n="detail.AF25.innovations.1.desc">最大感知距离大于37.5m，对远处小锥桶的检测能力再获提升</p>
                     </div>
                 </div>
                 <div class="innovation-card">
                     <img width="1280" height="360" src="image/innovations/AV/AF25/3.png" alt="RL Exposure Model" class="innovation-image" loading="lazy" decoding="async">
                     <div class="innovation-overlay">
-                        <h3 class="innovation-title">基于强化学习的自动曝光推理模型</h3>
-                        <p>基于动态收敛判定，带来更加稳定快速的视觉识别效果</p>
+                        <h3 class="innovation-title" data-i18n="detail.AF25.innovations.2.title">基于强化学习的自动曝光推理模型</h3>
+                        <p data-i18n="detail.AF25.innovations.2.desc">基于动态收敛判定，带来更加稳定快速的视觉识别效果</p>
                     </div>
                 </div>
                 <div class="innovation-card">
                     <img width="1039" height="760" src="image/innovations/AV/AF25/4.png" alt="Geometric Center Estimation" class="innovation-image" loading="lazy" decoding="async">
                     <div class="innovation-overlay">
-                        <h3 class="innovation-title">基于几何约束的一致性圆心估计</h3>
-                        <p>圆心识别0错误，相比ICP算法精度提升91%</p>
+                        <h3 class="innovation-title" data-i18n="detail.AF25.innovations.3.title">基于几何约束的一致性圆心估计</h3>
+                        <p data-i18n="detail.AF25.innovations.3.desc">圆心识别0错误，相比ICP算法精度提升91%</p>
                     </div>
                 </div>
                 <div class="innovation-card">
                     <img width="365" height="261" src="image/innovations/AV/AF25/5.png" alt="Multi-modal Fusion" class="innovation-image" loading="lazy" decoding="async">
                     <div class="innovation-overlay">
-                        <h3 class="innovation-title">多模态信息融合数据预处理</h3>
-                        <p>实现高速运动状态下精准数据匹配，点云去畸变仅需20ms</p>
+                        <h3 class="innovation-title" data-i18n="detail.AF25.innovations.4.title">多模态信息融合数据预处理</h3>
+                        <p data-i18n="detail.AF25.innovations.4.desc">实现高速运动状态下精准数据匹配，点云去畸变仅需20ms</p>
                     </div>
                 </div>
                 <div class="innovation-card">
                     <img width="592" height="581" src="image/innovations/AV/AF25/6.png" alt="SLAM Optimal Racing Line" class="innovation-image" loading="lazy" decoding="async">
                     <div class="innovation-overlay">
-                        <h3 class="innovation-title">SLAM最优赛车线生成方法</h3>
-                        <p>采用基于最小曲率约束的多目标QP路径优化，提高圈速表现</p>
+                        <h3 class="innovation-title" data-i18n="detail.AF25.innovations.5.title">SLAM最优赛车线生成方法</h3>
+                        <p data-i18n="detail.AF25.innovations.5.desc">采用基于最小曲率约束的多目标QP路径优化，提高圈速表现</p>
                     </div>
                 </div>
             </div>
@@ -142,10 +142,10 @@
         <section class="awards-section">
             <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="detail.common.awards">获得奖项</h2>
             <div class="awards-grid" data-reveal-stagger>
-                <div class="award-card"><div class="award-icon"><i class="fas fa-trophy"></i></div><h3 class="award-title">全国一等奖</h3><p class="award-year">2025年</p></div>
-                <div class="award-card"><div class="award-icon"><i class="fas fa-medal"></i></div><h3 class="award-title">年度优秀宣传团队</h3><p class="award-year">2025年</p></div>
-                <div class="award-card"><div class="award-icon"><i class="fas fa-bolt"></i></div><h3 class="award-title">高速循迹第二名</h3><p class="award-year">2025年</p></div>
-                <div class="award-card"><div class="award-icon"><i class="fas fa-lightbulb"></i></div><h3 class="award-title">设计答辩第二名</h3><p class="award-year">2025年</p></div>
+                <div class="award-card"><div class="award-icon"><i class="fas fa-trophy"></i></div><h3 class="award-title" data-i18n="detail.AF25.awards.0.title">全国一等奖</h3><p class="award-year" data-i18n="detail.AF25.awards.0.year">2025年</p></div>
+                <div class="award-card"><div class="award-icon"><i class="fas fa-medal"></i></div><h3 class="award-title" data-i18n="detail.AF25.awards.1.title">年度优秀宣传团队</h3><p class="award-year" data-i18n="detail.AF25.awards.1.year">2025年</p></div>
+                <div class="award-card"><div class="award-icon"><i class="fas fa-bolt"></i></div><h3 class="award-title" data-i18n="detail.AF25.awards.2.title">高速循迹第二名</h3><p class="award-year" data-i18n="detail.AF25.awards.2.year">2025年</p></div>
+                <div class="award-card"><div class="award-icon"><i class="fas fa-lightbulb"></i></div><h3 class="award-title" data-i18n="detail.AF25.awards.3.title">设计答辩第二名</h3><p class="award-year" data-i18n="detail.AF25.awards.3.year">2025年</p></div>
             </div>
         </section>
     </div>
