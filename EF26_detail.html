@@ -37,6 +37,7 @@
         .story-image img { width: 100%; height: 100%; object-fit: cover; }
         .awards-section { margin-bottom: 4rem; }
         .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .awards-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 360px)); justify-content: center; }
         .award-card { background-color: var(--accent-color); border-radius: 10px; padding: 2rem; text-align: center; box-shadow: 0 5px 15px var(--card-shadow); transition: transform 0.3s; }
         .award-card:hover { transform: translateY(-5px); }
         .award-icon { font-size: 2.5rem; color: var(--glow-color); margin-bottom: 1rem; }
@@ -111,7 +112,6 @@
             <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="detail.common.awards">获得奖项</h2>
             <div class="awards-grid" data-reveal-stagger>
                 <div class="award-card"><div class="award-icon"><i class="fas fa-trophy"></i></div><h3 class="award-title" data-i18n="detail.EF26.awards.0.title">全国二等奖</h3><p class="award-year" data-i18n="detail.EF26.awards.0.year">2026年</p></div>
-                <div class="award-card"><div class="award-icon"><i class="fas fa-flag-checkered"></i></div><h3 class="award-title" data-i18n="detail.EF26.awards.1.title">耐久赛 · 未完赛（换人时高压上电失败）</h3><p class="award-year" data-i18n="detail.EF26.awards.1.year">2026年</p></div>
             </div>
         </section>
     </div>
