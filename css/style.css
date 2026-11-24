@@ -19,6 +19,9 @@
     --glow-color: #5098e0;
     --card-shadow: rgba(26, 63, 110, 0.1);
     --card-shadow-hover: rgba(26, 63, 110, 0.2);
+    /* 深色页头带用色（蓝色 = 车队主色） */
+    --accent-glow: rgba(80, 152, 224, 0.16);
+    --accent-soft: #6aa9e9;
 }
 
 [data-theme="ev"] {
@@ -27,6 +30,8 @@
     --glow-color: #ffd700;
     --card-shadow: rgba(212, 0, 0, 0.1);
     --card-shadow-hover: rgba(212, 0, 0, 0.18);
+    --accent-glow: rgba(212, 0, 0, 0.26);
+    --accent-soft: #ff6b6b;
 }
 
 [data-theme="av"] {
@@ -35,6 +40,8 @@
     --glow-color: #00b0ff;
     --card-shadow: rgba(27, 138, 61, 0.1);
     --card-shadow-hover: rgba(27, 138, 61, 0.18);
+    --accent-glow: rgba(27, 138, 61, 0.26);
+    --accent-soft: #4fd18b;
 }
 
 /* ---------- Reset & Base ---------- */
@@ -264,16 +271,29 @@ nav {
 }
 
 /* ---------- Floating Back Button ---------- */
+.floating-back-btn span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
 .floating-back-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
     text-decoration: none;
     position: fixed;
-    top: 20px;
-    left: 19px;
+    top: 102px;
+    left: 18px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
     background-color: var(--accent-color);
     color: var(--primary-color);
-    padding: 0.6rem 1rem;
     border-radius: 5px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     z-index: 1000;
@@ -662,12 +682,14 @@ footer {
         height: 35px;
     }
 
-    /* Floating Back Button：移动端下移，避免压住 logo */
+    /* Floating Back Button：移动端同样圆形，位于导航下方 */
     .floating-back-btn {
         top: 84px;
         left: 12px;
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        font-size: 0.9rem;
     }
 }
 
