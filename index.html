@@ -58,7 +58,8 @@
             width: 100%;
             height: 100%;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
+            justify-content: center;
             opacity: 0;
             transition: opacity 0.8s ease, transform 0.8s ease;
             transform: translateX(100%);
@@ -75,33 +76,41 @@
             transform: translateX(100%);
         }
         .slide-content {
-            flex: 1;
-            padding: 2rem;
+            flex: 0 0 auto;
+            width: 90%;
+            max-width: 1200px;
+            padding: 0 0 7.5rem;
             color: var(--accent-color);
-            text-align: center;
+            text-align: left;
             z-index: 2;
-            max-width: 860px;
-            margin: 0 auto;
             position: relative;
         }
+        .slide-kicker {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.82);
+            margin-bottom: 1.15rem;
+            text-shadow: 0 1px 14px rgba(0, 0, 0, 0.7);
+        }
         .slide-content h1 {
-            font-size: clamp(2rem, 3.9vw, 3.15rem);
+            font-size: clamp(2rem, 4.1vw, 3.4rem);
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.18;
             letter-spacing: 0.04em;
             text-wrap: balance;
-            margin-bottom: 1.35rem;
-            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.55);
+            margin-bottom: 1.1rem;
+            text-shadow: 0 2px 34px rgba(0, 0, 0, 0.6);
         }
         .slide-content p {
-            font-size: clamp(1rem, 1.3vw, 1.22rem);
+            font-size: clamp(1rem, 1.25vw, 1.15rem);
             line-height: 1.9;
-            letter-spacing: 0.03em;
-            text-wrap: balance;
-            max-width: 46rem;
-            margin: 0 auto 2.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.02em;
+            max-width: 44rem;
+            margin: 0 0 1.9rem;
+            color: rgba(255, 255, 255, 0.88);
+            text-shadow: 0 1px 16px rgba(0, 0, 0, 0.55);
         }
         .slide-content .btn {
             padding: 0.95rem 2.6rem;
@@ -117,6 +126,10 @@
         }
         html[lang="en"] .slide-content p {
             letter-spacing: 0;
+        }
+        html[lang="en"] .slide-content h1 {
+            font-weight: 700;
+            letter-spacing: -0.015em;
         }
         .slide-image {
             position: absolute;
@@ -135,7 +148,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.62) 45%, rgba(0, 0, 0, 0.82) 100%);
+            background:
+                radial-gradient(46% 58% at 10% 96%, rgba(80, 152, 224, 0.24) 0%, rgba(80, 152, 224, 0) 60%),
+                linear-gradient(180deg, rgba(5, 8, 13, 0.10) 0%, rgba(5, 8, 13, 0.04) 30%, rgba(5, 8, 13, 0.42) 56%, rgba(5, 8, 13, 0.80) 78%, rgba(5, 8, 13, 0.97) 100%);
         }
         .carousel-prev,
         .carousel-next {
@@ -159,23 +174,33 @@
         .carousel-next { right: 20px; }
         .carousel-indicators {
             position: absolute;
-            bottom: 20px;
+            bottom: 2.6rem;
             left: 50%;
             transform: translateX(-50%);
+            width: min(1200px, 90%);
             display: flex;
-            gap: 10px;
+            align-items: center;
+            gap: 0.55rem;
             z-index: 10;
         }
         .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
+            width: 26px;
+            height: 2px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.34);
             cursor: pointer;
-            transition: background 0.3s;
+            transition: width 0.35s ease, background 0.35s ease;
         }
         .indicator.active {
+            width: 46px;
             background: var(--accent-color);
+        }
+        .carousel-count {
+            margin-left: 0.85rem;
+            font-size: 0.78rem;
+            letter-spacing: 0.18em;
+            color: rgba(255, 255, 255, 0.72);
+            font-variant-numeric: tabular-nums;
         }
 
         /* About */
@@ -376,9 +401,13 @@
         @media (max-width: 768px) {
             /* 移动端：隐藏箭头，改用滑动 + 圆点；标题按语义整段换行 */
             .carousel-prev, .carousel-next { display: none; }
-            .slide-content { padding: 1.5rem 1.25rem; }
-            .slide-content h1 { font-size: 1.75rem; letter-spacing: 0.03em; word-break: keep-all; }
-            .slide-content p { font-size: 0.95rem; line-height: 1.85; margin-bottom: 1.6rem; }
+            .slide-content { width: 90%; padding: 0 0 6.5rem; }
+            .slide-kicker { font-size: 0.68rem; letter-spacing: 0.24em; margin-bottom: 0.85rem; }
+            .slide-content h1 { font-size: 1.7rem; letter-spacing: 0.03em; word-break: keep-all; }
+            .slide-content p { font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.5rem; }
+            .carousel-indicators { bottom: 2rem; gap: 0.45rem; }
+            .indicator { width: 20px; }
+            .indicator.active { width: 34px; }
             .cars-container { flex-direction: column; align-items: center; }
             .car-card { width: 100%; }
             .join-us-hero { height: 100vh; }
@@ -443,6 +472,7 @@
             <div class="carousel-slides">
                 <div class="carousel-slide active">
                     <div class="slide-content">
+                        <div class="slide-kicker">SOUTH CHINA UNIVERSITY OF TECHNOLOGY · FORMULA STUDENT</div>
                         <h1 data-i18n="index.hero.slide1.title">Formax方程式赛车队</h1>
                         <p data-i18n="index.hero.slide1.desc">我们是一支充满激情与创新精神的大学生方程式赛车队，致力于设计和制造高性能的方程式赛车。</p>
                         <a href="#about" class="btn" data-i18n="index.hero.slide1.cta">了解更多</a>
@@ -451,6 +481,7 @@
                 </div>
                 <div class="carousel-slide">
                     <div class="slide-content">
+                        <div class="slide-kicker">E-FUTURE · ELECTRIC FORMULA CAR</div>
                         <h1 data-i18n="index.hero.slide2.title">E-Future电动方程式赛车</h1>
                         <p data-i18n="index.hero.slide2.desc">我们的电动赛车采用先进复材技术和高效轮边电机系统，实现卓越性能表现。</p>
                         <a href="#car" class="btn" data-i18n="index.hero.slide2.cta">查看赛车</a>
@@ -459,6 +490,7 @@
                 </div>
                 <div class="carousel-slide">
                     <div class="slide-content">
+                        <div class="slide-kicker">A-FUTURE · DRIVERLESS FORMULA CAR</div>
                         <h1 data-i18n="index.hero.slide3.title">Auto-Future无人驾驶方程式赛车</h1>
                         <p data-i18n="index.hero.slide3.desc">我们的无人驾驶赛车配备先进的传感器和AI算法，能够自主完成赛道识别和决策。</p>
                         <a href="#car" class="btn" data-i18n="index.hero.slide3.cta">技术详情</a>
@@ -472,6 +504,7 @@
                 <span class="indicator active" data-slide="0"></span>
                 <span class="indicator" data-slide="1"></span>
                 <span class="indicator" data-slide="2"></span>
+                <span class="carousel-count"><b id="slideNow">01</b> / 03</span>
             </div>
         </div>
     </section>
@@ -847,6 +880,8 @@
                     currentSlide = (n + slides.length) % slides.length;
                     slides[currentSlide].className = 'carousel-slide active';
                     indicators[currentSlide].classList.add('active');
+                    var now = document.getElementById('slideNow');
+                    if (now) now.textContent = ('0' + (currentSlide + 1)).slice(-2);
                 }
 
                 function nextSlide() { goToSlide(currentSlide + 1); }
