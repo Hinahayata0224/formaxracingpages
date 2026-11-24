@@ -370,9 +370,54 @@
             .silver-sponsors .sponsor { max-width: 100px; }
             .sponsors-container { gap: 1.5rem; }
         }
+
+        /* ===== 开屏加载动画 ===== */
+        .splash {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(62% 62% at 50% 44%, #0e1a2b 0%, #060a11 62%, #000 100%);
+            transition: opacity 0.55s ease, visibility 0.55s ease;
+        }
+        .splash.is-done { opacity: 0; visibility: hidden; }
+        .splash-inner { display: grid; justify-items: center; gap: 2rem; }
+        .splash-logo {
+            width: clamp(240px, 28vw, 360px);
+            height: auto;
+            opacity: 0;
+            transform: translateY(10px) scale(0.985);
+            animation: splashLogoIn 0.6s cubic-bezier(0.22, 0.68, 0.2, 1) forwards;
+        }
+        @keyframes splashLogoIn { to { opacity: 1; transform: none; } }
+        .splash-ring-wrap { opacity: 1; }
+        @keyframes splashFadeIn { to { opacity: 1; } }
+        .splash-ring {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            border-top-color: #6aa9e9;
+            animation: splashSpin 0.9s linear infinite;
+        }
+        @keyframes splashSpin { to { transform: rotate(360deg); } }
+        @media (prefers-reduced-motion: reduce) {
+            .splash-logo { animation: none; opacity: 1; transform: none; }
+            .splash-ring-wrap { animation: none; opacity: 1; }
+            .splash-ring { animation: none; border-top-color: rgba(255, 255, 255, 0.45); }
+        }
     </style>
+    <noscript><style>.splash{display:none !important}</style></noscript>
 </head>
 <body data-theme="team">
+    <!-- 开屏加载：等首屏 hero 图解码完再淡出，每个会话只出现一次 -->
+    <div id="splash" class="splash" aria-hidden="true">
+        <div class="splash-inner">
+            <img class="splash-logo" src="image/logo/logo.png" alt="" width="770" height="149">
+            <div class="splash-ring-wrap"><div class="splash-ring"></div></div>
+        </div>
+    </div>
     <!-- Hero Carousel -->
     <section class="carousel" id="home">
         <div class="carousel-container">
@@ -819,6 +864,32 @@
                     startSlideShow();
                 }, { passive: true });
             });
+        })();
+    </script>
+
+    <script>
+        /* 开屏：等首屏 hero 图解码完成再淡出；每会话只出现一次，3 秒兜底 */
+        (function () {
+            'use strict';
+            var splash = document.getElementById('splash');
+            if (!splash) return;
+            var KEY = 'formax-splash-seen';
+            try { if (sessionStorage.getItem(KEY)) { splash.remove(); return; } } catch (e) {}
+            var start = Date.now(), MIN = 900, MAX = 3000, done = false;
+            function hide() {
+                if (done) return;
+                done = true;
+                try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+                splash.classList.add('is-done');
+                setTimeout(function () { if (splash.parentNode) splash.remove(); }, 640);
+            }
+            function schedule() { setTimeout(hide, Math.max(0, MIN - (Date.now() - start))); }
+            var img = new Image();
+            img.src = 'image/hero/hero-slide-1.webp';
+            if (img.decode) { img.decode().then(schedule, schedule); }
+            else if (img.complete) { schedule(); }
+            else { img.onload = schedule; img.onerror = schedule; }
+            setTimeout(hide, MAX);
         })();
     </script>
 </body>
