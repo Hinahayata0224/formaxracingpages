@@ -662,12 +662,12 @@ footer {
         height: 35px;
     }
 
-    /* Floating Back Button */
+    /* Floating Back Button：移动端下移，避免压住 logo */
     .floating-back-btn {
-        top: 15px;
-        left: 15px;
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
+        top: 84px;
+        left: 12px;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
 }
 
