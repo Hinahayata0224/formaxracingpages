@@ -1,7 +1,23 @@
 {
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "note": "公众号推文列表。新增一条：改 date/title/url（可选 tag、title_en），按日期倒序即可；也可用 node tools/add-news.mjs 追加。",
   "items": [
+    {
+      "date": "2026-11-04",
+      "title": "回顾丨EF26&AF26新车发布会",
+      "title_en": "Recap | EF26 & AF26 launch event",
+      "url": "https://mp.weixin.qq.com/s/2p9bECbJmpi4afPa_CzWMA",
+      "tag": "新车",
+      "tag_en": "New car"
+    },
+    {
+      "date": "2026-01-28",
+      "title": "我们是谁",
+      "title_en": "Who we are",
+      "url": "https://mp.weixin.qq.com/s/V0MvhD6uIATc91CcALIW2g",
+      "tag": "团队",
+      "tag_en": "Team"
+    },
     {
       "date": "2025-08-15",
       "title": "回顾｜捷凯车队创始人许家泰走进华工Formax，共燃赛车梦！",

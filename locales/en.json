@@ -185,9 +185,11 @@
         "alumni": {
             "title": "Alumni Stories",
             "stories": [
-                { "date": "August 6, 2025", "title": "Profile | Gong Junjie \u2014 The Soul of Materials, Driving Dreams Forward", "excerpt": "He is the 'Welding Emperor' of the Body & Aero group, the 'Monocoque Photography Minister', and the 'Carbon Plate Killer'..." },
-                { "date": "July 15, 2025", "title": "Profile | From Firm Choice to Persistent Realization \u2014 Driverless Team Leader Wu Jiahao", "excerpt": "He knows the 3 AM workshop sky best, recording his dream of building a new driverless car and the long road from firm choice to persistent realization..." },
-                { "date": "July 13, 2025", "title": "Profile | Chasing Dreams in Formula, Racing with Electric Power \u2014 Electric Team Leader Chen Xitong", "excerpt": "On the journey of SCUT Formula Racing Team, a passionate young man with a burning dream for racing grew from a newcomer into a pillar of the electric team..." }
+                { "date": "September 8, 2026", "title": "Profile | Driven by passion: driverless team leader Liu Zhixian", "excerpt": "It began with a chance encounter and ended in a love of the sport." },
+                { "date": "July 21, 2026", "title": "Profile | Four seasons at speed: driver Lin Jiaxuan", "excerpt": "From a rookie to a race-day regular — four seasons of ups and downs, told by Lin Jiaxuan, class of 2021." },
+                { "date": "August 6, 2025", "title": "Profile | Gong Junjie — The Soul of Materials, Driving Dreams Forward", "excerpt": "He is the 'Welding Emperor' of the Body & Aero group, the 'Monocoque Photography Minister', and the 'Carbon Plate Killer'..." },
+                { "date": "July 15, 2025", "title": "Profile | From Firm Choice to Persistent Realization — Driverless Team Leader Wu Jiahao", "excerpt": "He knows the 3 AM workshop sky best, recording his dream of building a new driverless car and the long road from firm choice to persistent realization..." },
+                { "date": "July 13, 2025", "title": "Profile | Chasing Dreams in Formula, Racing with Electric Power — Electric Team Leader Chen Xitong", "excerpt": "On the journey of SCUT Formula Racing Team, a passionate young man with a burning dream for racing grew from a newcomer into a pillar of the electric team..." }
             ],
             "viewMore": "View More Stories",
             "wechatTitle": "Follow Our WeChat Official Account",
