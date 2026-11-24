@@ -1,0 +1,30 @@
+{
+  "updated": "2026-11-25",
+  "note": "人物故事列表（团队页）。新增：date 用 YYYY-MM-DD，填 title / title_en / excerpt / excerpt_en / url；也可用 node tools/add-story.mjs 追加。",
+  "items": [
+    {
+      "date": "2026-09-08",
+      "title": "人物｜怀一腔热爱，赴一场征程——无人车队长刘志贤",
+      "title_en": "Profile | Driven by passion: driverless team leader Liu Zhixian",
+      "excerpt": "始于一次邂逅，终于一份热爱。",
+      "excerpt_en": "It began with a chance encounter and ended in a love of the sport.",
+      "url": "https://mp.weixin.qq.com/s/mtY9LQE3Hmv8cOb-dQZGAg"
+    },
+    {
+      "date": "2026-07-21",
+      "title": "人物｜驰骋四赛季，以热爱驾驭赛车——车手林嘉轩专访",
+      "title_en": "Profile | Four seasons at speed: driver Lin Jiaxuan",
+      "excerpt": "从萌新车手到赛场主力，四载赛季起落，见证成长，走进 21 级车手林嘉轩，倾听他与车队、与赛道的故事。",
+      "excerpt_en": "From a rookie to a race-day regular — four seasons of ups and downs, told by Lin Jiaxuan, class of 2021.",
+      "url": "https://mp.weixin.qq.com/s/aBa7rcFDLPi1OPm0rmRqxA"
+    },
+    {
+      "date": "2025-07-13",
+      "title": "人物｜逐梦方程式，驭电驰骋——电车队长陈熙潼",
+      "title_en": "Profile | Chasing Dreams in Formula, Racing with Electric Power — Electric Team Leader Chen Xitong",
+      "excerpt": "在华南理工大学方程式赛车队的征程中，有这样一位热血青年，他怀揣着对赛车的炽热梦想，从懵懂新生成长为电车队的中流砥柱……",
+      "excerpt_en": "On the journey of SCUT Formula Racing Team, a passionate young man with a burning dream for racing grew from a newcomer into a pillar of the electric team...",
+      "url": "https://mp.weixin.qq.com/s/EygEIg199KdC28RBD5GEMQ"
+    }
+  ]
+}

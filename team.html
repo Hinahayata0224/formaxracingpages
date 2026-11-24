@@ -216,34 +216,9 @@
     <section id="stories" class="stories">
         <div class="container">
             <div class="section-title"><h2 data-i18n="teamPage.alumni.title">历届人物故事</h2></div>
-            <div class="stories-container" data-reveal-stagger>
-                <div class="story-card">
-                    <a href="https://mp.weixin.qq.com/s/mtY9LQE3Hmv8cOb-dQZGAg" class="read-more">
-                        <div class="story-content">
-                            <div class="story-date" data-i18n="teamPage.alumni.stories.0.date">2026年9月8日</div>
-                            <h3 data-i18n="teamPage.alumni.stories.0.title">人物｜怀一腔热爱，赴一场征程——无人车队长刘志贤</h3>
-                            <p class="story-excerpt" data-i18n="teamPage.alumni.stories.0.excerpt">始于一次邂逅，终于一份热爱。</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="story-card">
-                    <a href="https://mp.weixin.qq.com/s/aBa7rcFDLPi1OPm0rmRqxA" class="read-more">
-                        <div class="story-content">
-                            <div class="story-date" data-i18n="teamPage.alumni.stories.1.date">2026年7月21日</div>
-                            <h3 data-i18n="teamPage.alumni.stories.1.title">人物｜驰骋四赛季，以热爱驾驭赛车——车手林嘉轩专访</h3>
-                            <p class="story-excerpt" data-i18n="teamPage.alumni.stories.1.excerpt">从萌新车手到赛场主力，四载赛季起落，见证成长，走进 21 级车手林嘉轩，倾听他与车队、与赛道的故事。</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="story-card">
-                    <a href="https://mp.weixin.qq.com/s/EygEIg199KdC28RBD5GEMQ" class="read-more">
-                        <div class="story-content">
-                            <div class="story-date" data-i18n="teamPage.alumni.stories.2.date">2025年7月13日</div>
-                            <h3 data-i18n="teamPage.alumni.stories.2.title">人物｜逐梦方程式，驭电驰骋——电车队长陈熙潼</h3>
-                            <p class="story-excerpt" data-i18n="teamPage.alumni.stories.2.excerpt">在华南理工大学方程式赛车队的征程中，有这样一位热血青年，他怀揣着对赛车的炽热梦想，从懵懂新生成长为电车队的中流砥柱……</p>
-                        </div>
-                    </a>
-                </div>
+            <div class="stories-container" id="storiesList" data-count="3" data-reveal-stagger>
+                <!-- 由 js/stories.js 从 data/stories.json 渲染：新增人物故事只需改那个文件 -->
+            </div>
             <div class="story">
                 <button class="btn wechat-btn" id="showWechatQr">
                     <span data-i18n="teamPage.alumni.viewMore">查看更多故事</span> <i class="fas fa-chevron-down"></i>
@@ -265,6 +240,7 @@
     <script src="js/components.js"></script>
     <script src="js/common.js"></script>
     <script src="js/i18n.js"></script>
+    <script src="js/stories.js"></script>
     <script>
         (function() {
             'use strict';

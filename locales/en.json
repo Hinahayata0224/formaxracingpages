@@ -184,11 +184,6 @@
         },
         "alumni": {
             "title": "Alumni Stories",
-            "stories": [
-                { "date": "September 8, 2026", "title": "Profile | Driven by passion: driverless team leader Liu Zhixian", "excerpt": "It began with a chance encounter and ended in a love of the sport." },
-                { "date": "July 21, 2026", "title": "Profile | Four seasons at speed: driver Lin Jiaxuan", "excerpt": "From a rookie to a race-day regular — four seasons of ups and downs, told by Lin Jiaxuan, class of 2021." },
-                { "date": "July 13, 2025", "title": "Profile | Chasing Dreams in Formula, Racing with Electric Power — Electric Team Leader Chen Xitong", "excerpt": "On the journey of SCUT Formula Racing Team, a passionate young man with a burning dream for racing grew from a newcomer into a pillar of the electric team..." }
-            ],
             "viewMore": "View More Stories",
             "wechatTitle": "Follow Our WeChat Official Account",
             "wechatDesc": "Scan the QR code for more team stories",
