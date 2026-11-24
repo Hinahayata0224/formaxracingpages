@@ -80,9 +80,35 @@
             color: var(--accent-color);
             text-align: center;
             z-index: 2;
-            max-width: 800px;
+            max-width: 860px;
             margin: 0 auto;
             position: relative;
+        }
+        .slide-content h1 {
+            font-size: clamp(2.1rem, 4.3vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.18;
+            letter-spacing: 0.08em;
+            text-wrap: balance;
+            margin-bottom: 1.35rem;
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.55);
+        }
+        .slide-content p {
+            font-size: clamp(1rem, 1.3vw, 1.22rem);
+            line-height: 1.9;
+            letter-spacing: 0.03em;
+            text-wrap: balance;
+            max-width: 46rem;
+            margin: 0 auto 2.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
+        }
+        .slide-content .btn {
+            padding: 0.95rem 2.6rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
         }
         .slide-image {
             position: absolute;
@@ -101,7 +127,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.62) 45%, rgba(0, 0, 0, 0.82) 100%);
         }
         .carousel-prev,
         .carousel-next {
@@ -321,8 +347,11 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .carousel-prev, .carousel-next { padding: 0.8rem; font-size: 1.2rem; }
-            .slide-content h1 { font-size: 2.5rem; }
+            /* 移动端：隐藏箭头，改用滑动 + 圆点；标题按语义整段换行 */
+            .carousel-prev, .carousel-next { display: none; }
+            .slide-content { padding: 1.5rem 1.25rem; }
+            .slide-content h1 { font-size: 1.75rem; letter-spacing: 0.03em; word-break: keep-all; }
+            .slide-content p { font-size: 0.95rem; line-height: 1.85; margin-bottom: 1.6rem; }
             .cars-container { flex-direction: column; align-items: center; }
             .car-card { width: 100%; }
             .join-us-hero { height: 100vh; }
@@ -764,6 +793,23 @@
                 var carousel = document.querySelector('.carousel');
                 carousel.addEventListener('mouseenter', function() { clearInterval(slideInterval); });
                 carousel.addEventListener('mouseleave', startSlideShow);
+
+                // 触屏左右滑动切换（移动端隐藏了箭头）
+                var touchStartX = 0;
+                var touchStartY = 0;
+                carousel.addEventListener('touchstart', function(e) {
+                    touchStartX = e.touches[0].clientX;
+                    touchStartY = e.touches[0].clientY;
+                    clearInterval(slideInterval);
+                }, { passive: true });
+                carousel.addEventListener('touchend', function(e) {
+                    var dx = e.changedTouches[0].clientX - touchStartX;
+                    var dy = e.changedTouches[0].clientY - touchStartY;
+                    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+                        if (dx < 0) { nextSlide(); } else { prevSlide(); }
+                    }
+                    startSlideShow();
+                }, { passive: true });
             });
         })();
     </script>
