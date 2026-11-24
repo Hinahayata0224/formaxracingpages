@@ -1,0 +1,38 @@
+{
+  "updated": "2026-11-24",
+  "note": "公众号推文列表。新增一条：改 date/title/url（可选 tag、title_en），按日期倒序即可；也可用 node tools/add-news.mjs 追加。",
+  "items": [
+    {
+      "date": "2025-08-15",
+      "title": "回顾｜捷凯车队创始人许家泰走进华工Formax，共燃赛车梦！",
+      "title_en": "Recap | Jieke Racing founder Xu Jiatai visits SCUT Formax to talk racing dreams",
+      "url": "https://mp.weixin.qq.com/s/IwdGH9tOSgCYG0ZcSDftdQ",
+      "tag": "活动",
+      "tag_en": "Event"
+    },
+    {
+      "date": "2025-05-24",
+      "title": "回顾｜三方聚力 赞助签约活动成功举办",
+      "title_en": "Recap | Three-party sponsorship signing ceremony",
+      "url": "https://mp.weixin.qq.com/s/EWbn2mrLYnzr84NusbWMAA",
+      "tag": "合作",
+      "tag_en": "Partnership"
+    },
+    {
+      "date": "2025-01-25",
+      "title": "我们是谁",
+      "title_en": "Who we are",
+      "url": "https://mp.weixin.qq.com/s/LKOV-GXympn0VP8Wx7U-lQ",
+      "tag": "团队",
+      "tag_en": "Team"
+    },
+    {
+      "date": "2024-10-14",
+      "title": "回顾丨AF24 & EF24 新车发布会",
+      "title_en": "Recap | AF24 & EF24 launch event",
+      "url": "https://mp.weixin.qq.com/s/hb-Gp7r6KJtfrsFA8aPVCQ",
+      "tag": "新车",
+      "tag_en": "New car"
+    }
+  ]
+}

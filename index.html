@@ -597,23 +597,8 @@
     <section id="news" class="news">
         <div class="container">
             <div class="section-title"><h2 data-i18n="index.news.title">车队动态</h2></div>
-            <div class="news-container" data-reveal-stagger>
-                <div class="news-item">
-                    <div class="news-date">2025-08-15</div>
-                    <h3 class="news-title"><a href="https://mp.weixin.qq.com/s/IwdGH9tOSgCYG0ZcSDftdQ" target="_blank" data-i18n="index.news.items.0.title">回顾｜捷凯车队创始人许家泰走进华工Formax，共燃赛车梦！</a></h3>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">2025-05-24</div>
-                    <h3 class="news-title"><a href="https://mp.weixin.qq.com/s/EWbn2mrLYnzr84NusbWMAA" target="_blank" data-i18n="index.news.items.1.title">回顾｜三方聚力 赞助签约活动成功举办</a></h3>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">2025-01-25</div>
-                    <h3 class="news-title"><a href="https://mp.weixin.qq.com/s/LKOV-GXympn0VP8Wx7U-lQ" target="_blank" data-i18n="index.news.items.2.title">我们是谁</a></h3>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">2024-10-14</div>
-                    <h3 class="news-title"><a href="https://mp.weixin.qq.com/s/hb-Gp7r6KJtfrsFA8aPVCQ" target="_blank" data-i18n="index.news.items.3.title">回顾丨AF24& EF24新车发布会</a></h3>
-                </div>
+            <div class="news-container" id="newsList" data-count="4" data-reveal-stagger>
+                <!-- 由 js/news.js 从 data/news.json 渲染：新增推文只需改那个文件 -->
             </div>
             <div class="news-more">
                 <button class="btn wechat-btn" id="showWechatQr">
@@ -733,6 +718,7 @@
     <script src="js/components.js"></script>
     <script src="js/common.js"></script>
     <script src="js/i18n.js"></script>
+    <script src="js/news.js"></script>
     <script>
         (function() {
             'use strict';

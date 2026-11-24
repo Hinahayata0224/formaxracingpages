@@ -120,6 +120,18 @@ var I18n = (function () {
 
         // Update language switcher
         updateSwitcherUI(locale);
+
+        // 通知订阅者（数据驱动的区块，如新闻列表，需要按新语言重渲染）
+        changeHandlers.forEach(function (fn) {
+            try { fn(locale); } catch (e) { /* 单个订阅者出错不影响翻译 */ }
+        });
+    }
+
+    // ---------- 语言变化订阅 ----------
+    var changeHandlers = [];
+
+    function onChange(fn) {
+        if (typeof fn === 'function') changeHandlers.push(fn);
     }
 
     // ---------- 更新语言切换器 UI ----------
@@ -257,6 +269,7 @@ var I18n = (function () {
         getLocale: function () { return currentLocale; },
         t: t,
         translatePage: function () { translatePage(currentLocale); },
+        onChange: onChange,
         supported: supportedLocales,
         localeNames: localeNames
     };
