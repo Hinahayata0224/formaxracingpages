@@ -51,37 +51,39 @@
 
     // ---------- 微信公众号二维码模态框 ----------
     function initWechatModal() {
-        document.addEventListener('DOMContentLoaded', function () {
-            var showQrBtn = document.getElementById('showWechatQr');
-            var qrModal = document.getElementById('wechatQrModal');
-            var closeModal = qrModal ? qrModal.querySelector('.close-modal') : null;
+        var showQrBtn = document.getElementById('showWechatQr');
+        var qrModal = document.getElementById('wechatQrModal');
+        var closeModal = qrModal ? qrModal.querySelector('.close-modal') : null;
 
-            if (!showQrBtn || !qrModal) return;
+        if (!showQrBtn || !qrModal) return;
 
-            function openModal() {
-                qrModal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
+        // 打开前记下 body 的 overflow，关闭时原样还原（style.css 里 body 是 overflow-x: hidden）
+        var previousOverflow = '';
+
+        function openModal() {
+            previousOverflow = document.body.style.overflow;
+            qrModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModalFn() {
+            qrModal.style.display = 'none';
+            document.body.style.overflow = previousOverflow;
+        }
+
+        showQrBtn.addEventListener('click', openModal);
+        if (closeModal) {
+            closeModal.addEventListener('click', closeModalFn);
+        }
+
+        qrModal.addEventListener('click', function (e) {
+            if (e.target === qrModal) closeModalFn();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && qrModal.style.display === 'flex') {
+                closeModalFn();
             }
-
-            function closeModalFn() {
-                qrModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-
-            showQrBtn.addEventListener('click', openModal);
-            if (closeModal) {
-                closeModal.addEventListener('click', closeModalFn);
-            }
-
-            qrModal.addEventListener('click', function (e) {
-                if (e.target === qrModal) closeModalFn();
-            });
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && qrModal.style.display === 'flex') {
-                    closeModalFn();
-                }
-            });
         });
     }
 
