@@ -30,10 +30,10 @@
         .car-detail-specs h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--secondary-color); position: relative; padding-bottom: 1rem; }
         .car-detail-specs h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: var(--primary-color); }
         .specs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1.5rem; }
-        .spec-item { background-color: var(--light-gray); border-radius: 10px; padding: 1.5rem; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
-        .spec-item:hover { transform: translateY(-3px); box-shadow: 0 6px 20px var(--card-shadow-hover); }
-        .spec-value { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin-bottom: 0.5rem; }
-        .spec-label { color: #666; font-size: 0.9rem; }
+        .spec-item { background-color: #fff; border: 1px solid rgba(16, 24, 40, 0.08); border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 10px 28px -18px rgba(16, 24, 40, 0.35); transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+        .spec-item:hover { transform: translateY(-3px); border-color: rgba(16, 24, 40, 0.16); box-shadow: 0 2px 4px rgba(16, 24, 40, 0.05), 0 16px 36px -18px rgba(16, 24, 40, 0.4); }
+        .spec-value { font-size: 1.55rem; font-weight: 800; letter-spacing: -0.01em; color: var(--primary-color); margin-bottom: 0.45rem; font-variant-numeric: tabular-nums; }
+        .spec-label { color: #667085; font-size: 0.85rem; letter-spacing: 0.02em; }
         .innovation-section { margin-bottom: 4rem; }
         .innovation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .innovation-card { position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); cursor: pointer; }
@@ -51,8 +51,8 @@
         .story-image img { width: 100%; height: auto; display: block; }
         .awards-section { margin-bottom: 4rem; }
         .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .award-card { background-color: var(--accent-color); border-radius: 10px; padding: 2rem; text-align: center; box-shadow: 0 5px 15px var(--card-shadow); transition: transform 0.3s; }
-        .award-card:hover { transform: translateY(-5px); }
+        .award-card { background-color: #fff; border: 1px solid rgba(16, 24, 40, 0.08); border-radius: 12px; padding: 2rem; text-align: center; box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 10px 28px -18px rgba(16, 24, 40, 0.35); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .award-card:hover { transform: translateY(-4px); border-color: rgba(16, 24, 40, 0.16); box-shadow: 0 2px 4px rgba(16, 24, 40, 0.05), 0 18px 40px -20px rgba(16, 24, 40, 0.4); }
         .award-icon { font-size: 2.5rem; color: var(--glow-color); margin-bottom: 1rem; }
         .award-title { font-size: 1.2rem; font-weight: bold; color: var(--secondary-color); margin-bottom: 0.5rem; }
         .award-year { color: #777; }
