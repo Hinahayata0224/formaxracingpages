@@ -25,7 +25,7 @@ var Components = (function () {
         html += '<nav>';
         html += '<div class="logo">';
         html += '<a href="' + (isHomePage ? '#home' : '/') + '">';
-        html += '<img src="image/logo/logo.png" alt="Formax" data-i18n-alt="common.logoAlt">';
+        html += '<img src="image/logo/logo.png" alt="Formax" width="770" height="149" data-i18n-alt="common.logoAlt">';
         html += '</a>';
         html += '</div>';
         html += '<ul class="nav-links">';

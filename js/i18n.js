@@ -91,6 +91,14 @@ var I18n = (function () {
             if (titleText) el.setAttribute('title', titleText);
         }
 
+        // data-i18n-content (meta description 等使用 content 属性的标签)
+        var contentKey = el.getAttribute('data-i18n-content');
+        if (contentKey) {
+            var contentText = getTranslation(locale, contentKey);
+            if (!contentText) contentText = getTranslation(fallbackLocale, contentKey);
+            if (contentText) el.setAttribute('content', contentText);
+        }
+
         // data-i18n-html (innerHTML)
         var htmlKey = el.getAttribute('data-i18n-html');
         if (htmlKey) {
@@ -102,7 +110,7 @@ var I18n = (function () {
 
     // ---------- 翻译整个页面 ----------
     function translatePage(locale) {
-        var all = document.querySelectorAll('[data-i18n], [data-i18n-placeholder], [data-i18n-alt], [data-i18n-title], [data-i18n-html]');
+        var all = document.querySelectorAll('[data-i18n], [data-i18n-placeholder], [data-i18n-alt], [data-i18n-title], [data-i18n-content], [data-i18n-html]');
         all.forEach(function (el) {
             translateElement(el, locale);
         });
