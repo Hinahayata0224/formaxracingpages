@@ -68,19 +68,19 @@
                 {
                     "name": "E-Future 26 Electric Race Car",
                     "desc": "2026 season electric car: 233 kg with driver, four in-wheel motors on a 588V platform, 990 N downforce at 60 km/h, L/D 2.75, ClA 6.1.",
-                    "spec1label": "CLA",
+                    "spec1label": "ClA",
                     "spec2label": "Power"
                 },
                 {
                     "name": "A-Future 26 Driverless Race Car",
-                    "desc": "2026 season driverless car with the LiDAR relocated to the main hoop and a rebuilt perception chain; national runner-up and 2nd place in high-speed tracking.",
+                    "desc": "2026 season driverless car with the LiDAR relocated to the main hoop and a rebuilt perception chain; national runner-up and 2nd place in the trackdrive event.",
                     "spec1label": "LiDAR",
                     "spec2label": "Downforce"
                 },
                 {
                     "name": "E-Future 25 Electric Race Car",
-                    "desc": "Next-generation electric race car featuring carbon fiber monocoque and high-efficiency aero package, powered by four in-wheel motors with 80kW max output.",
-                    "spec1label": "CLA",
+                    "desc": "Next-generation electric race car featuring a carbon fiber monocoque and a high-efficiency aero package, powered by four in-wheel motors with 80kW max output.",
+                    "spec1label": "ClA",
                     "spec2label": "Power"
                 },
                 {
@@ -91,7 +91,7 @@
                 },
                 {
                     "name": "E-Future 24 Electric Race Car",
-                    "desc": "2024 season electric race car with carbon fiber monocoque and high-efficiency aero package, four in-wheel motors, 75kW max output.",
+                    "desc": "2024 season electric race car with a carbon fiber monocoque and a high-efficiency aero package, four in-wheel motors, 75kW max output.",
                     "spec1label": "Top Speed",
                     "spec2label": "Power"
                 },
@@ -110,14 +110,14 @@
         "groups": {
             "title": "Team Groups",
             "cards": [
-                { "name": "Electrical Systems", "desc": "Responsible for vehicle electrical system design, layout, and motor control algorithms, ensuring efficient and stable operation of the three-electric system." },
+                { "name": "Electrical Systems", "desc": "Responsible for vehicle electrical system design, layout, and motor control algorithms, keeping the battery, motor and controller systems efficient and reliable." },
                 { "name": "Body & Aerodynamics", "desc": "Focused on monocoque design and aerodynamic optimization, using CFD and composite materials to enhance race car performance." },
                 { "name": "Chassis", "desc": "Responsible for drivetrain, suspension, steering, and braking system design and manufacturing to ensure handling and stability." },
                 { "name": "Autonomous Systems", "desc": "Develops autonomous driving algorithms and sensor systems for self-planning and decision-making capabilities." },
                 { "name": "Marketing", "desc": "Responsible for team branding, platform operations, and event coordination to drive online development." },
-                { "name": "Secretariat", "desc": "Responsible for team financial accounting and event planning." },
+                { "name": "Secretary Team", "desc": "Responsible for team financial accounting and event planning." },
                 { "name": "Quality Control", "desc": "Responsible for workshop safety management and quality monitoring." },
-                { "name": "Driver Department", "desc": "Responsible for simulator training and test feedback tuning." }
+                { "name": "Drivers' Group", "desc": "Responsible for simulator training and test feedback tuning." }
             ]
         },
         "joinUs": {
@@ -168,7 +168,7 @@
                 { "name": "He Guolin", "dept": "School of Mechanical & Automotive Engineering", "desc": "Associate Professor, Doctoral Supervisor, Dept. of Automotive Engineering" },
                 { "name": "Ding Kang", "dept": "School of Mechanical & Automotive Engineering", "desc": "Vice Dean, Professor, Doctoral Supervisor" },
                 { "name": "Yang Zhijian", "dept": "School of Mechanical & Automotive Engineering", "desc": "Associate Professor, Master's Supervisor" },
-                { "name": "Huang Zhicong", "dept": "Wuxianming School of Intelligent Engineering", "desc": "Associate Professor, Doctoral Supervisor" }
+                { "name": "Huang Zhicong", "dept": "Wu Xianming School of Intelligent Engineering", "desc": "Associate Professor, Doctoral Supervisor" }
             ]
         },
         "management": {
@@ -208,7 +208,7 @@
                 { "title": "Brand Exposure", "desc": "Gain extensive brand exposure through competitions, media coverage, and campus events." },
                 { "title": "Talent Development", "desc": "Connect directly with top engineering talent and help develop future leaders and innovators." },
                 { "title": "Social Responsibility", "desc": "Demonstrate your support for education and technological innovation, enhancing your social image." },
-                { "title": "Technical Cooperation", "desc": "Collaborate with our technical team to develop innovative solutions and test new products and technologies." },
+                { "title": "Technical Collaboration", "desc": "Collaborate with our technical team to develop innovative solutions and test new products and technologies." },
                 { "title": "Network Expansion", "desc": "Join our partner network and build valuable connections with other industry leaders." },
                 { "title": "Promotional Opportunities", "desc": "Leverage our social media platforms to reach university audiences interested in technology and innovation." }
             ]
@@ -261,7 +261,7 @@
     },
     "contactusPage": {
         "pageTitle": "Contact Us - Formax Racing Team",
-        "pageDescription": "SCUT Formax Racing Team Official Website - Join Us",
+        "pageDescription": "SCUT Formax Racing Team - Contact Us",
         "title": "Ready for an In-Depth Conversation?",
         "address": "Address",
         "addressValue": "1st Floor, Automotive Technology Building, South China University of Technology (Wushan Campus), Tianhe District, Guangzhou, Guangdong",
@@ -307,7 +307,7 @@
             "wheelbase": "Wheelbase",
             "peakPower": "Peak Power",
             "liftDragRatio": "Lift-Drag Ratio",
-            "cLA": "Total CLA",
+            "cLA": "ClA",
             "lidar": "LiDAR",
             "camera": "Camera",
             "totalEnergy": "Total Energy",
@@ -334,7 +334,7 @@
                 { "title": "National First Prize", "year": "2024" },
                 { "title": "National Third Place", "year": "2024" },
                 { "title": "Matlab & Simulink Modeling First Prize", "year": "2024" },
-                { "title": "Design Presentation Third Place", "year": "2024" }
+                { "title": "Design Presentation · 3rd Place", "year": "2024" }
             ]
         },
         "AF25": {
@@ -346,7 +346,7 @@
                 { "value": "6.12kWh", "label": "Total Energy" },
                 { "value": "62.19kW", "label": "Peak Power" },
                 { "value": "750N\u00b7m", "label": "Peak Torque" },
-                { "value": "5.27", "label": "Total CLA" },
+                { "value": "5.27", "label": "ClA" },
                 { "value": "INS570D", "label": "INS" },
                 { "value": "AT128P", "label": "LiDAR" }
             ],
@@ -359,12 +359,12 @@
                 { "title": "SLAM Mapping Centerline Generation", "desc": "Iterative optimization algorithm, improving low-speed passing efficiency" }
             ],
             "storyTitle": "Racing Story",
-            "story": "<p>A-Future25 is our sixth-generation driverless formula car, twelve months in the making. As the team’s second driverless car with a carbon monocoque and dual AMK in-wheel motors, we put the emphasis on the autonomous system. Through countless simulations and tests, working late into the night, we finally produced a stable and precise driverless race car.</p><p>Yet when we walked confidently into the dynamic events, the car on the track was not the car we had practised with.</p><p>In the figure-eight the INS drifted strangely and we fell back on offset parameters we had never used before. In the acceleration run we ran into RES interference we had never seen, and AS Ready kept slipping away; on the last — and only — successful run, a Ready timeout meant it did not count.</p><p>The one chance to turn the season around was the high-speed tracking event at the end.</p><p>Our perception held up under the pressure and completed the mapping lap perfectly. But on the second lap the car began to weave, and we knew at once that it was a control problem. We tuned frantically, and then the problems came one after another — a stop distance we had forgotten to change, a speed profile that suddenly failed… none of which had ever appeared in practice. The clock ran on, and after one slow, safe completion lap we knew there was probably no time to try again.</p><p>For everyone there, it was a heavy day. Before it, we had imagined AF25 flying around the track a thousand times; we had not imagined these few hours turning out this way. Compared with the electric car that finished its endurance, what was left here was more red-eyed bitter smiling, more heads held in hands, more bitten lips and self-reproach.</p><p>Even with everyone’s eyes red, we still took a national first prize at the 2025 Formula Student China and secured the number A04 for the next driverless car. For Auto-Future, an unsatisfying 2025 season is over. For 2026, we go again.</p>",
+            "story": "<p>A-Future25 is our sixth-generation driverless formula car, twelve months in the making. As the team’s second driverless car with a carbon monocoque and dual AMK in-wheel motors, we put the emphasis on the autonomous system. Through countless simulations and tests, working late into the night, we finally produced a stable and precise driverless race car.</p><p>Yet when we walked confidently into the dynamic events, the car on the track was not the car we had practised with.</p><p>In the skidpad the INS drifted strangely and we fell back on offset parameters we had never used before. In the acceleration run we ran into RES interference we had never seen, and AS Ready kept slipping away; on the last — and only — successful run, a Ready timeout meant it did not count.</p><p>The one chance to turn the season around was the high-speed tracking event at the end.</p><p>Our perception held up under the pressure and completed the mapping lap perfectly. But on the second lap the car began to weave, and we knew at once that it was a control problem. We tuned frantically, and then the problems came one after another — a stop distance we had forgotten to change, a speed profile that suddenly failed… none of which had ever appeared in practice. The clock ran on, and after one slow, safe completion lap we knew there was probably no time to try again.</p><p>For everyone there, it was a heavy day. Before it, we had imagined AF25 flying around the track a thousand times; we had not imagined these few hours turning out this way. Compared with the electric car that finished its endurance, what was left here was more red-eyed bitter smiling, more heads held in hands, more bitten lips and self-reproach.</p><p>Even with everyone’s eyes red, we still took a national first prize at the 2025 Formula Student China and secured the number A04 for the next driverless car. For Auto-Future, an unsatisfying 2025 season is over. For 2026, we go again.</p>",
             "awards": [
                 { "title": "National First Prize", "year": "2025" },
                 { "title": "Outstanding Publicity Team of the Year", "year": "2025" },
-                { "title": "High-Speed Tracking · 2nd Place", "year": "2025" },
-                { "title": "Design Defence · 2nd Place", "year": "2025" }
+                { "title": "Trackdrive · 2nd Place", "year": "2025" },
+                { "title": "Design Presentation · 2nd Place", "year": "2025" }
             ]
         },
         "EF24": {
@@ -382,7 +382,7 @@
             "story": "E-Future24 is the eleventh-generation electric Formula Student race car we developed over 12 months. From concept design to final testing, the entire team invested over 5,000 hours of work. During the design process, we faced numerous technical challenges, including drivetrain optimization, battery management system improvements, and aerodynamic design. Through countless simulations and tests, we ultimately developed an electric race car with outstanding performance. The most unforgettable moments were during the final testing phase, when all team members took shifts and spent countless sleepless nights in the workshop. This spirit of 'dare to fight, dare to win, strive for excellence' enabled us to achieve excellent results at the Formula Student China competition.",
             "awards": [
                 { "title": "National First Prize", "year": "2024" },
-                { "title": "Design Presentation Third Place", "year": "2024" }
+                { "title": "Design Presentation · 3rd Place", "year": "2024" }
             ]
         },
         "EF25": {
@@ -411,16 +411,16 @@
             "innovations": [
                 { "title": "Aero package, evolved", "desc": "990 N downforce at 60 km/h, L/D 2.75 and ClA 6.1; swept sidepods and floor add another 50 N over EF25" },
                 { "title": "In-house distributed BMS", "desc": "First-order RC plus EKF estimates SOC with 2.26% RMSE; a four-layer main board cuts P95 message latency to 32 ms" },
-                { "title": "Carbon monocoque", "desc": "5868/6119 N·m/deg torsional stiffness front/rear and 18.7% lighter than the previous car, mixing UD and woven plies by load case" },
-                { "title": "Suspension and steering", "desc": "Double wishbones with a front U-bar and rear Z-bar, bump-steer toe change below 0.1 deg; open bevel-gear steering at 10% Ackermann" },
+                { "title": "Carbon monocoque", "desc": "5868/6119 N·m/° torsional stiffness front/rear and 18.7% lighter than the previous car, mixing UD and woven plies by load case" },
+                { "title": "Suspension and steering", "desc": "Double wishbones with a front U-bar and rear Z-bar, bump-steer toe change below 0.1°; open bevel-gear steering at 10% Ackermann" },
                 { "title": "Four-wheel torque vectoring", "desc": "TVC, TCS and yaw-stability control share the same actuators; yaw-rate peak up 22% at 13 m/s and 1.17 s faster average lap" },
-                { "title": "Lightweight integration", "desc": "233 kg with a 60 kg driver and a 280 mm centre of gravity; the five-in-one HV unit drops from 18.24 to 12.546 kg" }
+                { "title": "Lightweight integration", "desc": "233 kg with a 60 kg driver and a 280 mm center of gravity; the five-in-one HV unit drops from 18.24 to 12.546 kg" }
             ],
             "storyTitle": "Racing Story",
-            "story": "<p>E-Future26 is our twelfth-generation electric formula car, a full year in the making.</p><p>In the 2025 season we scored the best result of our four-motor era — fourth overall nationally — and with it earned E-Future26 the number E04. Yet last year’s E-Future25, hero though she was, was also a veteran: we would rather call her EF24B. Her layout and electrical platform descend straight from EF24 — a rear-biased centre of gravity, an oversized yaw inertia, and the flaw the four-motor era has carried since its very first year: too much mass. Keep that platform and our dynamic results could never take another step forward.</p><p>So E-Future26 made exactly those the first priorities: a low-inertia layout, a compact electrical architecture…</p><p>After fighting through a shortage of funding and a monocoque mould that would not cooperate, EF26 emerged. Her design caught up with the thinking of China’s top four-motor teams; the overweight body we had been criticised for was gone — 233 kg, Formax’s first step toward lighter, faster, stronger. The judges recognised it too: we reached the design final again and took fourth place. Two finals in a row — the “static king” of old was finding its form.</p><p>Her fate, like her build, was never going to be smooth. Scrutineering came and went quickly. On the dynamic side, the figure-eight and the acceleration both set new bests for the four-motor era. Then came the skidpad — traditionally one of SCUT’s strongest events — and the car’s electrical system chose that moment to misbehave. 64 seconds was her time, and she set it with only the front motors turning. Even so, she still made the top heat of endurance. We all kept hoping — hoping EF26 would tear up the endurance run and finally show the speed she really had.</p><p>Another bucket of cold water before endurance. One rear motor simply would not turn; we pulled the gears out of its reduction box. From the moment the green flag fell, she was no longer whole. Xuan brought her home safely, the driver change came and went, and the TSAL light went green.</p><p>Nobody saw the red light come on again. Her race was over.</p><p>We will never know how fast EF26 could have gone. But all of us know that EF26 was a fast car.</p><p>In the 2027 season she becomes A02, taking the mantle from E34, gaining an autonomous system and going on serving the team. We believe her red light will come on again, and her story will go on being written. SCUT Racing: still daring to fight, still striving for perfection.</p>",
+            "story": "<p>E-Future26 is our twelfth-generation electric formula car, a full year in the making.</p><p>In the 2025 season we scored the best result of our four-motor era — fourth overall nationally — and with it earned E-Future26 the number E04. Yet last year’s E-Future25, hero though she was, was also a veteran: we would rather call her EF24B. Her layout and electrical platform descend straight from EF24 — a rear-biased center of gravity, an oversized yaw inertia, and the flaw the four-motor era has carried since its very first year: too much mass. Keep that platform and our dynamic results could never take another step forward.</p><p>So E-Future26 made exactly those the first priorities: a low-inertia layout, a compact electrical architecture…</p><p>After fighting through a shortage of funding and a monocoque mould that would not cooperate, EF26 emerged. Her design caught up with the thinking of China’s top four-motor teams; the overweight body we had been criticized for was gone — 233 kg, Formax’s first step toward lighter, faster, stronger. The judges recognized it too: we reached the design final again and took fourth place. Two finals in a row — the “static king” of old was finding its form.</p><p>Her fate, like her build, was never going to be smooth. Scrutineering came and went quickly. On the dynamic side, the skidpad and the acceleration both set new bests for the four-motor era. Then came autocross — traditionally one of the team’s strongest events — and the car’s electrical system chose that moment to misbehave. 64 seconds was her time, and she set it with only the front motors turning. Even so, she still made the top heat of endurance. We all kept hoping — hoping EF26 would tear up the endurance run and finally show the speed she really had.</p><p>Another bucket of cold water before endurance. One rear motor simply would not turn; we pulled the gears out of its reduction box. From the moment the green flag fell, she was no longer whole. Xuan brought her home safely, the driver change came and went, and the TSAL light went green.</p><p>Nobody saw the red light come on again. Her race was over.</p><p>We will never know how fast EF26 could have gone. But all of us know that EF26 was a fast car.</p><p>In the 2027 season she becomes A02, taking the mantle from E34, gaining an autonomous system and going on serving the team. We believe her red light will come on again, and her story will go on being written. SCUT Racing: still daring to fight, still striving for perfection.</p>",
             "awards": [
                 { "title": "National Second Prize", "year": "2026" },
-                { "title": "Design Defence · 4th Place", "year": "2026" }
+                { "title": "Design Presentation · 4th Place", "year": "2026" }
             ]
         },
         "AF26": {
@@ -428,18 +428,18 @@
             "imageAlt": "A-Future26",
             "innovations": [
                 { "title": "LiDAR on the main hoop", "desc": "AT128P moved to the top of the main hoop with a rebuilt dataset; CenterPoint finds 43 cones per frame (+100%), 97.8% AP, 40 m average range" },
-                { "title": "Vision with PnP redundancy", "desc": "Dual 2 MP cameras cover about 130 deg; YOLO26m-Pose reaches 98.2% mAP50, and monocular depth stays within 5.5% AbsRel at 10 m as a fallback" },
-                { "title": "Multi-constraint SLAM", "desc": "Spacing, confidence and colour constraints reject ambiguous cones; three switchable localisation modes, under 3 ms latency and 0.15 m map error" },
+                { "title": "Vision with PnP redundancy", "desc": "Dual 2 MP cameras cover about 130°; YOLO26m-Pose reaches 98.2% mAP50, and monocular depth stays within 5.5% AbsRel at 10 m as a fallback" },
+                { "title": "Multi-constraint SLAM", "desc": "Spacing, confidence and color constraints reject ambiguous cones; three switchable localization modes, under 3 ms latency and 0.15 m map error" },
                 { "title": "Obstacle-tolerant front wing", "desc": "A swept mainplane with chamfered endplates guides cones outward; 34% stiffer at about 3.0 kg, ClA 4.39 and 709 N downforce" },
                 { "title": "LTV-MPC lateral/longitudinal control", "desc": "Under 13 ms per solve, 0.184 m tracking error in a 6 m/s figure-eight, 7% faster lap simulation than last season" },
-                { "title": "Stiffer monocoque", "desc": "6938 N·m/deg front (+69.71%) and 7602 N·m/deg rear (+16.05%), with a buried front hoop and topology-optimised inserts" }
+                { "title": "Stiffer monocoque", "desc": "6938 N·m/° front (+69.71%) and 7602 N·m/° rear (+16.05%), with a buried front hoop and topology-optimized inserts" }
             ],
             "storyTitle": "Racing Story",
-            "story": "<p>A-Future26 is our seventh-generation driverless formula car, twelve months in the making.</p><p>Built on E-Future26's body, she carries every mechanical quality a fast car needs — quick and stable. After all the setup experience A-Future25 accumulated, nobody expected her to be hard to drive — including the autonomous system.</p><p>Yet last season's shadow still hangs over this car, and over everyone who built her. “Hefei, a year ago. The driverless car DNF'd in the acceleration, then went into a death wobble in the tracking event — that failure followed me around for most of a year. Can the car finish? Is it fast enough? What kind of car, and what kind of team, does it actually take?” That is how Zhao Ziqian — AF25's autonomous-system lead and AF26's driverless team captain — puts it.</p><p>Nobody was beaten down by that shadow; we turned it into fuel. No idiom really covers the nights spent on code, but commit after commit on GitHub made this car's eyes brighter, her acceleration stronger, her steering freer. In one year we built our own highly customised simulation platforms — two of them, in fact — and a virtual AF25 ran lap after lap inside them; we built a stable speed planner, a complete SLAM and planning stack, a fast and precise MPC… and none of us thought “that's enough.” Everyone understood one thing: to show 100% on track, you have to put in 150%.</p><p>“In the end we got an answer we can live with,” Zhao Ziqian adds. “A04 grew up being pulled along by the whole team, and looked after by seniors from several seasons — he is very lucky. All three events performed to expectation and finished cleanly. Thank you all for putting together such a fine piece of work.”</p><p>We finally met a stable, fast, intelligent driverless car; we watched her go from yellow to blue in the high-speed tracking event, and watched her step onto the runner-up's podium.</p><p>But more importantly, we proved that we have a team that is proactive, united, meticulous and able to execute. That is a spirit worth far more than any award. And we believe the SCUT driverless team will carry it onward, toward the highest step of the podium.</p>",
+            "story": "<p>A-Future26 is our seventh-generation driverless formula car, twelve months in the making.</p><p>Built on E-Future26's body, she carries every mechanical quality a fast car needs — quick and stable. After all the setup experience A-Future25 accumulated, nobody expected her to be hard to drive — including the autonomous system.</p><p>Yet last season's shadow still hangs over this car, and over everyone who built her. “Hefei, a year ago. The driverless car DNF'd in the acceleration, then went into a death wobble in the trackdrive — that failure followed me around for most of a year. Can the car finish? Is it fast enough? What kind of car, and what kind of team, does it actually take?” That is how Zhao Ziqian — AF25's autonomous-system lead and AF26's driverless team captain — puts it.</p><p>Nobody was beaten down by that shadow; we turned it into fuel. No idiom really covers the nights spent on code, but commit after commit on GitHub made this car's eyes brighter, her acceleration stronger, her steering freer. In one year we built our own highly customized simulation platforms — two of them, in fact — and a virtual AF25 ran lap after lap inside them; we built a stable speed planner, a complete SLAM and planning stack, a fast and precise MPC… and none of us thought “that's enough.” Everyone understood one thing: to show 100% on track, you have to put in 150%.</p><p>“In the end we got an answer we can live with,” Zhao Ziqian adds. “A04 grew up being pulled along by the whole team, and looked after by seniors from several seasons — he is very lucky. All three events performed to expectation and finished cleanly. Thank you all for putting together such a fine piece of work.”</p><p>We finally met a stable, fast, intelligent driverless car; we watched her go from yellow to blue in the high-speed tracking event, and watched her step onto the runner-up's podium.</p><p>But more importantly, we proved that we have a team that is proactive, united, meticulous and able to execute. That is a spirit worth far more than any award. And we believe the SCUT driverless team will carry it onward, toward the highest step of the podium.</p>",
             "awards": [
                 { "title": "National Runner-up", "year": "2026" },
-                { "title": "High-Speed Tracking · 2nd Place", "year": "2026" },
-                { "title": "Design Defence · 4th Place", "year": "2026" }
+                { "title": "Trackdrive · 2nd Place", "year": "2026" },
+                { "title": "Design Presentation · 4th Place", "year": "2026" }
             ]
         }
     }
