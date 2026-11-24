@@ -47,8 +47,8 @@
         .story-section .story-content { flex: 1; min-width: 300px; }
         .story-section .story-content h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--secondary-color); }
         .story-section .story-content p { margin-bottom: 1rem; line-height: 1.8; }
-        .story-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); }
-        .story-image img { width: 100%; height: 100%; object-fit: cover; }
+        .story-image { flex: 1; min-width: 300px; align-self: flex-start; position: sticky; top: 100px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); }
+        .story-image img { width: 100%; height: auto; display: block; }
         .awards-section { margin-bottom: 4rem; }
         .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
         .award-card { background-color: var(--accent-color); border-radius: 10px; padding: 2rem; text-align: center; box-shadow: 0 5px 15px var(--card-shadow); transition: transform 0.3s; }
@@ -56,7 +56,7 @@
         .award-icon { font-size: 2.5rem; color: var(--glow-color); margin-bottom: 1rem; }
         .award-title { font-size: 1.2rem; font-weight: bold; color: var(--secondary-color); margin-bottom: 0.5rem; }
         .award-year { color: #777; }
-        @media (max-width: 768px) { .car-detail-header { flex-direction: column; } }
+        @media (max-width: 768px) { .car-detail-header { flex-direction: column; } .story-image { position: static; } }
     </style>
 </head>
 <body data-theme="av">
@@ -118,7 +118,7 @@
                 <h2 data-i18n="detail.AF26.storyTitle">赛车故事</h2>
                 <div data-i18n-html="detail.AF26.story"><p>A-Future26是我们历时12个月研发的第七代无人驾驶方程式赛车。</p><p>作为继承了E-Future26的身体的一辆赛车，她拥有一辆快车所有必备的机械素质——又快又稳定。在A-Future25积累了大量调车经验之后，没有人会觉得她不好开——包括无人系统。</p><p>然而，上个赛季的阴霾还时时刻刻笼罩在这台车，笼罩在所有开发这台车的队员们身上。“一年前的合肥赛场。无人车直线DNF后在循迹进入死亡摇摆后失利的阴影伴随了我大半年的生活。车能完赛吗？足够快吗？到底需要怎么样的车和队伍？”AF25的无人系统组长，也是AF26的无人车队长赵梓谦这样说。</p><p>大家没有被阴霾打倒，而是将它转化为了动力。夙兴夜寐无法形容大家通宵研究代码的努力，Github上一次又一次的提交，都让这辆车的眼睛更明亮，加速更有力，转向更自如。一年里，我们拥有了自己高度定制化的仿真平台（甚至一有就是两个），虚拟的AF25在里面跑了一圈又一圈；我们拥有了稳定的速度规划，拥有了功能完整的SLAM与规划，拥有了快速又精准的MPC……没有人觉得“这就够了”，大家都明白一个道理：赛场上要发挥出100%的实力，就要付出150%的努力。</p><p>“最终得到了一个还算让人满意的答案。”赵梓谦也说道，“A04是在全队拉扯下长大的，也是受到多个赛季学长学姐关照的，他真的很有福气，三个赛项全部发挥了预期的水平，顺利完赛。很感谢大家，一起完成了A04这个优秀的作品。”</p><p>我们最终见到了一辆稳定，快速，智能的无人赛车，见证了她在高速循迹的赛场上从黄灯到蓝灯，见证了她登上亚军的领奖台。</p><p>但更重要的，我们证明了我们拥有一个主动，团结，精益，有执行力的团队，这是一个队伍的精神瑰宝，比奖项重要得多。我们相信，华工无人车队会带着这份瑰宝，继续向最高领奖台进发。</p></div>
             </div>
-            <div class="story-image"><img width="1400" height="933" src="image/misc/AF26story.jpg" alt="AF26 Racing Story" loading="lazy" decoding="async"></div>
+            <div class="story-image"><img width="1200" height="800" src="image/misc/AF26story.jpg" alt="AF26 Racing Story" loading="lazy" decoding="async"></div>
         </section>
 
         <section class="awards-section">

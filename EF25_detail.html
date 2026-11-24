@@ -47,8 +47,8 @@
         .story-section .story-content { flex: 1; min-width: 300px; }
         .story-section .story-content h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--secondary-color); }
         .story-section .story-content p { margin-bottom: 1rem; line-height: 1.8; }
-        .story-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); }
-        .story-image img { width: 100%; height: 100%; object-fit: cover; }
+        .story-image { flex: 1; min-width: 300px; align-self: flex-start; position: sticky; top: 100px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); }
+        .story-image img { width: 100%; height: auto; display: block; }
         .awards-section { margin-bottom: 4rem; }
         .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
         .award-card { background-color: var(--accent-color); border-radius: 10px; padding: 2rem; text-align: center; box-shadow: 0 5px 15px var(--card-shadow); transition: transform 0.3s; }
@@ -56,7 +56,7 @@
         .award-icon { font-size: 2.5rem; color: var(--glow-color); margin-bottom: 1rem; }
         .award-title { font-size: 1.2rem; font-weight: bold; color: var(--secondary-color); margin-bottom: 0.5rem; }
         .award-year { color: #777; }
-        @media (max-width: 768px) { .car-detail-header { flex-direction: column; } }
+        @media (max-width: 768px) { .car-detail-header { flex-direction: column; } .story-image { position: static; } }
     </style>
 </head>
 <body data-theme="ev">
