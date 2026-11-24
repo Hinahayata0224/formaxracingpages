@@ -25,15 +25,19 @@
     <style>
         /* ===== Page-specific Styles: sponsor.html ===== */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image/sponsor/hero.jpg') no-repeat center center/cover;
+            min-height: 72vh;
+            background:
+                radial-gradient(70% 90% at 50% 0%, rgba(80, 152, 224, 0.22) 0%, rgba(5, 8, 13, 0) 62%),
+                linear-gradient(180deg, rgba(5, 8, 13, 0.55) 0%, rgba(5, 8, 13, 0.72) 52%, #05080d 100%),
+                url('image/sponsor/hero.jpg') no-repeat center center/cover;
             color: var(--accent-color);
             display: flex;
             align-items: center;
             text-align: center;
             margin-top: 0;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; text-shadow: 0 2px 30px rgba(0, 0, 0, 0.55); }
+        .hero .hero-content p { color: rgba(255, 255, 255, 0.82); font-size: 1.05rem; letter-spacing: 0.03em; }
 
         .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
         .benefit-card {

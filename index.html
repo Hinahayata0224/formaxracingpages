@@ -221,6 +221,8 @@
         .car-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .car-card:hover .car-image img { transform: scale(1.05); }
         .car-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px var(--card-shadow-hover); }
+        .car-card-ev:hover { box-shadow: 0 20px 46px -24px rgba(212, 0, 0, 0.55); }
+        .car-card-av:hover { box-shadow: 0 20px 46px -24px rgba(27, 138, 61, 0.55); }
         .car-info { padding: 1.5rem; }
         .car-info h3 { margin-bottom: 0; color: var(--secondary-color); }
         .car-specs { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 0; }
@@ -268,21 +270,37 @@
         .group-card p { color: #666; }
 
         /* Achievements */
-        .achievements { background-color: var(--dark-bg); color: var(--accent-color); }
+        .achievements { background-color: #070d16; color: var(--accent-color); position: relative; overflow: hidden; }
+        .achievements::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(70% 90% at 50% 0%, rgba(80, 152, 224, 0.20) 0%, rgba(5, 8, 13, 0) 62%);
+        }
+        .achievements .container { position: relative; }
         .achievements .section-title h2 { color: var(--accent-color); }
-        .achievements .section-title::before { color: var(--glow-color); opacity: 0.9; }
+        .achievements .section-title::before { color: var(--accent-soft); opacity: 0.9; }
         .stats { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; }
-        .stat { text-align: center; padding: 1.8rem 1.5rem; background: rgba(255,255,255,0.06); border-radius: 12px; min-width: 140px; transition: transform 0.3s, background 0.3s; }
-        .stat:hover { transform: translateY(-3px); background: rgba(255,255,255,0.1); }
-        .stat i { font-size: 2.5rem; color: var(--glow-color); margin-bottom: 0.8rem; }
-        .stat-number { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.3rem; }
-        .stat-name { color: rgba(255,255,255,0.65); font-size: 0.95rem; }
+        .stat { text-align: center; padding: 1.8rem 1.5rem; min-width: 140px; border-radius: 12px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.10);
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+                backdrop-filter: blur(6px);
+                transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+        .stat:hover { transform: translateY(-4px); background: rgba(255, 255, 255, 0.09); border-color: var(--accent-soft); box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.9); }
+        .stat i { font-size: 2.5rem; color: var(--accent-soft); margin-bottom: 0.8rem; }
+        .stat-number { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 0.3rem; font-variant-numeric: tabular-nums; }
+        .stat-name { color: rgba(255,255,255,0.62); font-size: 0.95rem; }
 
         /* Join Us */
         .join-us-section { margin: 0; padding: 0; }
         .join-us-hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image/misc/hero.jpg') no-repeat center center/cover;
+            background:
+                radial-gradient(70% 90% at 50% 0%, rgba(80, 152, 224, 0.22) 0%, rgba(5, 8, 13, 0) 62%),
+                linear-gradient(180deg, rgba(5, 8, 13, 0.58) 0%, rgba(5, 8, 13, 0.74) 55%, #05080d 100%),
+                url('image/misc/hero.jpg') no-repeat center center/cover;
             color: var(--accent-color);
             display: flex;
             align-items: center;
