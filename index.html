@@ -110,6 +110,14 @@
             letter-spacing: 0.14em;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
         }
+        /* 英文版：拉丁字按西文排印习惯收紧字距、降低一级字重 */
+        html[lang="en"] .slide-content h1 {
+            font-weight: 700;
+            letter-spacing: -0.015em;
+        }
+        html[lang="en"] .slide-content p {
+            letter-spacing: 0;
+        }
         .slide-image {
             position: absolute;
             top: 0;
