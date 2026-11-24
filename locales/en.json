@@ -66,6 +66,18 @@
             "title": "Our Cars",
             "cars": [
                 {
+                    "name": "E-Future 26 Electric Race Car",
+                    "desc": "2026 season electric car: 230 kg with driver, four in-wheel motors on a 588V platform, 990 N downforce at 60 km/h, L/D 2.75, ClA 6.1.",
+                    "spec1label": "CLA",
+                    "spec2label": "Power"
+                },
+                {
+                    "name": "A-Future 26 Driverless Race Car",
+                    "desc": "2026 season driverless car with the LiDAR relocated to the main hoop and a rebuilt perception chain; national runner-up and 2nd place in high-speed tracking.",
+                    "spec1label": "LiDAR",
+                    "spec2label": "Downforce"
+                },
+                {
                     "name": "E-Future 25 Electric Race Car",
                     "desc": "Next-generation electric race car featuring carbon fiber monocoque and high-efficiency aero package, powered by four in-wheel motors with 80kW max output.",
                     "spec1label": "CLA",
@@ -390,6 +402,42 @@
                 { "title": "Matlab & Simulink Modeling Second Prize", "year": "2025" },
                 { "title": "Outstanding Aerodynamics Award", "year": "2025" }
             ]
-        }
+        },
+    "EF26": {
+        "name": "E-Future26 Technical Specifications",
+        "imageAlt": "E-Future26",
+        "innovations": [
+            { "title": "Aero package, evolved", "desc": "990 N downforce at 60 km/h, L/D 2.75 and ClA 6.1; swept sidepods and floor add another 50 N over EF25" },
+            { "title": "In-house distributed BMS", "desc": "First-order RC plus EKF estimates SOC with 2.26% RMSE; a four-layer main board cuts P95 message latency to 32 ms" },
+            { "title": "Carbon monocoque", "desc": "5868/6119 N·m/deg torsional stiffness front/rear and 18.7% lighter than the previous car, mixing UD and woven plies by load case" },
+            { "title": "Suspension and steering", "desc": "Double wishbones with a front U-bar and rear Z-bar, bump-steer toe change below 0.1 deg; open bevel-gear steering at 10% Ackermann" },
+            { "title": "Four-wheel torque vectoring", "desc": "TVC, TCS and yaw-stability control share the same actuators; yaw-rate peak up 22% at 13 m/s and 1.17 s faster average lap" },
+            { "title": "Lightweight integration", "desc": "230 kg with a 60 kg driver and a 280 mm centre of gravity; the five-in-one HV unit drops from 18.24 to 12.546 kg" }
+        ],
+        "storyTitle": "Racing Story",
+        "story": "<p>E-Future26 (competition number E04) is our 2026 electric formula car, built around four in-wheel motors and a high-performance aero package. Curb weight drops to 230 kg including a 60 kg driver, with the centre of gravity at 280 mm — 30 kg lighter than the previous car, and quicker in the corners.</p><p>On the electrical side the car runs a 588V platform and a 6.993 kWh pack. Four AMK in-wheel motors drive through our own 2Z-NW planetary reducer (ratio 12.292), for roughly 1032.5 N·m at the wheels. The motor controllers and HV distribution box are merged into one five-in-one unit, cutting that assembly from 18.24 kg to 12.546 kg (-31.2%). The in-house distributed BMS estimates SOC with a first-order RC model and an extended Kalman filter (2.26% RMSE), and a four-layer main board brings P95 message latency down to 32 ms.</p><p>Aerodynamically the car makes 990 N of downforce at 60 km/h, with L/D 2.75 and ClA 6.1. A high-clearance front wing and biplane mainplane pair with whisker wings to tidy the front-wheel wake, and swept sidepods push the tyre wake outward, adding 50 N over EF25; yaw sensitivity reaches 96% at 6 deg. The carbon monocoque is torsionally 5868/6119 N·m/deg front/rear and 18.7% lighter, its layup split by load case and mixing unidirectional and woven material.</p><p>The team also rebuilt the vehicle control software around the V-model: requirements, HIL and driver-in-the-loop testing all moved ahead of the car, so control parameters were tuned while the car was still being built. On track the new algorithms were 1.17 s per lap quicker than the old ones, and far more consistent.</p><p>In the 2026 season EF26 took a national second prize in the static events. In endurance the car failed to come back up on high voltage during a driver change and retired. Both the best and the hardest parts of the year went straight into the next design — dare to fight, strive for perfection.</p>",
+        "awards": [
+            { "title": "National Second Prize", "year": "2026" },
+            { "title": "Endurance · DNF (HV restart failed at driver change)", "year": "2026" }
+        ]
+    },
+    "AF26": {
+        "name": "A-Future26 Technical Specifications",
+        "imageAlt": "A-Future26",
+        "innovations": [
+            { "title": "LiDAR on the main hoop", "desc": "AT128P moved to the top of the main hoop with a rebuilt dataset; CenterPoint finds 43 cones per frame (+100%), 97.8% AP, 40 m average range" },
+            { "title": "Vision with PnP redundancy", "desc": "Dual 2 MP cameras cover about 130 deg; YOLO26m-Pose reaches 98.2% mAP50, and monocular depth stays within 5.5% AbsRel at 10 m as a fallback" },
+            { "title": "Multi-constraint SLAM", "desc": "Spacing, confidence and colour constraints reject ambiguous cones; three switchable localisation modes, under 3 ms latency and 0.15 m map error" },
+            { "title": "Obstacle-tolerant front wing", "desc": "A swept mainplane with chamfered endplates guides cones outward; 34% stiffer at about 3.0 kg, ClA 4.39 and 709 N downforce" },
+            { "title": "LTV-MPC lateral/longitudinal control", "desc": "Under 13 ms per solve, 0.184 m tracking error in a 6 m/s figure-eight, 7% faster lap simulation than last season" },
+            { "title": "Stiffer monocoque", "desc": "6938 N·m/deg front (+69.71%) and 7602 N·m/deg rear (+16.05%), with a buried front hoop and topology-optimised inserts" }
+        ],
+        "storyTitle": "Racing Story",
+        "story": "<p>A-Future26 (competition number A04) takes the EF26 electric platform and rebuilds it as a driverless car, with perception, mapping, planning and control redesigned end to end.</p><p>Perception starts with a Hesai AT128P LiDAR moved from the front wing to the centre of the main hoop, cutting occlusion and demanding a dataset rebuilt for the new viewpoint. CenterPoint detects small cones at 43 per frame — double last season — with 97.8% AP, a 40 m average range and 7.2 ms per frame. Two Hikrobot 2 MP cameras feed YOLO26m-Pose keypoint detection, synced over GNSS-PTP and fused through SDIoU for 98.2% mAP50. A PnP monocular depth estimate acts as redundancy: 5.5% relative error within 10 m, enough to keep sensing alive if the LiDAR drops out.</p><p>On the mapping side we wrote our own multi-constraint, globally optimal data-association SLAM, rejecting ambiguous cones by spacing, position confidence and colour, with three switchable modes — direct INS, KISS-ICP self-localisation, and automatic switching when the INS drifts. Mapping latency is under 3 ms with 0.15 m cone-map error. Planning runs Delaunay triangulation inside a sector ROI locally and a QP minimum-curvature line globally, under 5 ms per cycle.</p><p>Control uses an LTV-MPC lateral controller with a two-stage longitudinal controller, solving both within 13 ms and holding 0.184 m tracking error in a 6 m/s figure-eight. Steering moved to a Demark servo motor with bevel-gear reversal, 52.35% lighter than last season, while the brake-by-wire uses our own twin-cylinder module to close the loop on brake pressure between 0 and 0.9 MPa.</p><p>In the 2026 season A04 finished as national runner-up and took second place in high-speed tracking. From where the LiDAR sits to the chamfer on an endplate, every change was backed by simulation and real car data — the most engineering-like thing about this car.</p>",
+        "awards": [
+            { "title": "National Runner-up", "year": "2026" },
+            { "title": "High-Speed Tracking · 2nd Place", "year": "2026" }
+        ]
+    }
     }
 }

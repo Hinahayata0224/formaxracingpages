@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="华南理工大学Formax方程式赛车队-2026赛季无人车介绍">
+    <title>A-Future26 Racing Car Details - Formax Racing Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <style>
+        .car-detail-header { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem; }
+        .car-detail-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); }
+        .car-detail-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .car-detail-specs { flex: 1; min-width: 300px; }
+        .car-detail-specs h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--secondary-color); position: relative; padding-bottom: 1rem; }
+        .car-detail-specs h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: var(--primary-color); }
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1.5rem; }
+        .spec-item { background-color: var(--light-gray); border-radius: 10px; padding: 1.5rem; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+        .spec-item:hover { transform: translateY(-3px); box-shadow: 0 6px 20px var(--card-shadow-hover); }
+        .spec-value { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .spec-label { color: #666; font-size: 0.9rem; }
+        .innovation-section { margin-bottom: 4rem; }
+        .innovation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .innovation-card { position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); cursor: pointer; }
+        .innovation-image { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.5s; }
+        .innovation-card:hover .innovation-image { transform: scale(1.1); }
+        .innovation-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); color: var(--accent-color); padding: 1.5rem; transform: translateY(calc(100% - 3.8rem)); transition: transform 0.3s; }
+        .innovation-card:hover .innovation-overlay { transform: translateY(0); }
+        .innovation-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .innovation-overlay p { font-size: 0.9rem; opacity: 0.9; }
+        .story-section { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem; }
+        .story-section .story-content { flex: 1; min-width: 300px; }
+        .story-section .story-content h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--secondary-color); }
+        .story-section .story-content p { margin-bottom: 1rem; line-height: 1.8; }
+        .story-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px var(--card-shadow); }
+        .story-image img { width: 100%; height: 100%; object-fit: cover; }
+        .awards-section { margin-bottom: 4rem; }
+        .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .award-card { background-color: var(--accent-color); border-radius: 10px; padding: 2rem; text-align: center; box-shadow: 0 5px 15px var(--card-shadow); transition: transform 0.3s; }
+        .award-card:hover { transform: translateY(-5px); }
+        .award-icon { font-size: 2.5rem; color: var(--glow-color); margin-bottom: 1rem; }
+        .award-title { font-size: 1.2rem; font-weight: bold; color: var(--secondary-color); margin-bottom: 0.5rem; }
+        .award-year { color: #777; }
+        @media (max-width: 768px) { .car-detail-header { flex-direction: column; } }
+    </style>
+</head>
+<body data-theme="av">
+    <a href="/" class="floating-back-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span data-i18n="common.back">返回主页</span>
+    </a>
+    <div class="container" style="padding-top: 100px;">
+
+        <section class="car-detail-header">
+            <div class="car-detail-image"><img src="image/vehicle/AF26_detail.jpg" alt="AF26" data-i18n-alt="detail.AF26.imageAlt"></div>
+            <div class="car-detail-specs">
+                <h2 data-i18n="detail.AF26.name">A-Future26 技术规格</h2>
+                <div class="specs-grid" data-reveal-stagger>
+                    <div class="spec-item"><div class="spec-value">230kg</div><div class="spec-label" data-i18n="detail.common.curbWeight">整备质量</div></div>
+                    <div class="spec-item"><div class="spec-value">37:63</div><div class="spec-label" data-i18n="detail.common.weightDist">前后轴荷比</div></div>
+                    <div class="spec-item"><div class="spec-value">3.6176kWh</div><div class="spec-label" data-i18n="detail.common.totalEnergy">总能量</div></div>
+                    <div class="spec-item"><div class="spec-value">70kW</div><div class="spec-label" data-i18n="detail.common.peakPower">峰值功率</div></div>
+                    <div class="spec-item"><div class="spec-value">1.2G</div><div class="spec-label" data-i18n="detail.common.peakLatAccel">峰值侧向加速度</div></div>
+                    <div class="spec-item"><div class="spec-value">AT128P</div><div class="spec-label" data-i18n="detail.common.lidar">激光雷达</div></div>
+                    <div class="spec-item"><div class="spec-value">2MP × 2</div><div class="spec-label" data-i18n="detail.common.camera">相机</div></div>
+                    <div class="spec-item"><div class="spec-value">353TOPS</div><div class="spec-label" data-i18n="detail.common.processor">处理器</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="innovation-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="detail.common.innovations">技术创新亮点</h2>
+            <div class="innovation-grid" data-reveal-stagger>
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/AF26/1.jpg" alt="LiDAR perception" class="innovation-image" loading="lazy">
+                    <div class="innovation-overlay"><h3 class="innovation-title" data-i18n="detail.AF26.innovations.0.title">雷达迁至主环</h3><p data-i18n="detail.AF26.innovations.0.desc">AT128P迁至主环顶部中央并重建数据集，CenterPoint单帧识别43个锥桶（+100%），AP 97.8%，平均识别距离40m</p></div>
+                </div>
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/AF26/2.jpg" alt="Vision and PnP redundancy" class="innovation-image" loading="lazy">
+                    <div class="innovation-overlay"><h3 class="innovation-title" data-i18n="detail.AF26.innovations.1.title">视觉感知与PnP冗余</h3><p data-i18n="detail.AF26.innovations.1.desc">双目200万像素相机约130°视场，YOLO26m-Pose的mAP50达98.2%；单目深度10m内AbsRel 5.5%，雷达失效时可兜底</p></div>
+                </div>
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/AF26/3.jpg" alt="Constrained SLAM" class="innovation-image" loading="lazy">
+                    <div class="innovation-overlay"><h3 class="innovation-title" data-i18n="detail.AF26.innovations.2.title">多约束全局最优SLAM</h3><p data-i18n="detail.AF26.innovations.2.desc">间距、置信度与颜色三重约束筛除分歧锥桶，三种定位建图模式自动切换；建图延迟低于3ms，地图误差0.15m</p></div>
+                </div>
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/AF26/4.jpg" alt="Obstacle-tolerant front wing" class="innovation-image" loading="lazy">
+                    <div class="innovation-overlay"><h3 class="innovation-title" data-i18n="detail.AF26.innovations.3.title">前翼避障设计</h3><p data-i18n="detail.AF26.innovations.3.desc">后掠主翼配合斜切端板引导锥桶外滑，整体刚度提升34%、质量降至约3.0kg，CLA 4.39、下压力709N</p></div>
+                </div>
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/AF26/5.jpg" alt="LTV-MPC control" class="innovation-image" loading="lazy">
+                    <div class="innovation-overlay"><h3 class="innovation-title" data-i18n="detail.AF26.innovations.4.title">LTV-MPC横纵向控制</h3><p data-i18n="detail.AF26.innovations.4.desc">横纵向MPC求解总用时低于13ms，6m/s八字绕环平均跟踪误差0.184m，圈速仿真较上赛季降低7%</p></div>
+                </div>
+                <div class="innovation-card">
+                    <img src="image/innovations/AV/AF26/6.jpg" alt="Stiff monocoque" class="innovation-image" loading="lazy">
+                    <div class="innovation-overlay"><h3 class="innovation-title" data-i18n="detail.AF26.innovations.5.title">单体壳刚度跃升</h3><p data-i18n="detail.AF26.innovations.5.desc">前悬扭转刚度6938N·m/°（+69.71%）、后悬7602N·m/°（+16.05%），预埋前环与拓扑优化预埋件兼顾轻量化</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="story-content">
+                <h2 data-i18n="detail.AF26.storyTitle">赛车故事</h2>
+                <div data-i18n-html="detail.AF26.story"><p>A-Future26（赛场编号A04）在EF26电动平台的基础上完成无人化改造，感知、建图、规划与控制全链路重新设计。</p><p>感知层，禾赛AT128P激光雷达从前翼迁到主环顶部中央，视野遮挡更小，配套数据集按新位置重建；小尺寸锥桶用CenterPoint检测，单帧平均识别43个锥桶、较上赛季翻倍，平均检测精度97.8%，平均识别距离40m，单帧推理仅7.2ms。视觉端换成两台海康200万像素相机，YOLO26m-Pose关键点检测配合GNSS-PTP时间同步与SDIoU匹配融合，mAP50达98.2%；再用PnP单目深度估计做冗余，10m内深度相对误差5.5%，雷达失效时仍能维持感知。</p><p>建图与规划层，自研多约束全局最优数据关联SLAM，用间距、位置置信度与颜色三重约束筛除分歧锥桶，并提供惯导直连、KISS-ICP自定位与自动切换三种建图模式，实时建图延迟低于3ms、锥桶地图误差0.15m。规划端以扇形ROI约束的德劳内三角剖分做局部规划，全局用QP求解最小曲率线，单周期求解低于5ms。</p><p>控制与执行层，LTV-MPC横向控制器与两级纵向控制协同，横纵向MPC求解总用时低于13ms，6m/s八字绕环平均跟踪误差0.184m。线控转向改用德马克伺服电机配锥齿轮换向机构，较上赛季减重52.35%；线控制动采用自制双气缸无级调节，在0~0.9MPa气压区间内闭环控制制动油压。</p><p>2026赛季，A04拿到全国亚军，并在高速循迹项目中获得第二名。从雷达安装位置到一块端板的倒角，每个改动都被仿真和实车数据验证过——这是这辆车最像工程的地方。</p></div>
+            </div>
+            <div class="story-image"><img src="image/misc/AF26story.jpg" alt="AF26 Racing Story" loading="lazy"></div>
+        </section>
+
+        <section class="awards-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="detail.common.awards">获得奖项</h2>
+            <div class="awards-grid" data-reveal-stagger>
+                <div class="award-card"><div class="award-icon"><i class="fas fa-trophy"></i></div><h3 class="award-title" data-i18n="detail.AF26.awards.0.title">全国亚军</h3><p class="award-year" data-i18n="detail.AF26.awards.0.year">2026年</p></div>
+                <div class="award-card"><div class="award-icon"><i class="fas fa-stopwatch"></i></div><h3 class="award-title" data-i18n="detail.AF26.awards.1.title">高速循迹第二名</h3><p class="award-year" data-i18n="detail.AF26.awards.1.year">2026年</p></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/effects.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
+    <script>
+        (function(){ 'use strict'; Components.injectAll(false); I18n.init().then(function(){ I18n.translatePage(); }); })();
+    </script>
+</body>
+</html>
