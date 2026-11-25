@@ -163,7 +163,7 @@ async function main() {
         if (!it) continue;
         // 已有 webp 的沿用，不再重复下载 jpg
         const webpRel = `image/race/day${d.day}-${car}.webp`;
-        if (fs.existsSync(path.join(ROOT, webpRel))) { it.local = webpRel; continue; }
+        if (!forceImages && fs.existsSync(path.join(ROOT, webpRel))) { it.local = webpRel; continue; }
         if (!it.cover) continue;
         const rel = `image/race/day${d.day}-${car}.jpg`;
         const abs = path.join(ROOT, rel);
