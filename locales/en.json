@@ -16,7 +16,6 @@
     "nav": {
         "home": "Home",
         "about": "About Us",
-        "achievements": "Achievements",
         "cars": "Our Cars",
         "team": "Team",
         "groups": "Groups",
@@ -64,15 +63,6 @@
                 { "year": "2014", "text": "Electric team founded" },
                 { "year": "2019", "text": "Driverless team founded" },
                 { "year": "2026", "text": "12th-generation EV + 7th-generation driverless car" }
-            ]
-        },
-        "achievements": {
-            "title": "Our Achievements",
-            "items": [
-                { "number": "50+", "name": "National Awards" },
-                { "number": "20+", "name": "Cars Built" },
-                { "number": "80+", "name": "Patents" },
-                { "number": "1000+", "name": "Team Members" }
             ]
         },
         "carShowcase": {

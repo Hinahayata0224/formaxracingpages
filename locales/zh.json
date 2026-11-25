@@ -16,7 +16,6 @@
     "nav": {
         "home": "首页",
         "about": "关于我们",
-        "achievements": "成就",
         "cars": "赛车展示",
         "team": "管理团队",
         "groups": "团队分组",
@@ -64,15 +63,6 @@
                 { "year": "2014", "text": "电车队成立" },
                 { "year": "2019", "text": "无人车队成立" },
                 { "year": "2026", "text": "第十二代电车 + 第七代无人车" }
-            ]
-        },
-        "achievements": {
-            "title": "我们的成就",
-            "items": [
-                { "number": "50+", "name": "全国奖项" },
-                { "number": "20+", "name": "赛车制造" },
-                { "number": "80+", "name": "专利数量" },
-                { "number": "1000+", "name": "团队成员" }
             ]
         },
         "carShowcase": {
