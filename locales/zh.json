@@ -1,5 +1,9 @@
 {
     "common": {
+        "contacts": [
+            { "name": "黄鸿宇", "role": "行政队长" },
+            { "name": "包俊静", "role": "车队经理" }
+        ],
         "back": "返回主页",
         "viewDetail": "查看详情",
         "learnMore": "了解更多",

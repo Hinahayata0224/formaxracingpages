@@ -1,5 +1,9 @@
 {
     "common": {
+        "contacts": [
+            { "name": "Huang Hongyu", "role": "Administrative Captain" },
+            { "name": "Bao Junjing", "role": "Team Manager" }
+        ],
         "back": "Back to Home",
         "viewDetail": "View Details",
         "learnMore": "Learn More",

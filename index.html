@@ -563,6 +563,7 @@
         @media (max-width: 768px) {
             /* 移动端：隐藏箭头，改用滑动 + 圆点；标题按语义整段换行 */
             .carousel-prev, .carousel-next { display: none; }
+            .contact-people { grid-template-columns: 1fr; }
             .race-grid { grid-template-columns: 1fr; gap: 30px; }
             .race-cell { width: auto; height: auto; display: flex; flex-direction: column; gap: 10px; }
             .race-card { position: relative; width: auto; height: auto; left: auto; }
@@ -1017,25 +1018,28 @@
                     <p data-i18n="index.contact.addressValue">广东省广州市天河区华南理工大学（五山校区）汽车科技大楼1楼</p>
                 </div>
             </div>
-            <div class="info-item" data-reveal>
-                <i class="fas fa-envelope"></i>
-                <div>
-                    <h4 data-i18n="index.contact.email">邮箱</h4>
-                    <p>formax@scutracing.com</p>
+            <div class="contact-people" data-reveal-stagger>
+                <div class="contact-person">
+                    <div class="person-head">
+                        <b data-i18n="common.contacts.0.name">黄鸿宇</b>
+                        <span data-i18n="common.contacts.0.role">行政队长</span>
+                    </div>
+                    <ul class="person-lines">
+                        <li><i class="fas fa-phone"></i><a href="tel:15220471679">152 2047 1679</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:shanfeng0708@163.com">shanfeng0708@163.com</a></li>
+                        <li><i class="fab fa-qq"></i><span>1634493558</span></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="info-item" data-reveal>
-                <i class="fas fa-phone"></i>
-                <div>
-                    <h4 data-i18n="index.contact.phone">电话</h4>
-                    <p>+86 151 4756 0196</p>
-                </div>
-            </div>
-            <div class="info-item" data-reveal>
-                <i class="fas fa-clock"></i>
-                <div>
-                    <h4 data-i18n="index.contact.hours">工作时间</h4>
-                    <p data-i18n="index.contact.hoursValue">周一至周五: 9:00 - 17:00</p>
+                <div class="contact-person">
+                    <div class="person-head">
+                        <b data-i18n="common.contacts.1.name">包俊静</b>
+                        <span data-i18n="common.contacts.1.role">车队经理</span>
+                    </div>
+                    <ul class="person-lines">
+                        <li><i class="fas fa-phone"></i><a href="tel:15147560196">151 4756 0196</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:kikko99@qq.com">kikko99@qq.com</a></li>
+                        <li><i class="fab fa-qq"></i><span>1295843190</span></li>
+                    </ul>
                 </div>
             </div>
         </div>

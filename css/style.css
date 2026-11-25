@@ -654,7 +654,26 @@ footer {
     .lang-switch { margin-left: 0.85rem; }
 }
 
+
+/* ---------- 联系人卡片（联系我们） ---------- */
+.contact-people { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 26px; }
+.contact-person {
+    background: #fff;
+    border: 1px solid rgba(16, 24, 40, 0.10);
+    border-radius: 12px;
+    padding: 24px 26px;
+    box-shadow: 0 14px 30px -26px rgba(16, 24, 40, 0.5);
+}
+.person-head { display: flex; align-items: baseline; gap: 14px; }
+.person-head b { font-size: 1.16rem; font-weight: 700; letter-spacing: 0.02em; }
+.person-head span { font-size: 0.9rem; color: #667085; padding-left: 14px; border-left: 1px solid rgba(16, 24, 40, 0.18); }
+.person-lines { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
+.person-lines li { display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: #344054; }
+.person-lines i { width: 16px; text-align: center; color: var(--primary-color); opacity: 0.9; }
+.person-lines a { color: #344054; text-decoration: none; transition: color 0.25s ease; }
+.person-lines a:hover { color: var(--primary-color); }
 @media (max-width: 768px) {
+    .contact-people { grid-template-columns: 1fr; }
     /* Mobile Nav */
     .nav-links {
         position: fixed;
