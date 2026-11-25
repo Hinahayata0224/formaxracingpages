@@ -281,7 +281,9 @@
             gap: 80px;
             align-items: center;
         }
+        .about-title { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.03em; margin: 0 0 24px; }
         .about-copy p { margin: 0; font-size: 0.98rem; line-height: 2; color: #344054; }
+        .about-copy p + p { margin-top: 16px; }
         .about-timeline { position: relative; }
         .about-timeline::before {
             content: '';
@@ -625,7 +627,7 @@
     <section id="about" class="about">
         <div class="about-banner">
             <div class="about-banner-inner">
-                <div class="about-kicker"><span class="about-kicker-num"></span> · <span data-i18n="index.about.title">关于我们</span></div>
+                <div class="about-kicker"><span class="about-kicker-num"></span></div>
                 <div class="about-stats" data-reveal-stagger>
                     <div class="about-stat"><b data-i18n="index.about.stats.0.value">2009</b><span data-i18n="index.about.stats.0.label">年成立</span></div>
                     <div class="about-stat"><b data-i18n="index.about.stats.1.value">50+</b><span data-i18n="index.about.stats.1.label">全国奖项</span></div>
@@ -637,7 +639,12 @@
         </div>
         <div class="about-body">
             <div class="about-copy" data-reveal-left>
-                <p data-i18n="index.about.desc">Formax方程式赛车队成立于2009年10月，是广东省第一辆FSC赛车的制造团队，也是FSC赛事最早的发起者之一，由一群对赛车充满热情的大学生创建。我们团队由来自机械、电气、工商管理等多个专业的本科生组成。 我们是由华南理工大学与华工机械与汽车工程学院两级共同打造的科研团队。在学校、学院与社会的大力支持下，每年，我们每年自主设计两辆全新的大学生方程式赛车，分别参加中国大学生电动方程式大赛和中国大学生无人驾驶方程式大赛。我们的使命是结合工程实践打造创新型人才培养平台。 "敢拼敢赢，精益求精"是我们的口号，我们与赛车相伴，不断突破技术极限，在比赛中取得优异成绩，积累宝贵的实战经验。十六年间，从油车、电车到无人车，车队见证了无数人的青葱岁月。岁月匆匆，白驹过隙，时间冲刷着历史的印记， 但汗水镌刻在荣誉中被所有人铭记。</p>
+                <h3 class="about-title" data-i18n="index.about.title">关于我们</h3>
+                <div data-i18n-html="index.about.desc">
+                    <p>Formax方程式赛车队成立于2009年10月，是广东省第一辆FSC赛车的制造团队，也是FSC赛事最早的发起者之一，由一群对赛车充满热情的大学生创建。</p>
+                    <p>我们是由华南理工大学与华工机械与汽车工程学院两级共同打造的科研团队，由来自机械、电气、工商管理等多个专业的本科生组成。在学校、学院与社会的大力支持下，每年，我们自主设计制造两辆全新的赛车，分别参加中国大学生电动方程式大赛和无人驾驶方程式大赛。</p>
+                    <p>我们的使命是结合工程实践打造创新型人才培养平台。“敢拼敢赢，精益求精”，我们与赛车相伴，不断突破技术极限，在比赛中积累宝贵的实战经验。十七年间，从油车、电车到无人车，车队见证了无数队员的青葱岁月，汗水镌刻在荣誉中被所有人铭记。</p>
+                </div>
             </div>
             <div class="about-timeline" data-reveal-right>
                 <div class="tl-item"><b data-i18n="index.about.timeline.0.year">2009</b><span data-i18n="index.about.timeline.0.text">油车队成立，广东省第一台 FSC 赛车</span></div>
