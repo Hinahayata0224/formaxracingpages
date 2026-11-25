@@ -265,12 +265,38 @@
         .about-stat span { display: block; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.8); margin-top: 12px; font-size: 0.9rem; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.66); }
         .about-slogan { font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 700; letter-spacing: 0.12em; margin: 0; text-shadow: 0 2px 26px rgba(0, 0, 0, 0.8); }
         html[lang="en"] .about-slogan { letter-spacing: 0.02em; font-size: clamp(1.7rem, 2.8vw, 2.3rem); }
+        .about-kicker {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.34em;
+            color: rgba(255, 255, 255, 0.7);
+            counter-increment: section;
+        }
+        .about-kicker-num::before { content: counter(section, decimal-leading-zero); }
         .about-body-wrap { width: min(1200px, 90%); margin: 0 auto; padding: 78px 0 92px; }
         .about-body {
             display: grid;
             grid-template-columns: 1fr 1.02fr;
             gap: 80px;
             align-items: center;
+        }
+        .about-title {
+            font-size: clamp(1.7rem, 2.6vw, 2.15rem);
+            font-weight: 700;
+            letter-spacing: 0.045em;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.65rem;
+            margin: 0 0 30px;
+        }
+        .about-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
         }
         .about-copy p { margin: 0; font-size: 0.98rem; line-height: 2; color: #344054; }
         .about-copy p + p { margin-top: 16px; }
@@ -594,6 +620,7 @@
     <section id="about" class="about">
         <div class="about-banner">
             <div class="about-banner-inner">
+                <div class="about-kicker"><span class="about-kicker-num"></span></div>
                 <div class="about-stats" data-reveal-stagger>
                     <div class="about-stat"><b data-i18n="index.about.stats.0.value">2009</b><span data-i18n="index.about.stats.0.label">年成立</span></div>
                     <div class="about-stat"><b data-i18n="index.about.stats.1.value">50+</b><span data-i18n="index.about.stats.1.label">全国奖项</span></div>
@@ -604,11 +631,9 @@
             </div>
         </div>
         <div class="about-body-wrap">
-            <div class="section-title">
-                <h2 data-i18n="index.about.title">关于我们</h2>
-            </div>
             <div class="about-body">
                 <div class="about-copy" data-reveal-left>
+                    <h2 class="about-title" data-i18n="index.about.title">关于我们</h2>
                     <div data-i18n-html="index.about.desc">
                         <p>Formax方程式赛车队成立于2009年10月，是广东省第一辆FSC赛车的制造团队，也是FSC赛事最早的发起者之一，由一群对赛车充满热情的大学生创建。</p>
                         <p>我们是由华南理工大学与华工机械与汽车工程学院两级共同打造的科研团队，由来自机械、电气、工商管理等多个专业的本科生组成。在学校、学院与社会的大力支持下，每年，我们自主设计制造两辆全新的赛车，分别参加中国大学生电动方程式大赛和无人驾驶方程式大赛。</p>
