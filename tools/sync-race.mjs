@@ -142,20 +142,17 @@ async function main() {
     for (const d of out) {
       for (const car of ['ev', 'av']) {
         const it = d[car];
-        if (!it || !it.cover) continue;
+        if (!it) continue;
+        // 已有 webp 的沿用，不再重复下载 jpg
+        const webpRel = `image/race/day${d.day}-${car}.webp`;
+        if (fs.existsSync(path.join(ROOT, webpRel))) { it.local = webpRel; continue; }
+        if (!it.cover) continue;
         const rel = `image/race/day${d.day}-${car}.jpg`;
         const abs = path.join(ROOT, rel);
         if (!fs.existsSync(abs)) {
           try { await download(it.cover, abs); downloaded++; } catch (e) { console.warn(`  封面下载失败 DAY ${d.day} ${car}: ${e.message}`); continue; }
         }
         it.local = rel;
-      }
-      // 已存在 webp 的沿用
-      for (const car of ['ev', 'av']) {
-        const it = d[car];
-        if (!it) continue;
-        const webp = path.join(IMG_DIR, `day${d.day}-${car}.webp`);
-        if (fs.existsSync(webp)) it.local = `image/race/day${d.day}-${car}.webp`;
       }
     }
   }
