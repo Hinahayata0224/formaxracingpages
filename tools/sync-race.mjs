@@ -16,6 +16,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_FILE = path.join(ROOT, 'data', 'race-days.json');
@@ -46,6 +47,20 @@ async function fetchJson(url) {
   if (!resp.ok) throw new Error('HTTP ' + resp.status + ' ' + url);
   const text = await resp.text();
   try { return JSON.parse(text); } catch { throw new Error('接口未返回 JSON（可能被风控）'); }
+}
+
+/**
+ * 用 cwebp 把 jpg 压成 560px 宽的 webp；成功则删掉 jpg 并返回 webp 路径，失败返回 null
+ * （本地 Windows 没有 cwebp 时会走 fallback，保留 jpg）
+ */
+function toWebp(jpgAbs) {
+  const webpAbs = jpgAbs.replace(/\.jpe?g$/i, '.webp');
+  const r = spawnSync('cwebp', ['-quiet', '-q', '82', '-resize', '560', '0', jpgAbs, '-o', webpAbs], { stdio: 'ignore' });
+  if (r.status === 0 && fs.existsSync(webpAbs)) {
+    try { fs.unlinkSync(jpgAbs); } catch {}
+    return webpAbs;
+  }
+  return null;
 }
 
 async function download(url, dest) {
@@ -81,6 +96,8 @@ async function main() {
   const args = parseArgs(process.argv.slice(2));
   const dry = !!args['dry-run'];
   const noImages = !!args['no-images'];
+  const forceImages = !!args['force-images'];
+  const requireWebp = !!args['require-webp'];
 
   let biz = 'MzAwNDExMDQ3Mw==';
   if (fs.existsSync(CONFIG_FILE)) {
@@ -137,6 +154,7 @@ async function main() {
   // 封面下载
   const out = [...byDate.values()].sort((a, b) => b.date.localeCompare(a.date));
   let downloaded = 0;
+  let converted = 0;
   if (!noImages && !dry) {
     fs.mkdirSync(IMG_DIR, { recursive: true });
     for (const d of out) {
@@ -149,10 +167,16 @@ async function main() {
         if (!it.cover) continue;
         const rel = `image/race/day${d.day}-${car}.jpg`;
         const abs = path.join(ROOT, rel);
-        if (!fs.existsSync(abs)) {
+        if (forceImages || !fs.existsSync(abs)) {
           try { await download(it.cover, abs); downloaded++; } catch (e) { console.warn(`  封面下载失败 DAY ${d.day} ${car}: ${e.message}`); continue; }
         }
-        it.local = rel;
+        const webp = toWebp(abs);
+        if (webp) {
+          converted++;
+          it.local = path.relative(ROOT, webp).split(path.sep).join('/');
+        } else {
+          it.local = rel;
+        }
       }
     }
   }
@@ -165,7 +189,7 @@ async function main() {
     }
   }
 
-  console.log(`下载封面 ${downloaded} 张`);
+  console.log(`下载封面 ${downloaded} 张，转 webp ${converted} 张`);
   for (const d of out) {
     const marks = [];
     if (!d.ev) marks.push('EV 待补');
@@ -187,6 +211,14 @@ async function main() {
   };
   fs.writeFileSync(DATA_FILE, JSON.stringify(payload, null, 2) + '\n', 'utf8');
   console.log('已写入 data/race-days.json（' + out.length + ' 天）');
+
+  if (requireWebp) {
+    const leftovers = fs.readdirSync(IMG_DIR).filter((f) => /\.jpe?g$/i.test(f));
+    if (leftovers.length) {
+      console.error('❌ 仍有未转 webp 的封面：' + leftovers.join(', ') + '（cwebp 是否可用？）');
+      process.exit(1);
+    }
+  }
 }
 
 main().catch((err) => { console.error('失败：' + err.message); process.exit(1); });

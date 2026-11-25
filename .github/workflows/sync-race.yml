@@ -10,6 +10,11 @@ on:
         description: '预期比赛日数（合集里缺的天会写成「敬请期待」），留空则按合集实际天数'
         required: false
         default: ''
+      force:
+        description: '强制重新下载并转换全部封面（用于验证 webp 流程）'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -24,13 +29,16 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install cwebp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq webp
+
       - name: Sync from WeChat album
         run: |
-          if [ -n "${{ inputs.expect }}" ]; then
-            node tools/sync-race.mjs --expect "${{ inputs.expect }}"
-          else
-            node tools/sync-race.mjs
-          fi
+          ARGS="--require-webp"
+          if [ -n "${{ inputs.expect }}" ]; then ARGS="$ARGS --expect ${{ inputs.expect }}"; fi
+          if [ "${{ inputs.force }}" = "true" ]; then ARGS="$ARGS --force-images"; fi
+          echo "node tools/sync-race.mjs $ARGS"
+          node tools/sync-race.mjs $ARGS
 
       - name: Commit if changed
         run: |
