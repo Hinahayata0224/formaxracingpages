@@ -8,9 +8,9 @@ var Components = (function () {
     var NAV_ITEMS = [
         { key: 'nav.home', label: '首页', href: '/#home', section: 'home' },
         { key: 'nav.about', label: '关于我们', href: '/#about', section: 'about' },
-            { key: 'nav.cars', label: '赛车展示', href: '/#car', section: 'car' },
-        { key: 'nav.team', label: '管理团队', href: '/#team', section: 'team' },
+        { key: 'nav.cars', label: '赛车展示', href: '/#car', section: 'car' },
         { key: 'nav.groups', label: '团队分组', href: '/#groups', section: 'groups' },
+        { key: 'nav.team', label: '管理团队', href: '/#team', section: 'team' },
         { key: 'nav.news', label: '车队动态', href: '/#news', section: 'news' },
         { key: 'nav.sponsors', label: '合作伙伴', href: '/#sponsors', section: 'sponsors' },
         { key: 'nav.contact', label: '联系我们', href: '/#contact', section: 'contact' }
