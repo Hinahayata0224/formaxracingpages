@@ -449,23 +449,24 @@
         }
         .explore-card:hover .explore-go { background-color: #fff; color: #0b1220; border-color: #fff; transform: translateX(3px); }
         /* Race days：赛场动态（横向叠卡） */
-        .race { background-color: #fff; }
-        .race-grid { display: grid; grid-template-columns: repeat(3, 340px); gap: 44px 26px; justify-content: space-between; }
-        .race-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px; }
+        .race { background-color: #fff; padding: 2.4rem 0 2.6rem; }
+        .race .section-title { margin-bottom: 1.6rem; }
+        .race-grid { display: grid; grid-template-columns: repeat(3, 340px); gap: 22px 26px; justify-content: space-between; }
+        .race-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
         .race-head b { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.2em; }
         .race-head span { font-size: 0.76rem; color: #667085; letter-spacing: 0.06em; }
-        .race-cell { position: relative; height: 244px; width: 340px; }
+        .race-cell { position: relative; height: 214px; width: 340px; }
         .race-card {
             position: absolute;
             top: 0; left: 0;
-            width: 280px; height: 244px;
+            width: 280px; height: 214px;
             display: flex; flex-direction: column;
             text-decoration: none; color: var(--text-dark);
             background: #fff; border: 1px solid rgba(16, 24, 40, 0.10); border-radius: 12px; overflow: hidden;
             box-shadow: 0 16px 30px -24px rgba(16, 24, 40, 0.55);
             transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 0.45s ease, opacity 0.3s ease;
         }
-        .race-card .race-cover { height: 140px; background-size: cover; background-position: center; flex: 0 0 auto; }
+        .race-card .race-cover { height: 122px; background-size: cover; background-position: center; flex: 0 0 auto; }
         .race-card .race-body { padding: 12px 14px 14px; }
         .race-tag { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; letter-spacing: 0.12em; color: #667085; }
         .race-tag .dot { width: 6px; height: 6px; border-radius: 50%; }
@@ -476,11 +477,11 @@
         .race-card.ev { z-index: 2; }
         .race-card.av { left: 60px; z-index: 1; }
         .race-card.av .race-body { opacity: 0; transition: opacity 0.35s ease; }
-        .race-cell:hover .race-card.av { z-index: 3; transform: translate(-6px, -8px); box-shadow: 0 26px 44px -26px rgba(16, 24, 40, 0.65); }
-        .race-cell:hover .race-card.av .race-body { opacity: 1; }
-        .race-cell:hover .race-card.ev { transform: translateY(-2px); opacity: 0.94; }
+        .race-card.av:hover { z-index: 3; transform: translate(-6px, -8px); box-shadow: 0 26px 44px -26px rgba(16, 24, 40, 0.65); }
+        .race-card.av:hover .race-body { opacity: 1; }
+        .race-card.ev:hover { transform: translateY(-2px); }
         .race-grid:empty { min-height: 240px; }
-        .race-more { text-align: center; margin-top: 3rem; }
+        .race-more { text-align: center; margin-top: 1.8rem; }
         .race-more a { display: inline-block; padding: 0.75rem 2.2rem; border: 1px solid rgba(16, 24, 40, 0.16); border-radius: 999px;
                        color: var(--primary-color); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.04em;
                        text-decoration: none; transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
@@ -558,7 +559,7 @@
             .race-card.av { left: auto; }
             .race-card.av .race-body { opacity: 1; }
             .race-card .race-cover { height: 150px; }
-            .race-cell:hover .race-card.av, .race-cell:hover .race-card.ev { transform: none; opacity: 1; }
+            .race-card.av:hover, .race-card.ev:hover { transform: none; }
             .explore-grid { grid-template-columns: 1fr; gap: 16px; }
             .explore-card { height: 300px; border-radius: 12px; }
             .explore-body { padding: 22px 22px 24px; }
