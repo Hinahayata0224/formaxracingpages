@@ -556,6 +556,10 @@
         .car-card-av .btn:hover { background-color: #fff; color: #00b0ff; }
 
         /* Responsive */
+        @media (max-width: 1200px) {
+            .race-grid { grid-template-columns: repeat(2, 340px); justify-content: start; }
+        }
+
         @media (max-width: 768px) {
             /* 移动端：隐藏箭头，改用滑动 + 圆点；标题按语义整段换行 */
             .carousel-prev, .carousel-next { display: none; }

@@ -234,7 +234,7 @@ nav {
 }
 
 .nav-links li {
-    margin-left: 2rem;
+    margin-left: 1.4rem;
 }
 
 .nav-links a {
@@ -249,7 +249,7 @@ nav {
 .lang-switch {
     display: flex;
     align-items: center;
-    margin-left: 2rem;
+    margin-left: 1.4rem;
     gap: 0;
     font-size: 0.9rem;
 }
@@ -648,6 +648,12 @@ footer {
 }
 
 /* ---------- Responsive ---------- */
+@media (min-width: 769px) and (max-width: 1280px) {
+    .nav-links li { margin-left: 0.85rem; }
+    .nav-links a { font-size: 0.92rem; }
+    .lang-switch { margin-left: 0.85rem; }
+}
+
 @media (max-width: 768px) {
     /* Mobile Nav */
     .nav-links {
