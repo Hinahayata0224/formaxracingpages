@@ -402,7 +402,7 @@
         /* Join Us */
 
         /* Explore：入口区 */
-        .explore { background-color: #fff; }
+        .explore { background-color: #f8f9fa; }
         .explore-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
         .explore-card {
             position: relative;
@@ -448,6 +448,43 @@
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
         }
         .explore-card:hover .explore-go { background-color: #fff; color: #0b1220; border-color: #fff; transform: translateX(3px); }
+        /* Race days：赛场动态（横向叠卡） */
+        .race { background-color: #fff; }
+        .race-grid { display: grid; grid-template-columns: repeat(3, 340px); gap: 44px 26px; justify-content: space-between; }
+        .race-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px; }
+        .race-head b { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.2em; }
+        .race-head span { font-size: 0.76rem; color: #667085; letter-spacing: 0.06em; }
+        .race-cell { position: relative; height: 244px; width: 340px; }
+        .race-card {
+            position: absolute;
+            top: 0; left: 0;
+            width: 280px; height: 244px;
+            display: flex; flex-direction: column;
+            text-decoration: none; color: var(--text-dark);
+            background: #fff; border: 1px solid rgba(16, 24, 40, 0.10); border-radius: 12px; overflow: hidden;
+            box-shadow: 0 16px 30px -24px rgba(16, 24, 40, 0.55);
+            transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 0.45s ease, opacity 0.3s ease;
+        }
+        .race-card .race-cover { height: 140px; background-size: cover; background-position: center; flex: 0 0 auto; }
+        .race-card .race-body { padding: 12px 14px 14px; }
+        .race-tag { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; letter-spacing: 0.12em; color: #667085; }
+        .race-tag .dot { width: 6px; height: 6px; border-radius: 50%; }
+        .race-card.ev .dot { background: #d40000; }
+        .race-card.av .dot { background: #1b8a3d; }
+        .race-card h3 { margin: 8px 0 0; font-size: 0.94rem; font-weight: 600; line-height: 1.5; letter-spacing: 0.01em;
+                       display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .race-card.ev { z-index: 2; }
+        .race-card.av { left: 60px; z-index: 1; }
+        .race-card.av .race-body { opacity: 0; transition: opacity 0.35s ease; }
+        .race-cell:hover .race-card.av { z-index: 3; transform: translate(-6px, -8px); box-shadow: 0 26px 44px -26px rgba(16, 24, 40, 0.65); }
+        .race-cell:hover .race-card.av .race-body { opacity: 1; }
+        .race-cell:hover .race-card.ev { transform: translateY(-2px); opacity: 0.94; }
+        .race-grid:empty { min-height: 240px; }
+        .race-more { text-align: center; margin-top: 3rem; }
+        .race-more a { display: inline-block; padding: 0.75rem 2.2rem; border: 1px solid rgba(16, 24, 40, 0.16); border-radius: 999px;
+                       color: var(--primary-color); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.04em;
+                       text-decoration: none; transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
+        .race-more a:hover { background-color: var(--primary-color); border-color: var(--primary-color); color: #fff; }
         /* News */
         .news { background-color: var(--light-gray); padding: 2rem 0; }
         .news-container { display: grid; gap: 1.5rem; margin-bottom: 1.5rem; }
@@ -515,6 +552,13 @@
         @media (max-width: 768px) {
             /* 移动端：隐藏箭头，改用滑动 + 圆点；标题按语义整段换行 */
             .carousel-prev, .carousel-next { display: none; }
+            .race-grid { grid-template-columns: 1fr; gap: 30px; }
+            .race-cell { width: auto; height: auto; display: flex; flex-direction: column; gap: 10px; }
+            .race-card { position: relative; width: auto; height: auto; left: auto; }
+            .race-card.av { left: auto; }
+            .race-card.av .race-body { opacity: 1; }
+            .race-card .race-cover { height: 150px; }
+            .race-cell:hover .race-card.av, .race-cell:hover .race-card.ev { transform: none; opacity: 1; }
             .explore-grid { grid-template-columns: 1fr; gap: 16px; }
             .explore-card { height: 300px; border-radius: 12px; }
             .explore-body { padding: 22px 22px 24px; }
@@ -849,6 +893,22 @@
         </div>
     </section>
 
+    <!-- Race days：赛场动态（数据来自 data/race-days.json，js/race.js 渲染） -->
+    <section id="race" class="race">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-i18n="index.race.title">赛场动态</h2>
+            </div>
+            <div class="race-grid" id="raceGrid" data-reveal-stagger>
+                <!-- 由 js/race.js 从 data/race-days.json 渲染 -->
+            </div>
+            <div class="race-more">
+                <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAwNDExMDQ3Mw==&action=getalbum&album_id=3561905531105263626#wechat_redirect"
+                   target="_blank" rel="noopener" data-i18n="index.race.more">查看全部赛场动态</a>
+            </div>
+        </div>
+    </section>
+
     <!-- News -->
     <section id="news" class="news">
         <div class="container">
@@ -974,6 +1034,7 @@
     <script src="js/components.js"></script>
     <script src="js/common.js"></script>
     <script src="js/i18n.js"></script>
+    <script src="js/race.js"></script>
     <script src="js/news.js"></script>
     <script>
         (function() {

@@ -132,6 +132,10 @@
             "teamTag": "Team",
             "joinTag": "Join Us"
         },
+        "race": {
+            "title": "Race Updates",
+            "more": "View all race updates"
+        },
         "news": {
             "title": "Team News",
             "viewMore": "View More",

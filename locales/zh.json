@@ -132,6 +132,10 @@
             "teamTag": "管理团队",
             "joinTag": "加入我们"
         },
+        "race": {
+            "title": "赛场动态",
+            "more": "查看全部赛场动态"
+        },
         "news": {
             "title": "车队动态",
             "viewMore": "查看更多",

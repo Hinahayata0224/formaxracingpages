@@ -1,0 +1,144 @@
+{
+  "updated": "2026-11-25",
+  "source": "3561905531105263626",
+  "days": [
+    {
+      "date": "2025-11-24",
+      "day": 6,
+      "ev": {
+        "title": "FSEC DAY 6丨耐久·颁奖",
+        "short": "耐久·颁奖",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gWOWbCPOCsqDwWgovW0mTOMXGZNsFWNtmseBKtnrZVyfFUeogN7kEPGDibPmFX1XDIpu4MAk5SGCcA/0?wx_fmt=jpeg",
+        "local": "image/race/day6-ev.webp",
+        "url": "https://mp.weixin.qq.com/s/zOqkBKN1-6dtPDyFEtrXpg"
+      },
+      "av": {
+        "title": "FSAC DAY 6丨直线加速·高速循迹·颁奖典礼",
+        "short": "直线加速·高速循迹·颁奖典礼",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gWOWbCPOCsqDwWgovW0mTOMPCIJ28zk5PysIGkCj0a5SyqyY0iamSvt4tyt309PVicxlG1oPCX5LpXQ/0?wx_fmt=jpeg",
+        "local": "image/race/day6-av.webp",
+        "url": "https://mp.weixin.qq.com/s/mr-M6I6TgZS1VbpQ62-V9A"
+      }
+    },
+    {
+      "date": "2025-11-23",
+      "day": 5,
+      "ev": {
+        "date": "2025-11-23",
+        "day": 5,
+        "car": "ev",
+        "title": "FSEC DAY 5丨直线加速·高避",
+        "short": "直线加速·高避",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gXr1mZaIH4SNZGemVHwLUHPN5MYBoJlExiaNLnHm5Ax1Za2qwQO0ZS9yCz3kAdGsMzB5K2eZtB1qiaQ/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652115587&idx=2",
+        "local": "image/race/day5-ev.webp"
+      },
+      "av": {
+        "date": "2025-11-23",
+        "day": 5,
+        "car": "av",
+        "title": "FSAC DAY 5丨操控性测试·无人八字·颁奖典礼",
+        "short": "操控性测试·无人八字·颁奖典礼",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gX7iaql5cWmmQFZ2Qtz74hiaPTRibZtmibP3Yl7mL7SHEKRMdjo4icKicJ2N8Glubb83gQOF524zmV1pE3w/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652115587&idx=1",
+        "local": "image/race/day5-av.webp"
+      }
+    },
+    {
+      "date": "2025-11-22",
+      "day": 4,
+      "ev": {
+        "date": "2025-11-22",
+        "day": 4,
+        "car": "ev",
+        "title": "FSEC DAY 4丨答辩·制动测试·跑动",
+        "short": "答辩·制动测试·跑动",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gXKqmKib91ulJER2GZ1XRpdPVnCffyibSDAuyoXsl5iaILplicC5ypyr0wlek6LeF2xniaOqe8kZaT1uAw/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652115548&idx=2",
+        "local": "image/race/day4-ev.webp"
+      },
+      "av": {
+        "date": "2025-11-22",
+        "day": 4,
+        "car": "av",
+        "title": "FSAC DAY 4丨淋雨检·过关完成",
+        "short": "淋雨检·过关完成",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gXKqmKib91ulJER2GZ1XRpdPssuLaiauIY7DtpBljFTlChzVvhk31MibN6Sy17uOaOe7G62sJElwOrxw/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652115548&idx=1",
+        "local": "image/race/day4-av.webp"
+      }
+    },
+    {
+      "date": "2025-11-21",
+      "day": 3,
+      "ev": {
+        "date": "2025-11-21",
+        "day": 3,
+        "car": "ev",
+        "title": "FSEC DAY 3丨报告·检测",
+        "short": "报告·检测",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gVkEtcnuUsFm3nA71nJHiawwribPHoN1VDiaTOX6dO1RpicfTHuBwLNlsgBPJTNjl2slZ08WG8YmFslNw/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652115509&idx=2",
+        "local": "image/race/day3-ev.webp"
+      },
+      "av": {
+        "date": "2025-11-21",
+        "day": 3,
+        "car": "av",
+        "title": "FSAC DAY 3丨机械检·无人检·侧倾测试",
+        "short": "机械检·无人检·侧倾测试",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gVkEtcnuUsFm3nA71nJHiawwtWD72IxSpwA5kyMDkFxHp7NL9fvZzQCxic1X4ZP0DPhs6822oHoUyeQ/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652115509&idx=1",
+        "local": "image/race/day3-av.webp"
+      }
+    },
+    {
+      "date": "2025-11-20",
+      "day": 2,
+      "ev": {
+        "date": "2025-11-20",
+        "day": 2,
+        "car": "ev",
+        "title": "FSEC DAY 2丨车检・答辩",
+        "short": "车检・答辩",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gVkEtcnuUsFm3nA71nJHiawwx1ahhN8lu2dib8UFjG5QdyejibUgYX110fQrpXvwbaibicnC5EP5t4kpibA/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652115474&idx=2",
+        "local": "image/race/day2-ev.webp"
+      },
+      "av": {
+        "date": "2025-11-20",
+        "day": 2,
+        "car": "av",
+        "title": "FSAC DAY 2丨车检和设计答辩",
+        "short": "车检和设计答辩",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gVkEtcnuUsFm3nA71nJHiawwtWD72IxSpwA5kyMDkFxHp7NL9fvZzQCxic1X4ZP0DPhs6822oHoUyeQ/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652115474&idx=1",
+        "local": "image/race/day2-av.webp"
+      }
+    },
+    {
+      "date": "2025-11-19",
+      "day": 1,
+      "ev": {
+        "date": "2025-11-19",
+        "day": 1,
+        "car": "ev",
+        "title": "FSEC DAY 1丨赛场・启幕",
+        "short": "赛场・启幕",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gUibGXZA7U1TMicl7py1PW9ribXcQCDmy6GxHIupAGAQ8ZYeib6vR4ZpZoo7SZ24CicuQRPkOTZMkjDnxg/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652115446&idx=1",
+        "local": "image/race/day1-ev.webp"
+      },
+      "av": {
+        "date": "2025-11-19",
+        "day": 1,
+        "car": "av",
+        "title": "FSAC DAY 1丨赛场・启幕",
+        "short": "赛场・启幕",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/xyKKedNB4gUibGXZA7U1TMicl7py1PW9ribkMLqE4Qo4p5Q7xQktJfSD2QWAm9wGiawUoqoC5iaHb5rFINUicQZiaLcyQ/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652115446&idx=2",
+        "local": "image/race/day1-av.webp"
+      }
+    }
+  ]
+}
