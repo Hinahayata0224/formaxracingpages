@@ -51,7 +51,20 @@
         "about": {
             "title": "About Us",
             "desc": "Formax Racing Team was founded in October 2009. We built the first FSC race car in Guangdong Province and were among the earliest initiators of the FSC competition. Founded by a group of passionate university students, our team comprises undergraduates from mechanical engineering, electrical engineering, business administration, and other disciplines. We are a university-level research team co-supported by South China University of Technology and its School of Mechanical and Automotive Engineering. With strong backing from the university, the school, and society, we independently design and build two brand-new Formula Student cars each year, competing in the Formula Student Electric China (FSEC) and Formula Student Autonomous China (FSAC). Our mission is to cultivate innovative talent through hands-on engineering practice. 'Dare to fight, dare to win, strive for excellence' is our motto. Together with our race cars, we continuously push technical limits, achieve outstanding results in competitions, and accumulate invaluable practical experience. Over sixteen years, from combustion to electric to autonomous, the team has witnessed countless youthful journeys. Time passes swiftly, washing away the traces of history, but the sweat engraved in our honors is remembered by all.",
-            "imageAlt": "Team Group Photo"
+            "imageAlt": "Team Group Photo",
+            "slogan": "Dare to fight, dare to win — strive for excellence",
+            "stats": [
+                { "value": "2009", "label": "Founded" },
+                { "value": "50+", "label": "National awards" },
+                { "value": "1000+", "label": "Alumni" },
+                { "value": "First", "label": "FSC car in Guangdong" }
+            ],
+            "timeline": [
+                { "year": "2009", "text": "Combustion team founded — the first FSC car in Guangdong" },
+                { "year": "2014", "text": "Electric team founded" },
+                { "year": "2019", "text": "Driverless team founded" },
+                { "year": "2026", "text": "12th-generation EV + 7th-generation driverless car" }
+            ]
         },
         "achievements": {
             "title": "Our Achievements",

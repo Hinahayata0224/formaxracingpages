@@ -214,6 +214,99 @@
         .about-image { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
         .about-image img { width: 100%; height: auto; display: block; transition: transform 0.5s; }
         .about-image:hover img { transform: scale(1.05); }
+        /* ===== 关于我们：横幅 + 时间轴 ===== */
+        .about { padding: 0; scroll-margin-top: 96px; }
+        .about-banner {
+            position: relative;
+            color: #fff;
+            overflow: hidden;
+            background: #05080d url('image/hero/hero-slide-2.webp') no-repeat center 38% / cover;
+        }
+        .about-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(58% 70% at 50% 100%, rgba(47, 111, 176, 0.26) 0%, rgba(5, 8, 13, 0) 62%),
+                radial-gradient(72% 130% at 50% 46%, rgba(5, 8, 13, 0.50) 0%, rgba(5, 8, 13, 0.18) 70%, rgba(5, 8, 13, 0.42) 100%),
+                linear-gradient(180deg, rgba(5, 8, 13, 0.62) 0%, rgba(5, 8, 13, 0.76) 55%, rgba(5, 8, 13, 0.94) 100%);
+        }
+        .about-banner-inner {
+            position: relative;
+            z-index: 2;
+            width: min(1200px, 90%);
+            margin: 0 auto;
+            padding: 104px 0 86px;
+            text-align: center;
+        }
+        .about-kicker {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.34em;
+            color: rgba(255, 255, 255, 0.7);
+            counter-increment: section;
+        }
+        .about-kicker-num::before { content: counter(section, decimal-leading-zero); }
+        .about-stats { display: flex; justify-content: center; align-items: stretch; margin: 36px 0 52px; }
+        .about-stat { position: relative; padding: 0 46px; }
+        .about-stat + .about-stat::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 6px; bottom: 6px;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.22);
+        }
+        .about-stat b {
+            display: block;
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.01em;
+            font-variant-numeric: tabular-nums;
+        }
+        .about-stat b.is-text { font-size: 2.1rem; letter-spacing: 0.04em; }
+        .about-stat span { display: block; margin-top: 12px; font-size: 0.9rem; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.66); }
+        .about-slogan { font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 700; letter-spacing: 0.12em; margin: 0; }
+        html[lang="en"] .about-slogan { letter-spacing: 0.02em; font-size: clamp(1.7rem, 2.8vw, 2.3rem); }
+        .about-body {
+            width: min(1200px, 90%);
+            margin: 0 auto;
+            padding: 82px 0 92px;
+            display: grid;
+            grid-template-columns: 1fr 1.02fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .about-copy p { margin: 0; font-size: 0.98rem; line-height: 2; color: #344054; }
+        .about-timeline { position: relative; }
+        .about-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            transform: translateX(-50%);
+            background: rgba(16, 24, 40, 0.14);
+        }
+        .tl-item { position: relative; width: 50%; padding-bottom: 38px; }
+        .tl-item:last-child { padding-bottom: 0; }
+        .tl-item:nth-child(odd) { padding-right: 34px; text-align: right; }
+        .tl-item:nth-child(even) { margin-left: 50%; padding-left: 34px; }
+        .tl-item::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid var(--primary-color);
+        }
+        .tl-item:nth-child(odd)::after { right: -6px; }
+        .tl-item:nth-child(even)::after { left: -6px; }
+        .tl-item b { display: block; font-size: 1.3rem; font-weight: 800; letter-spacing: 0.02em; font-variant-numeric: tabular-nums; }
+        .tl-item span { display: block; margin-top: 6px; font-size: 0.88rem; line-height: 1.7; color: #667085; }
 
         /* Car Showcase */
         .car-showcase { background-color: var(--light-gray); margin-top: 0; }
@@ -401,6 +494,19 @@
         @media (max-width: 768px) {
             /* 移动端：隐藏箭头，改用滑动 + 圆点；标题按语义整段换行 */
             .carousel-prev, .carousel-next { display: none; }
+            .about-stats { flex-wrap: wrap; margin: 28px 0 36px; }
+            .about-stat { width: 50%; padding: 0 0 22px; }
+            .about-stat + .about-stat::before { display: none; }
+            .about-stat b { font-size: 2.4rem; }
+            .about-stat b.is-text { font-size: 1.7rem; }
+            .about-slogan { letter-spacing: 0.08em; }
+            .about-body { grid-template-columns: 1fr; gap: 46px; padding: 56px 0 64px; }
+            .about-timeline::before { left: 6px; transform: none; }
+            .tl-item { width: 100%; padding: 0 0 26px 34px; text-align: left; }
+            .tl-item:nth-child(odd) { padding-right: 0; text-align: left; }
+            .tl-item:nth-child(even) { margin-left: 0; padding-left: 34px; }
+            .tl-item:nth-child(odd)::after { right: auto; left: 0; }
+            .tl-item:nth-child(even)::after { left: 0; }
             .slide-content { width: 90%; padding: 0 0 6.5rem; }
             .slide-kicker { font-size: 0.68rem; letter-spacing: 0.24em; margin-bottom: 0.85rem; }
             .slide-content h1 { font-size: 1.7rem; letter-spacing: 0.03em; word-break: keep-all; }
@@ -510,24 +616,32 @@
     </section>
 
     <!-- About Us -->
+    <!-- About -->
     <section id="about" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2 data-i18n="index.about.title">关于我们</h2>
+        <div class="about-banner">
+            <div class="about-banner-inner">
+                <div class="about-kicker"><span class="about-kicker-num"></span> · <span data-i18n="index.about.title">关于我们</span></div>
+                <div class="about-stats" data-reveal-stagger>
+                    <div class="about-stat"><b data-i18n="index.about.stats.0.value">2009</b><span data-i18n="index.about.stats.0.label">年成立</span></div>
+                    <div class="about-stat"><b data-i18n="index.about.stats.1.value">50+</b><span data-i18n="index.about.stats.1.label">全国奖项</span></div>
+                    <div class="about-stat"><b data-i18n="index.about.stats.2.value">1000+</b><span data-i18n="index.about.stats.2.label">历届队员</span></div>
+                    <div class="about-stat"><b class="is-text" data-i18n="index.about.stats.3.value">首台</b><span data-i18n="index.about.stats.3.label">广东 FSC 赛车</span></div>
+                </div>
+                <h2 class="about-slogan" data-i18n="index.about.slogan">敢拼敢赢，精益求精</h2>
             </div>
-            <div class="about-content">
-                <div class="about-text" data-reveal-left>
-                    <p data-i18n="index.about.desc">Formax方程式赛车队成立于2009年10月，是广东省第一辆FSC赛车的制造团队，也是FSC赛事最早的发起者之一，由一群对赛车充满热情的大学生创建。我们团队由来自机械、电气、工商管理等多个专业的本科生组成。 我们是由华南理工大学与华工机械与汽车工程学院两级共同打造的科研团队。在学校、学院与社会的大力支持下，每年，我们每年自主设计两辆全新的大学生方程式赛车，分别参加中国大学生电动方程式大赛和中国大学生无人驾驶方程式大赛。我们的使命是结合工程实践打造创新型人才培养平台。 "敢拼敢赢，精益求精"是我们的口号，我们与赛车相伴，不断突破技术极限，在比赛中取得优异成绩，积累宝贵的实战经验。十六年间，从油车、电车到无人车，车队见证了无数人的青葱岁月。岁月匆匆，白驹过隙，时间冲刷着历史的印记， 但汗水镌刻在荣誉中被所有人铭记。</p>
-                </div>
-                <div class="about-image img-hover-zoom" data-reveal-right>
-                    <a href="https://mp.weixin.qq.com/s/LKOV-GXympn0VP8Wx7U-lQ" target="_blank">
-                        <img width="3504" height="2336" src="image/misc/allmember.webp" alt="两队合影" loading="lazy" decoding="async" data-i18n-alt="index.about.imageAlt">
-                    </a>
-                </div>
+        </div>
+        <div class="about-body">
+            <div class="about-copy" data-reveal-left>
+                <p data-i18n="index.about.desc">Formax方程式赛车队成立于2009年10月，是广东省第一辆FSC赛车的制造团队，也是FSC赛事最早的发起者之一，由一群对赛车充满热情的大学生创建。我们团队由来自机械、电气、工商管理等多个专业的本科生组成。 我们是由华南理工大学与华工机械与汽车工程学院两级共同打造的科研团队。在学校、学院与社会的大力支持下，每年，我们每年自主设计两辆全新的大学生方程式赛车，分别参加中国大学生电动方程式大赛和中国大学生无人驾驶方程式大赛。我们的使命是结合工程实践打造创新型人才培养平台。 "敢拼敢赢，精益求精"是我们的口号，我们与赛车相伴，不断突破技术极限，在比赛中取得优异成绩，积累宝贵的实战经验。十六年间，从油车、电车到无人车，车队见证了无数人的青葱岁月。岁月匆匆，白驹过隙，时间冲刷着历史的印记， 但汗水镌刻在荣誉中被所有人铭记。</p>
+            </div>
+            <div class="about-timeline" data-reveal-right>
+                <div class="tl-item"><b data-i18n="index.about.timeline.0.year">2009</b><span data-i18n="index.about.timeline.0.text">油车队成立，广东省第一台 FSC 赛车</span></div>
+                <div class="tl-item"><b data-i18n="index.about.timeline.1.year">2014</b><span data-i18n="index.about.timeline.1.text">电车队成立</span></div>
+                <div class="tl-item"><b data-i18n="index.about.timeline.2.year">2019</b><span data-i18n="index.about.timeline.2.text">无人车队成立</span></div>
+                <div class="tl-item"><b data-i18n="index.about.timeline.3.year">2026</b><span data-i18n="index.about.timeline.3.text">第十二代电车 + 第七代无人车</span></div>
             </div>
         </div>
     </section>
-
     <!-- Achievements -->
     <section id="achievements" class="achievements">
         <div class="container">
