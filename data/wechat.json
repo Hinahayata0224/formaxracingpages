@@ -1,0 +1,8 @@
+{
+  "note": "公众号合集抓取配置。把要同步的文章都加进同一个「合集」，再填这里的 biz / albumId；tools/sync-wechat.mjs --album 会按它拉取。",
+  "biz": "MzAwNDExMDQ3Mw==",
+  "albumId": "3425816951120019456",
+  "tag": "招新",
+  "howToFind": "打开该合集内任意一篇文章，点页面里的「合集」入口，地址栏形如 mp.weixin.qq.com/mp/appmsgalbum?...&__biz=XXX&action=getalbum&album_id=NNN —— 取 __biz 与 album_id。",
+  "caveat": "接口只能列出「被加入该合集」的文章；没有合集就没有列表，无法翻历史消息。"
+}
