@@ -384,15 +384,16 @@
         .team-content h2 { font-size: 2.5rem; margin-bottom: 2rem; }
 
         /* Groups */
-        .groups { background-color: var(--light-gray); padding: 4rem 0; }
+        .groups { background-color: #fff; padding: 4rem 0; }
         .group-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .group-card {
             background-color: var(--accent-color);
+            border: 1px solid rgba(16, 24, 40, 0.10);
             border-radius: 10px;
             padding: 2rem;
             text-align: center;
-            box-shadow: 0 5px 15px var(--card-shadow);
-            transition: transform 0.3s;
+            box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 10px 28px -20px rgba(16, 24, 40, 0.35);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
         .group-card:hover { transform: translateY(-5px); }
         .group-icon {
