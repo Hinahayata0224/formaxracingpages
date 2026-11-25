@@ -10,7 +10,7 @@ var Components = (function () {
         { key: 'nav.about', label: '关于我们', href: '/#about', section: 'about' },
         { key: 'nav.cars', label: '赛车展示', href: '/#car', section: 'car' },
         { key: 'nav.groups', label: '团队分组', href: '/#groups', section: 'groups' },
-        { key: 'nav.team', label: '管理团队', href: '/#team', section: 'team' },
+        { key: 'nav.team', label: '管理团队', url: 'team.html' },
         { key: 'nav.news', label: '车队动态', href: '/#news', section: 'news' },
         { key: 'nav.sponsors', label: '合作伙伴', href: '/#sponsors', section: 'sponsors' },
         { key: 'nav.contact', label: '联系我们', href: '/#contact', section: 'contact' }
@@ -30,7 +30,7 @@ var Components = (function () {
         html += '<ul class="nav-links">';
 
         NAV_ITEMS.forEach(function (item) {
-            var href = isHomePage ? ('#' + item.section) : (base + '#' + item.section);
+            var href = item.url ? (base + item.url) : (isHomePage ? ('#' + item.section) : (base + '#' + item.section));
             html += '<li><a href="' + href + '" data-i18n="' + item.key + '">' + item.label + '</a></li>';
         });
 

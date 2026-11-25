@@ -127,6 +127,11 @@
             "title": "Want to Join the Formax Team?",
             "cta": "Join Us"
         },
+        "explore": {
+            "title": "Keep Exploring",
+            "teamTag": "Team",
+            "joinTag": "Join Us"
+        },
         "news": {
             "title": "Team News",
             "viewMore": "View More",

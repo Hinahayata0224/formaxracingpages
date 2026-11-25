@@ -127,6 +127,11 @@
             "title": "想成为Formax团队的一员吗?",
             "cta": "加入我们"
         },
+        "explore": {
+            "title": "继续了解",
+            "teamTag": "管理团队",
+            "joinTag": "加入我们"
+        },
         "news": {
             "title": "车队动态",
             "viewMore": "查看更多",
