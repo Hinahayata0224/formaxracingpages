@@ -1,0 +1,289 @@
+{
+  "note": "赞助商配置：tier.key 决定尺寸等级（diamond/gold/silver）。加一个赞助商可用 node tools/add-sponsor.mjs --tier silver --name 名称 --img 图片路径 [--url 链接]（自动读图片尺寸）；也可直接改本文件。url 留空则只显示 logo。移除：--remove",
+  "updated": "2026-11-25",
+  "tiers": [
+    {
+      "key": "diamond",
+      "class": "platinum-sponsors",
+      "title": "钻石级",
+      "title_en": "Diamond",
+      "items": [
+        {
+          "name": "cok",
+          "img": "image/sponsor/diamond/cok.png",
+          "url": "",
+          "width": 627,
+          "height": 171
+        },
+        {
+          "name": "柏中",
+          "img": "image/sponsor/diamond/柏中.png",
+          "url": "https://mp.weixin.qq.com/s/iJvgx4LJRtnTAX_fknbTNg",
+          "width": 730,
+          "height": 186
+        },
+        {
+          "name": "广州晓达金属",
+          "img": "image/sponsor/diamond/广州晓达金属.png",
+          "url": "https://mp.weixin.qq.com/s/bu50GD8-mq4ChlgxY8F54w",
+          "width": 705,
+          "height": 167
+        },
+        {
+          "name": "华工检测",
+          "img": "image/sponsor/diamond/华工检测.png",
+          "url": "https://mp.weixin.qq.com/s/MwMzVYFSjYBHbiC9oogFZw",
+          "width": 746,
+          "height": 129
+        },
+        {
+          "name": "卡布尔",
+          "img": "image/sponsor/diamond/卡布尔.png",
+          "url": "https://mp.weixin.qq.com/s/5X0slL3mfxoK7SrhiNO8MQ",
+          "width": 628,
+          "height": 102
+        },
+        {
+          "name": "蓝科",
+          "img": "image/sponsor/diamond/蓝科.png",
+          "url": "https://mp.weixin.qq.com/s/P0N9agHTZKN8caJXHpE4bg",
+          "width": 534,
+          "height": 207
+        },
+        {
+          "name": "欧思科光电",
+          "img": "image/sponsor/diamond/欧思科光电.png",
+          "url": "https://mp.weixin.qq.com/s/VQ3K51iPWunBYWq2D3EHSA",
+          "width": 683,
+          "height": 263
+        },
+        {
+          "name": "优信电子",
+          "img": "image/sponsor/diamond/优信电子.png",
+          "url": "https://mp.weixin.qq.com/s/vRsZ2Ezly31dFf0Gf1qGpw",
+          "width": 415,
+          "height": 269
+        },
+        {
+          "name": "通达电气",
+          "img": "image/sponsor/diamond/通达电气.png",
+          "url": "https://mp.weixin.qq.com/s/yLTtL6Cv3pix2X1wcDfhhQ",
+          "width": 634,
+          "height": 158
+        }
+      ]
+    },
+    {
+      "key": "gold",
+      "class": "gold-sponsors",
+      "title": "黄金级",
+      "title_en": "Gold",
+      "items": [
+        {
+          "name": "dn",
+          "img": "image/sponsor/gold/dn.png",
+          "url": "https://mp.weixin.qq.com/s/CDSxzfYmA0eAlgwgeZwb-Q",
+          "width": 388,
+          "height": 244
+        },
+        {
+          "name": "kings",
+          "img": "image/sponsor/gold/kings.png",
+          "url": "https://mp.weixin.qq.com/s/7jt-03Kz-qOqbECp8MeLyA",
+          "width": 488,
+          "height": 164
+        },
+        {
+          "name": "one车膜",
+          "img": "image/sponsor/gold/one车膜.png",
+          "url": "",
+          "width": 766,
+          "height": 95
+        },
+        {
+          "name": "xev",
+          "img": "image/sponsor/gold/xev.png",
+          "url": "https://mp.weixin.qq.com/s/ChOsMlFRz9kb0n-ZCAMMBA",
+          "width": 547,
+          "height": 141
+        },
+        {
+          "name": "骏怡汇",
+          "img": "image/sponsor/gold/骏怡汇.png",
+          "url": "https://mp.weixin.qq.com/s/ynP9rp0K9grLpYgf-lb6Qg",
+          "width": 670,
+          "height": 241
+        },
+        {
+          "name": "领克",
+          "img": "image/sponsor/gold/领克.png",
+          "url": "https://mp.weixin.qq.com/s/MvnmzlaCeZ3wNSj5IJycCA",
+          "width": 531,
+          "height": 204
+        },
+        {
+          "name": "cmst",
+          "img": "image/sponsor/gold/cmst.png",
+          "url": "",
+          "width": 578,
+          "height": 123
+        }
+      ]
+    },
+    {
+      "key": "silver",
+      "class": "silver-sponsors",
+      "title": "白银/天使级",
+      "title_en": "Silver / Angel",
+      "items": [
+        {
+          "name": "beta",
+          "img": "image/sponsor/silver/beta.png",
+          "url": "https://mp.weixin.qq.com/s/0gJ32SrsgkWj0lLQsr0Gmg",
+          "width": 423,
+          "height": 192
+        },
+        {
+          "name": "cf",
+          "img": "image/sponsor/silver/cf.png",
+          "url": "",
+          "width": 600,
+          "height": 300
+        },
+        {
+          "name": "chroma",
+          "img": "image/sponsor/silver/chroma.png",
+          "url": "https://mp.weixin.qq.com/s/UOZ3bLJjI6j5MzVEdlvleQ",
+          "width": 461,
+          "height": 104
+        },
+        {
+          "name": "dynatune",
+          "img": "image/sponsor/silver/dynatune.png",
+          "url": "",
+          "width": 416,
+          "height": 151
+        },
+        {
+          "name": "imk",
+          "img": "image/sponsor/silver/imk.png",
+          "url": "",
+          "width": 445,
+          "height": 133
+        },
+        {
+          "name": "mds",
+          "img": "image/sponsor/silver/mds.png",
+          "url": "https://mp.weixin.qq.com/s/tcXieWJwaEWHLPXaOzfDvA",
+          "width": 354,
+          "height": 249
+        },
+        {
+          "name": "mdstraining",
+          "img": "image/sponsor/silver/mdstraining.png",
+          "url": "",
+          "width": 433,
+          "height": 72
+        },
+        {
+          "name": "melasta",
+          "img": "image/sponsor/silver/melasta.png",
+          "url": "https://mp.weixin.qq.com/s/E-JPEw2Cs4jdK0LN-P0_TA",
+          "width": 303,
+          "height": 216
+        },
+        {
+          "name": "moza",
+          "img": "image/sponsor/silver/moza.png",
+          "url": "https://mp.weixin.qq.com/s/s4Zdm4x71DXvjD3rW4Vx6w",
+          "width": 394,
+          "height": 81
+        },
+        {
+          "name": "rowe",
+          "img": "image/sponsor/silver/rowe.png",
+          "url": "https://mp.weixin.qq.com/s/GDLLQ1COKHdLLCxhAL1JWg",
+          "width": 449,
+          "height": 152
+        },
+        {
+          "name": "scut20",
+          "img": "image/sponsor/silver/scut20.png",
+          "url": "",
+          "width": 249,
+          "height": 216
+        },
+        {
+          "name": "vigrade",
+          "img": "image/sponsor/silver/vigrade.png",
+          "url": "",
+          "width": 436,
+          "height": 138
+        },
+        {
+          "name": "wago",
+          "img": "image/sponsor/silver/wago.png",
+          "url": "https://mp.weixin.qq.com/s/p8KgFwzMmXDBIFSFcCA7qw",
+          "width": 409,
+          "height": 148
+        },
+        {
+          "name": "yato",
+          "img": "image/sponsor/silver/yato.png",
+          "url": "",
+          "width": 431,
+          "height": 98
+        },
+        {
+          "name": "仿真秀",
+          "img": "image/sponsor/silver/仿真秀.png",
+          "url": "https://mp.weixin.qq.com/s/ExkI8iPRZwY5gkRXZxMogw",
+          "width": 417,
+          "height": 131
+        },
+        {
+          "name": "丰泰美华",
+          "img": "image/sponsor/silver/丰泰美华.png",
+          "url": "",
+          "width": 634,
+          "height": 144
+        },
+        {
+          "name": "华秋",
+          "img": "image/sponsor/silver/华秋.png",
+          "url": "https://mp.weixin.qq.com/s/GFe6tVKX6QcvJTilPd1AzA",
+          "width": 404,
+          "height": 142
+        },
+        {
+          "name": "捷凯",
+          "img": "image/sponsor/silver/捷凯.png",
+          "url": "",
+          "width": 344,
+          "height": 215
+        },
+        {
+          "name": "竞速赛车",
+          "img": "image/sponsor/silver/竞速赛车.png",
+          "url": "https://mp.weixin.qq.com/s/95q9IdUHwyhaHDRSniOKUg",
+          "width": 404,
+          "height": 187
+        },
+        {
+          "name": "万家乐",
+          "img": "image/sponsor/silver/万家乐.png",
+          "url": "",
+          "width": 346,
+          "height": 116
+        },
+        {
+          "name": "卓宇信息",
+          "img": "image/sponsor/silver/卓宇信息.png",
+          "url": "https://mp.weixin.qq.com/s/SFs4SBhf3QvTONRSgJ3n7g",
+          "width": 419,
+          "height": 161
+        }
+      ]
+    }
+  ]
+}
