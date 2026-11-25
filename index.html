@@ -475,6 +475,12 @@
         .race-card h3 { margin: 8px 0 0; font-size: 0.94rem; font-weight: 600; line-height: 1.5; letter-spacing: 0.01em;
                        display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .race-card.ev { z-index: 2; }
+        .race-card.is-empty { border-style: dashed; border-color: rgba(16, 24, 40, 0.16); background: #fbfcfd; box-shadow: none; }
+        .race-card.is-empty:hover { transform: none; box-shadow: none; opacity: 1; }
+        .race-card.is-empty.is-wide { width: 340px; left: 0; }
+        .race-empty { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+        .race-empty span { font-size: 0.7rem; letter-spacing: 0.14em; color: #98a2b3; }
+        .race-empty b { font-size: 0.98rem; font-weight: 600; letter-spacing: 0.08em; color: #667085; }
         .race-card.av { left: 60px; z-index: 1; }
         .race-card.av .race-body { opacity: 0; transition: opacity 0.35s ease; }
         .race-card.av:hover { z-index: 3; transform: translate(-6px, -8px); box-shadow: 0 26px 44px -26px rgba(16, 24, 40, 0.65); }

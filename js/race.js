@@ -44,10 +44,20 @@
         return lang() === 'en' && item.title_en ? item.title_en : (item.short || item.title || '');
     }
 
+    function tbd() {
+        return lang() === 'en' ? 'Coming soon' : '敬请期待';
+    }
+
     function card(item, car) {
-        if (!item) return '';
+        if (!item) {
+            return '<div class="race-card ' + car + ' is-empty">' +
+                '<div class="race-empty">' +
+                '<span>' + esc(carLabel(car)) + '</span>' +
+                '<b>' + esc(tbd()) + '</b>' +
+                '</div></div>';
+        }
         return '<a class="race-card ' + car + '" href="' + esc(safeUrl(item.url)) + '" target="_blank" rel="noopener">' +
-            '<div class="race-cover" style="background-image:url(\'' + esc(item.local) + '\')"></div>' +
+            '<div class="race-cover" style="background-image:url(\'' + esc(item.local || '') + '\')"></div>' +
             '<div class="race-body">' +
             '<div class="race-tag"><i class="dot"></i>' + esc(carLabel(car)) + '</div>' +
             '<h3>' + esc(titleOf(item)) + '</h3>' +
@@ -60,8 +70,16 @@
             return;
         }
         grid.innerHTML = days.map(function (d) {
-            return '<div class="race-day">' +
-                '<div class="race-head"><b>DAY ' + esc(d.day) + '</b><span>' + esc(shortDate(d.date)) + '</span></div>' +
+            var head = '<div class="race-head"><b>DAY ' + esc(d.day) + '</b><span>' + esc(shortDate(d.date)) + '</span></div>';
+            if (!d.ev && !d.av) {
+                return '<div class="race-day">' + head +
+                    '<div class="race-cell">' +
+                    '<div class="race-card is-empty is-wide"><div class="race-empty">' +
+                    '<span>' + esc(carLabel('ev')) + ' · ' + esc(carLabel('av')) + '</span>' +
+                    '<b>' + esc(tbd()) + '</b></div></div>' +
+                    '</div></div>';
+            }
+            return '<div class="race-day">' + head +
                 '<div class="race-cell">' + card(d.ev, 'ev') + card(d.av, 'av') + '</div>' +
                 '</div>';
         }).join('');
