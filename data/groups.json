@@ -1,0 +1,45 @@
+{
+  "items": {
+    "driverless": {
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652117105&idx=2&sn=1454de5014d52899ad5434f9adcb419d&chksm=80d05997b7a7d0819fc2f108a368e6276ae76c6ac5747cb9424f840a04750601601ff355ee0f",
+      "title": "招新丨无人系统组",
+      "date": "2026-03-24"
+    },
+    "chassis": {
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652117105&idx=3&sn=47d8357f0d564e9f551459416f407c85&chksm=80d05997b7a7d0812f2c084ff787e24a768a02531803ea95d2e8675f05600baa6c4e373f26aa",
+      "title": "招新丨底盘组",
+      "date": "2026-03-24"
+    },
+    "elec": {
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652117105&idx=4&sn=13a86a90b5b59a25a3a0c493cef450be&chksm=80d05997b7a7d0817a5d4b7388c19c4f101783d4dec93437a3bc680bd029ba0cefbbedfcfa91",
+      "title": "招新丨电气系统组",
+      "date": "2026-03-24"
+    },
+    "aero": {
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652117105&idx=5&sn=75a883c1323fc87c87e9f2b1a059332c&chksm=80d05997b7a7d081aa387e551422c0e193b9d7c4ce7275b6b8db049a1010fdf4d2e82ad0364d",
+      "title": "招新丨车身空力组",
+      "date": "2026-03-24"
+    },
+    "marketing": {
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652117106&idx=1&sn=a740b4ce9ae9ee4fdf8d472b0c253d26&chksm=80d05994b7a7d0820364b1df6a310cab1ffe1c3fa6cd8d6451e1eb7a76a8504106184d4e2c05",
+      "title": "招新丨市场部",
+      "date": "2026-03-24"
+    },
+    "driver": {
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652117106&idx=3&sn=957f52aa3284f868b0ad185e6e105047&chksm=80d05994b7a7d0823fb150a332182b0069e59aa73334714b2f29f81e1ec0723226bcb440deaa",
+      "title": "招新丨车手部",
+      "date": "2026-03-24"
+    },
+    "secretary": {
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652117106&idx=2&sn=8823a5502f96476212200e409b85eb35&chksm=80d05994b7a7d082259f5030c1351393158716cb8c94089bb8f70f00cb91d4499a7d8c832e7e",
+      "title": "招新丨秘书部",
+      "date": "2026-03-24"
+    },
+    "qc": {
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652117106&idx=4&sn=2bce04a9e3902edcdb957339470e17d8&chksm=80d05994b7a7d0827d5cf76e90f77c419485fcb1ba4475af1a6136f9d18d58665d1d4a1ba169",
+      "title": "招新丨质管部",
+      "date": "2026-03-24"
+    }
+  },
+  "updated": "2026-11-25"
+}

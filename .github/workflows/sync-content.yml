@@ -1,17 +1,17 @@
-name: Sync race days
+name: Sync content from WeChat
 
 on:
   schedule:
-    # 每天 09:00（北京时间）跑一次；比赛周可以临时改成每小时
+    # 每天 09:00（北京时间）：赛场动态、人物故事、分组链接一起同步
     - cron: '0 1 * * *'
   workflow_dispatch:
     inputs:
       expect:
-        description: '预期比赛日数（合集里缺的天会写成「敬请期待」），留空则按合集实际天数'
+        description: '赛场动态预期比赛日数（缺的天写「敬请期待」），留空按合集实际天数'
         required: false
         default: ''
       force:
-        description: '强制重新下载并转换全部封面（用于验证 webp 流程）'
+        description: '强制重新下载并转换全部赛场封面（验证 webp 流程）'
         required: false
         default: false
         type: boolean
@@ -32,7 +32,7 @@ jobs:
       - name: Install cwebp
         run: sudo apt-get update -qq && sudo apt-get install -y -qq webp
 
-      - name: Sync from WeChat album
+      - name: Sync race days
         run: |
           ARGS="--require-webp"
           if [ -n "${{ inputs.expect }}" ]; then ARGS="$ARGS --expect ${{ inputs.expect }}"; fi
@@ -40,14 +40,20 @@ jobs:
           echo "node tools/sync-race.mjs $ARGS"
           node tools/sync-race.mjs $ARGS
 
+      - name: Sync alumni stories
+        run: node tools/sync-stories.mjs
+
+      - name: Sync group links
+        run: node tools/sync-groups.mjs
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/race-days.json image/race
+          git add data image/race
           if git diff --cached --quiet; then
             echo "没有变化，跳过提交"
             exit 0
           fi
-          git commit -m "chore(race): sync 赛场动态 from WeChat album"
+          git commit -m "chore(content): sync from WeChat albums"
           git push
