@@ -1,7 +1,95 @@
 {
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "source": "3561905531105263626",
   "days": [
+    {
+      "date": "2026-11-21",
+      "day": 4,
+      "ev": {
+        "title": "FSEC DAY 4丨答辩决赛·制动测试·八字绕环",
+        "short": "答辩决赛·制动测试·八字绕环",
+        "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/w2g5UjUJzpO8UtalcmPEYeSQFggrFibGrYicJM3fCLkkP75fkZmYngSoNgibPUqkKk4W9HbuMMpSKGUfAJXbn89TzTMVr4IicZCN4o9ic93qNYCY/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652119507&idx=2&sn=77270d7e25656f668880be604a2f51c6&chksm=80d06035b7a7e92312914f30ad5829e49b8f0355e9c1c6437a4467d91b379536c2f4a457cf2b",
+        "key": "2652119507:2",
+        "date": "2026-11-21",
+        "local": "image/race/day4-ev.webp"
+      },
+      "av": {
+        "title": "FSAC DAY 4丨制动测试·直线加速",
+        "short": "制动测试·直线加速",
+        "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/w2g5UjUJzpPlJFXIRjIscmibJwaME6GVAO9EdiajUxJdfgvNcTdT1Yy68UqGevKgYN2yqIQGGvbCic2u27KK8UKdH3wCRSKRYHFpgGzcu9mVWg/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652119507&idx=1&sn=2fc500aed2b18a8d88a31213ab8d6cd7&chksm=80d06035b7a7e9231926f8fa6e1b66d80499cba7812a470373b006a61f9c656f8b929297c035",
+        "key": "2652119507:1",
+        "date": "2026-11-21",
+        "local": "image/race/day4-av.webp"
+      }
+    },
+    {
+      "date": "2026-11-20",
+      "day": 3,
+      "ev": {
+        "title": "FSEC DAY 3丨逐项核验，整装待发",
+        "short": "逐项核验，整装待发",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/w2g5UjUJzpPrUkibsfCLowNf0PJ2Nk7ElhgvzIdRRuEMmJg9rmPArU2tcDfcTdffBrSYog65wQyoyTia8mPnib0K3XQBibmqzoYibb1PjDxmMEW4/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652119449&idx=1&sn=76218c020a96679c112dbd3bae77e809&chksm=80d0607fb7a7e9699f4dd3e9c6806ed0116a957fc20dcae1b43b7159165a1266e26fd43699cb",
+        "key": "2652119449:1",
+        "date": "2026-11-20",
+        "local": "image/race/day3-ev.webp"
+      },
+      "av": {
+        "title": "FSAC DAY 3丨逐项核验，蓄能竞速",
+        "short": "逐项核验，蓄能竞速",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/w2g5UjUJzpNcrnOiaL4zq61SwwhLgSYWicpbyoIlP1BVv2SJiajZq3zxCXoPwYvQicGqk3MUu2zJojAGh0sMhiaiayS3IllDKBOx0gJl9ibpmiaJUS4/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652119449&idx=2&sn=2463ae6d0dbde3b26bba4f17c15b239c&chksm=80d0607fb7a7e96944aeb6ca255671c31475a5d8c713f70f40ec34c3bbe2debd3d1c6d7bb8ae",
+        "key": "2652119449:2",
+        "date": "2026-11-20",
+        "local": "image/race/day3-av.webp"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "day": 2,
+      "ev": {
+        "title": "FSEC DAY 2丨开幕式·箱检·机械检·成本商业答辩",
+        "short": "开幕式·箱检·机械检·成本商业答辩",
+        "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/w2g5UjUJzpN5iaceBe4ibTrcibZuxC78aCYL1ucZQUYl1sghBrOb3IDCjZXlUs2U7RoZ2u7ib4oib1OFKqibB0SooXS8ksVscOaxajlicdLZKDvwDc/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652119364&idx=1&sn=9398c971b486b3675d0303c1a69dee9c&chksm=80d060a2b7a7e9b4cd7bce4df951ba53d22745e3db0337c4554283ade55191e23e4f5f0f11d6",
+        "key": "2652119364:1",
+        "date": "2026-11-19",
+        "local": "image/race/day2-ev.webp"
+      },
+      "av": {
+        "title": "FSAC DAY 2丨开幕式·设计答辩·机械检·电气检查",
+        "short": "开幕式·设计答辩·机械检·电气检查",
+        "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/w2g5UjUJzpOARHme9x9gClDfQucImolJ3tHKlJDtSbXoL6EoYnq5VsM9chYmBYfIpz9KzG8iaVmyscJgeFbCTIj0uH6PITb4nf7RdPgVjWzI/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652119364&idx=2&sn=79525f5d6c0f7c16fc3a97237203cbd9&chksm=80d060a2b7a7e9b4d2062a71852eb5dcebfa650e2336c2f1b102bfb881711488213e54b8452d",
+        "key": "2652119364:2",
+        "date": "2026-11-19",
+        "local": "image/race/day2-av.webp"
+      }
+    },
+    {
+      "date": "2026-11-18",
+      "day": 1,
+      "ev": {
+        "title": "FSEC DAY 1丨车手逃生",
+        "short": "车手逃生",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/w2g5UjUJzpP6ibfA612ZEF8pfWaHiajJUCYBfTAyh70HGmR3icOJGusgPJfcYKAYFrXOfk9IfdtEEbY4uuDGWsPrK4icibuE7oicWmBmQI2YvCm3U/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652119051&idx=1&sn=141cdd51cf9b8690af060fedb6ab1361&chksm=80d061edb7a7e8fbe78c97c53723d352d847e61f73a07b65593ccfc6e302ed70e3a04fa59d5d",
+        "key": "2652119051:1",
+        "date": "2026-11-18",
+        "local": "image/race/day1-ev.webp"
+      },
+      "av": {
+        "title": "FSAC DAY 1丨车手逃生&电池箱检查",
+        "short": "车手逃生&电池箱检查",
+        "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/w2g5UjUJzpNS8OcE85hO8FaNVcfic1qibbjibhoPicVkibpm14agbw5b2Cs55O3xE1D2I2q2ogW3guxkxUxAUPkyrFYFFn5KsselKQsFibPKo6a2w/640",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDExMDQ3Mw==&mid=2652119051&idx=2&sn=05b020784a764794f144701abae6e7e5&chksm=80d061edb7a7e8fb358a2a0dcb3b22b0debf8767de6737c2a2f43168f7610a88fb63d300f31b",
+        "key": "2652119051:2",
+        "date": "2026-11-18",
+        "local": "image/race/day1-av.webp"
+      }
+    },
     {
       "date": "2025-11-24",
       "day": 6,
